@@ -1,29 +1,28 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using EvilBaschdi.Avalonia.DummyUi.ViewModels;
-using EvilBaschdi.Avalonia.DummyUi.Views;
+using EvilBaschdi.Avalonia.DummyAppMvvm.ViewModels;
+using EvilBaschdi.Avalonia.DummyAppMvvm.Views;
 
-namespace EvilBaschdi.Avalonia.DummyUi
+namespace EvilBaschdi.Avalonia.DummyAppMvvm;
+
+public class App : Application
 {
-    public partial class App : Application
+    public override void Initialize()
     {
-        public override void Initialize()
+        AvaloniaXamlLoader.Load(this);
+    }
+
+    public override void OnFrameworkInitializationCompleted()
+    {
+        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            AvaloniaXamlLoader.Load(this);
+            desktop.MainWindow = new MainWindow
+                                 {
+                                     DataContext = new MainWindowViewModel(),
+                                 };
         }
 
-        public override void OnFrameworkInitializationCompleted()
-        {
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
-            }
-
-            base.OnFrameworkInitializationCompleted();
-        }
+        base.OnFrameworkInitializationCompleted();
     }
 }

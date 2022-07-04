@@ -1,0 +1,24 @@
+﻿using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Platform;
+using EvilBaschdi.Core.Extensions;
+
+namespace EvilBaschdi.Avalonia.Core;
+
+/// <inheritdoc />
+public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
+{
+    /// <inheritdoc />
+    public void RunFor((Window window, Panel headerPanel, Panel mainPanel) value)
+    {
+        var (window, headerPanel, mainPanel) = value;
+
+        if (VersionHelper.IsWindows)
+        {
+            window.ExtendClientAreaToDecorationsHint = true;
+            window.ExtendClientAreaChromeHints = ExtendClientAreaChromeHints.Default;
+            headerPanel.IsVisible = true;
+            mainPanel.Margin = new Thickness(0, 30, 0, 0);
+        }
+    }
+}
