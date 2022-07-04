@@ -19,7 +19,8 @@ public partial class MainWindow : Window
 
         var thm = AvaloniaLocator.Current.GetService<FluentAvaloniaTheme>();
         IWindowInstance windowInstance = new WindowInstance(this);
-        ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance);
+        ICalculateImmutableSolidColorBrushColor calculateImmutableSolidColorBrushColor = new CalculateImmutableSolidColorBrushColor(windowInstance);
+        ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance, calculateImmutableSolidColorBrushColor);
         IOnRequestedThemeChanged onRequestedThemeChanged = new OnRequestedThemeChanged(tryEnableMicaEffect);
         IApplyFluentAvaloniaUiStyle applyFluentAvaloniaUiStyle = new ApplyFluentAvaloniaUiStyle(windowInstance, onRequestedThemeChanged, tryEnableMicaEffect);
 
