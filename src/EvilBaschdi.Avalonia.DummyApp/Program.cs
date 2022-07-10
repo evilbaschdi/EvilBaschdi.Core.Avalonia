@@ -3,6 +3,7 @@ using Avalonia;
 
 namespace EvilBaschdi.Avalonia.DummyApp;
 
+// ReSharper disable once ClassNeverInstantiated.Global
 internal class Program
 {
     // Initialization code. Don't use any Avalonia, third-party APIs or any
@@ -13,6 +14,7 @@ internal class Program
         .StartWithClassicDesktopLifetime(args);
 
     // Avalonia configuration, don't remove; also used by visual designer.
+    // ReSharper disable once MemberCanBePrivate.Global
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
                      .UsePlatformDetect()
