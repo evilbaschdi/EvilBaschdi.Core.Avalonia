@@ -1,4 +1,3 @@
-using System;
 using Avalonia;
 
 namespace EvilBaschdi.Avalonia.DummyApp;
