@@ -6,9 +6,14 @@ namespace EvilBaschdi.Avalonia.DummyAppMvvm;
 
 public class ViewLocator : IDataTemplate
 {
-    public IControl Build(object data)
+    public IControl Build(object? data)
     {
-        var name = data.GetType().FullName!.Replace("ViewModel", "View");
+        var name = data?.GetType().FullName!.Replace("ViewModel", "View");
+        if (name == null)
+        {
+            return new TextBlock { Text = "View Not Found" };
+        }
+
         var type = Type.GetType(name);
 
         if (type != null)
@@ -19,7 +24,7 @@ public class ViewLocator : IDataTemplate
         return new TextBlock { Text = "Not Found: " + name };
     }
 
-    public bool Match(object data)
+    public bool Match(object? data)
     {
         return data is ViewModelBase;
     }

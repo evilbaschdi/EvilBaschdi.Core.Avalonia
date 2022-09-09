@@ -17,6 +17,6 @@ public class HandleOsDependentTitleBarTests
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
     {
-        assertion.Verify(typeof(HandleOsDependentTitleBar).GetMethods().Where(method => !method.IsAbstract));
+        assertion.Verify(typeof(HandleOsDependentTitleBar).GetMethods().Where(method => !method.IsAbstract & !method.Name.StartsWith("Run")));
     }
 }

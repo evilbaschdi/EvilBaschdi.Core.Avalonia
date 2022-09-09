@@ -21,6 +21,16 @@ public class OnRequestedThemeChanged : IOnRequestedThemeChanged
     /// <inheritdoc />
     public void RunFor(FluentAvaloniaTheme sender, RequestedThemeChangedEventArgs args)
     {
+        if (sender == null)
+        {
+            throw new ArgumentNullException(nameof(sender));
+        }
+
+        if (args == null)
+        {
+            throw new ArgumentNullException(nameof(args));
+        }
+
         if (VersionHelper.IsWindows11 && args.NewTheme != FluentAvaloniaTheme.HighContrastModeString)
         {
             _tryEnableMicaEffect.RunFor(sender);

@@ -24,8 +24,7 @@ public class ApplyFluentAvaloniaUiStyle : IApplyFluentAvaloniaUiStyle
     {
         _windowInstance = windowInstance ?? throw new ArgumentNullException(nameof(windowInstance));
         _onRequestedThemeChanged = onRequestedThemeChanged ?? throw new ArgumentNullException(nameof(onRequestedThemeChanged));
-        _tryEnableMicaEffect = tryEnableMicaEffect;
-        _tryEnableMicaEffect = tryEnableMicaEffect;
+        _tryEnableMicaEffect = tryEnableMicaEffect ?? throw new ArgumentNullException(nameof(tryEnableMicaEffect));
     }
 
     /// <inheritdoc />
