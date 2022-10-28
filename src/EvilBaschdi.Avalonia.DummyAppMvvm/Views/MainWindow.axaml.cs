@@ -1,6 +1,8 @@
 using Avalonia;
+using Avalonia.Collections;
 using Avalonia.Controls;
 using EvilBaschdi.Avalonia.Core;
+using EvilBaschdi.Avalonia.DummyAppMvvm.Models;
 using FluentAvalonia.Styling;
 
 namespace EvilBaschdi.Avalonia.DummyAppMvvm.Views;
@@ -27,5 +29,13 @@ public partial class MainWindow : Window
         {
             applyFluentAvaloniaUiStyle.RunFor(thm);
         }
+
+        TargetDataGrid.Items = new DataGridCollectionView(Countries.All)
+                               {
+                                   GroupDescriptions =
+                                   {
+                                       new DataGridPathGroupDescription("Region")
+                                   }
+                               };
     }
 }
