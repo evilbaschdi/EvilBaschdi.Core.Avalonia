@@ -1,5 +1,4 @@
-﻿using EvilBaschdi.Core;
-using FluentAvalonia.UI.Media;
+﻿using FluentAvalonia.UI.Media;
 
 namespace EvilBaschdi.Avalonia.Core;
 

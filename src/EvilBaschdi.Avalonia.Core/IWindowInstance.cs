@@ -1,5 +1,4 @@
 ﻿using Avalonia.Controls;
-using EvilBaschdi.Core;
 
 namespace EvilBaschdi.Avalonia.Core;
 
