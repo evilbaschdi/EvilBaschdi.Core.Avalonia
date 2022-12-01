@@ -20,7 +20,7 @@ internal class Program
                      .LogToTrace()
                      .With(new Win32PlatformOptions
                            {
-                               UseWindowsUIComposition = true,
+                               UseWindowsUIComposition = false,
                                CompositionBackdropCornerRadius = 8f
                            });
 }

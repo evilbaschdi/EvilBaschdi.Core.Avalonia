@@ -4,18 +4,7 @@ public static class Countries
 {
     private static IReadOnlyList<Country>? _all;
 
-    public static IReadOnlyList<Country> All
-    {
-        get
-        {
-            if (_all == null)
-            {
-                _all = GetCountries().ToList().AsReadOnly();
-            }
-
-            return _all;
-        }
-    }
+    public static IEnumerable<Country> All => _all ??= GetCountries().ToList().AsReadOnly();
 
     static IEnumerable<Country> GetCountries()
     {

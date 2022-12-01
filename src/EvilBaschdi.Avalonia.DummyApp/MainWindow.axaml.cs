@@ -1,12 +1,16 @@
-using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using EvilBaschdi.Avalonia.Core;
-using FluentAvalonia.Styling;
+using EvilBaschdi.Avalonia.Core.Controls.About;
+using EvilBaschdi.Core;
 
 namespace EvilBaschdi.Avalonia.DummyApp;
 
 public partial class MainWindow : Window
 {
+    /// <summary>
+    ///     Constructor
+    /// </summary>
     public MainWindow()
     {
         InitializeComponent();
@@ -15,17 +19,21 @@ public partial class MainWindow : Window
     protected override void OnOpened(EventArgs e)
     {
         base.OnOpened(e);
+        IHandleOsDependentTitleBar handleOsDependentTitleBar = new HandleOsDependentTitleBar();
+        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel));
+    }
 
-        var thm = AvaloniaLocator.Current.GetService<FluentAvaloniaTheme>();
-        IWindowInstance windowInstance = new WindowInstance(this);
-        ICalculateImmutableSolidColorBrushColor calculateImmutableSolidColorBrushColor = new CalculateImmutableSolidColorBrushColor(windowInstance);
-        ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance, calculateImmutableSolidColorBrushColor);
-        IOnRequestedThemeChanged onRequestedThemeChanged = new OnRequestedThemeChanged(tryEnableMicaEffect);
-        IApplyFluentAvaloniaUiStyle applyFluentAvaloniaUiStyle = new ApplyFluentAvaloniaUiStyle(windowInstance, onRequestedThemeChanged, tryEnableMicaEffect);
-
-        if (thm != null)
-        {
-            applyFluentAvaloniaUiStyle.RunFor(thm);
-        }
+    // ReSharper disable UnusedParameter.Local
+    private void AboutClick(object? sender, RoutedEventArgs e)
+        // ReSharper restore UnusedParameter.Local
+    {
+        ICurrentAssembly currentAssembly = new CurrentAssembly();
+        IAboutContent aboutContent = new AboutContent(currentAssembly);
+        IAboutModel aboutModel = new AboutViewModel(aboutContent);
+        var aboutWindow = new AboutWindow
+                          {
+                              DataContext = aboutModel
+                          };
+        aboutWindow.ShowDialog(this);
     }
 }
