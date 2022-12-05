@@ -30,6 +30,7 @@ public class AboutContent : IAboutContent
     public AboutContent(ICurrentAssembly currentAssembly)
     {
         // ReSharper disable once ConstantConditionalAccessQualifier
+        // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
         _assembly = currentAssembly?.Value ?? throw new ArgumentNullException(nameof(currentAssembly));
         _logoSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "about.png");
     }
@@ -45,15 +46,13 @@ public class AboutContent : IAboutContent
 
             var config = new AboutModel
                          {
-                             ApplicationTitle = title,
-                             Copyright = _assembly.GetCustomAttributes<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright,
-                             Company = _assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault()?.Company,
-                             Description = _assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()
-                                                    ?.Description,
-                             Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
-                                                ?.InformationalVersion.Split('+').FirstOrDefault(),
+                             ApplicationTitle = title ?? string.Empty,
+                             Copyright = _assembly.GetCustomAttributes<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright ?? string.Empty,
+                             Company = _assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault()?.Company ?? string.Empty,
+                             Description = _assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description ?? string.Empty,
+                             Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+').FirstOrDefault() ?? string.Empty,
                              Runtime = Environment.Version.ToString(),
-                             LogoSource = _logoSourcePath != null ? new Bitmap(_logoSourcePath) : null
+                             LogoSource = new Bitmap(_logoSourcePath)
                          };
 
             return config;
