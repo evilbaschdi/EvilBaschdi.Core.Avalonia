@@ -1,7 +1,9 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using EvilBaschdi.About.Avalonia;
+using EvilBaschdi.About.Avalonia.Models;
+using EvilBaschdi.About.Core;
 using EvilBaschdi.Avalonia.Core;
-using EvilBaschdi.Avalonia.Core.Controls.About;
 using EvilBaschdi.Core;
 
 namespace EvilBaschdi.Avalonia.DummyApp;
@@ -29,7 +31,7 @@ public partial class MainWindow : Window
     {
         ICurrentAssembly currentAssembly = new CurrentAssembly();
         IAboutContent aboutContent = new AboutContent(currentAssembly);
-        IAboutModel aboutModel = new AboutViewModel(aboutContent);
+        IAboutViewModelExtended aboutModel = new AboutViewModelExtended(aboutContent);
         var aboutWindow = new AboutWindow
                           {
                               DataContext = aboutModel

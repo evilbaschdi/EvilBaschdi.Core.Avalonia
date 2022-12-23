@@ -29,7 +29,13 @@
 		<TrimmableAssembly Include="Avalonia.Themes.Default" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<!--<ItemGroup>
 		<ProjectReference Include="..\EvilBaschdi.Avalonia.Core\EvilBaschdi.Avalonia.Core.csproj" />
+	</ItemGroup>-->
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\EvilBaschdi.About\EvilBaschdi.About.Avalonia\EvilBaschdi.About.Avalonia.csproj" />
+		<ProjectReference Include="..\..\..\EvilBaschdi.About\EvilBaschdi.About.Core\EvilBaschdi.About.Core.csproj" />
 	</ItemGroup>
+
 </Project>
