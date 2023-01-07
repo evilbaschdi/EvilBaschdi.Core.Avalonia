@@ -22,6 +22,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="EvilBaschdi.About.Avalonia" Version="2022.12.23.1407-develop" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<!--This helps with theme dll-s trimming.
 	If you will publish your application in self-contained mode with p:PublishTrimmed=true and it will use Fluent theme Default theme will be trimmed from the output and vice versa.
 	https://github.com/AvaloniaUI/Avalonia/issues/5593 -->
@@ -29,13 +33,8 @@
 		<TrimmableAssembly Include="Avalonia.Themes.Default" />
 	</ItemGroup>
 
-	<!--<ItemGroup>
-		<ProjectReference Include="..\EvilBaschdi.Avalonia.Core\EvilBaschdi.Avalonia.Core.csproj" />
-	</ItemGroup>-->
-
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\EvilBaschdi.About\EvilBaschdi.About.Avalonia\EvilBaschdi.About.Avalonia.csproj" />
-		<ProjectReference Include="..\..\..\EvilBaschdi.About\EvilBaschdi.About.Core\EvilBaschdi.About.Core.csproj" />
+		<ProjectReference Include="..\EvilBaschdi.Avalonia.Core\EvilBaschdi.Avalonia.Core.csproj" />
 	</ItemGroup>
 
 </Project>
