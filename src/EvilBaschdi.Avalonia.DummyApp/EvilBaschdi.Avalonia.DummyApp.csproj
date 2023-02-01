@@ -22,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="EvilBaschdi.About.Avalonia" Version="2023.1.26.1703-develop" />
+	  <PackageReference Include="EvilBaschdi.About.Avalonia" Version="2023.2.1.1943-develop" />
 	</ItemGroup>
 
 	<ItemGroup>
