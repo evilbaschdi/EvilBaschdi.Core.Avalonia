@@ -1,3 +1,7 @@
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Local
+
 namespace EvilBaschdi.Avalonia.DummyAppMvvm.Models;
 
 public class Country
