@@ -16,11 +16,11 @@
 		<LangVersion>preview</LangVersion>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
-		<PackageId>EvilBaschdi.Avalonia.Core</PackageId>
-		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Avalonia</PackageProjectUrl>
+		<PackageId>EvilBaschdi.CoreAvalonia.</PackageId>
+		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Avalonia</PackageProjectUrl>
 		<PackageTags>Avalonia</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Avalonia</RepositoryUrl>
+		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Avalonia</RepositoryUrl>
 		<TargetFrameworks>net6.0;net7.0</TargetFrameworks>
 		<!--Avalonia doesen't support TrimMode=link currently,but we are working on that https://github.com/AvaloniaUI/Avalonia/issues/6892 -->
 		<TrimMode>copyused</TrimMode>
