@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
+        x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.MainWindow"
+        Icon="/Assets/b.ico"
+        Title="EvilBaschdi.Avalonia.DummyAppMvvm">
+
+    <!--<Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>-->
+
+    <DataGrid Name="TargetDataGrid">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Country" Binding="{Binding Name}" Width="6*" />
+            <DataGridTextColumn Header="Region" Binding="{Binding Region}" Width="4*" />
+            <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{Binding Population}" Width="3*" />
+            <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" />
+            <DataGridTextColumn Header="GDP" Binding="{Binding GDP}" Width="3*" />
+        </DataGrid.Columns>
+
+    </DataGrid>
+
+</Window>
