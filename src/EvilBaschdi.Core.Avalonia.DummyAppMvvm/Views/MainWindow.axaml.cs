@@ -1,8 +1,6 @@
-using Avalonia;
 using Avalonia.Collections;
 using Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
-using FluentAvalonia.Styling;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 
@@ -17,17 +15,17 @@ public partial class MainWindow : Window
     {
         base.OnOpened(e);
 
-        var thm = AvaloniaLocator.Current.GetService<FluentAvaloniaTheme>();
-        IWindowInstance windowInstance = new WindowInstance(this);
-        ICalculateImmutableSolidColorBrushColor calculateImmutableSolidColorBrushColor = new CalculateImmutableSolidColorBrushColor(windowInstance);
-        ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance, calculateImmutableSolidColorBrushColor);
-        IOnRequestedThemeChanged onRequestedThemeChanged = new OnRequestedThemeChanged(tryEnableMicaEffect);
-        IApplyFluentAvaloniaUiStyle applyFluentAvaloniaUiStyle = new ApplyFluentAvaloniaUiStyle(windowInstance, onRequestedThemeChanged, tryEnableMicaEffect);
+        //var thm = AvaloniaLocator.Current.GetService<FluentAvaloniaTheme>();
+        //IWindowInstance windowInstance = new WindowInstance(this);
+        //ICalculateImmutableSolidColorBrushColor calculateImmutableSolidColorBrushColor = new CalculateImmutableSolidColorBrushColor(windowInstance);
+        //ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance, calculateImmutableSolidColorBrushColor);
+        //IOnRequestedThemeChanged onRequestedThemeChanged = new OnRequestedThemeChanged(tryEnableMicaEffect);
+        //IApplyFluentAvaloniaUiStyle applyFluentAvaloniaUiStyle = new ApplyFluentAvaloniaUiStyle(windowInstance, onRequestedThemeChanged, tryEnableMicaEffect);
 
-        if (thm != null)
-        {
-            applyFluentAvaloniaUiStyle.RunFor(thm);
-        }
+        //if (thm != null)
+        //{
+        //    applyFluentAvaloniaUiStyle.RunFor(thm);
+        //}
 
         TargetDataGrid.Items = new DataGridCollectionView(Countries.All)
                                {
