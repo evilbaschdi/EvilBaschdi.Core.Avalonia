@@ -9,8 +9,7 @@
 		Background="{x:Null}"
 		Title="DummyApp">
 
-
-	<Panel Name="RootPanel">
+    <Panel Name="RootPanel">
 		<ExperimentalAcrylicBorder IsHitTestVisible="False">
 			<ExperimentalAcrylicBorder.Material>
 				<ExperimentalAcrylicMaterial

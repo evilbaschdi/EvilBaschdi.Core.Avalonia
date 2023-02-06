@@ -1,6 +1,8 @@
 ﻿using System.Runtime.InteropServices;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
+using Avalonia.Styling;
 using EvilBaschdi.Core.Extensions;
 using FluentAvalonia.Styling;
 
@@ -28,24 +30,27 @@ public class ApplyFluentAvaloniaUiStyle : IApplyFluentAvaloniaUiStyle
     }
 
     /// <inheritdoc />
-    public void RunFor(FluentAvaloniaTheme fluentAvaloniaTheme)
+    public void RunFor(ThemeVariant themeVariant)
     {
-        if (fluentAvaloniaTheme == null)
+        if (themeVariant == null)
         {
-            throw new ArgumentNullException(nameof(fluentAvaloniaTheme));
+            throw new ArgumentNullException(nameof(themeVariant));
         }
 
-        fluentAvaloniaTheme.RequestedThemeChanged += _onRequestedThemeChanged.RunFor;
+        if (Application.Current != null)
+        {
+            Application.Current.ActualThemeVariantChanged += _onRequestedThemeChanged.RunFor;
+        }
 
         // Enable Mica on Windows 11
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) && VersionHelper.IsWindows11 && fluentAvaloniaTheme.RequestedTheme != FluentAvaloniaTheme.HighContrastModeString)
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) && themeVariant != FluentAvaloniaTheme.HighContrastTheme && VersionHelper.IsWindows11)
         {
             _windowInstance.Value.TransparencyBackgroundFallback = Brushes.Transparent;
             _windowInstance.Value.TransparencyLevelHint = WindowTransparencyLevel.Mica;
 
-            _tryEnableMicaEffect.RunFor(fluentAvaloniaTheme);
+            _tryEnableMicaEffect.RunFor(themeVariant);
         }
 
-        fluentAvaloniaTheme.ForceWin32WindowToTheme(_windowInstance.Value);
+        //themeVariant.ForceWin32WindowToTheme(_windowInstance.Value);
     }
 }

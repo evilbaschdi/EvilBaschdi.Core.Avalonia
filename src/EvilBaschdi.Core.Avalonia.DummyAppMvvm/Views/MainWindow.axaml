@@ -5,21 +5,49 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
         x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.MainWindow"
         Icon="/Assets/b.ico"
+        TransparencyLevelHint="Mica"
+        Background="{x:Null}"
         Title="EvilBaschdi.Avalonia.DummyAppMvvm">
 
-    <!--<Design.DataContext>
+	<!--<Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>-->
 
-    <DataGrid Name="TargetDataGrid">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Country" Binding="{Binding Name}" Width="6*" />
-            <DataGridTextColumn Header="Region" Binding="{Binding Region}" Width="4*" />
-            <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{Binding Population}" Width="3*" />
-            <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" />
-            <DataGridTextColumn Header="GDP" Binding="{Binding GDP}" Width="3*" />
-        </DataGrid.Columns>
 
-    </DataGrid>
 
-</Window>
+
+    <Panel Name="RootPanel">
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.9" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <Panel Name="HeaderPanel" IsVisible="False">
+            <Panel Margin="7">
+                <Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Panel>
+            <TextBlock Text="DummyApp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0" />
+        </Panel>
+
+        <Panel Name="MainPanel" Margin="0,0,0,0">
+            <Panel>
+                <Panel Name="ContentPanel" Margin="0,0,0,0">
+					<DataGrid Name="TargetDataGrid">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Country" Binding="{Binding Name}" Width="6*" />
+                            <DataGridTextColumn Header="Region" Binding="{Binding Region}" Width="4*" />
+                            <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{Binding Population}" Width="3*" />
+                            <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" />
+                            <DataGridTextColumn Header="GDP" Binding="{Binding GDP}" Width="3*" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Panel>
+            </Panel>
+        </Panel>
+    </Panel>
+	</Window>

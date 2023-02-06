@@ -14,18 +14,17 @@ public partial class MainWindow : Window
     protected override void OnOpened(EventArgs e)
     {
         base.OnOpened(e);
+        IHandleOsDependentTitleBar handleOsDependentTitleBar = new HandleOsDependentTitleBar();
+        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel));
 
-        //var thm = AvaloniaLocator.Current.GetService<FluentAvaloniaTheme>();
-        //IWindowInstance windowInstance = new WindowInstance(this);
-        //ICalculateImmutableSolidColorBrushColor calculateImmutableSolidColorBrushColor = new CalculateImmutableSolidColorBrushColor(windowInstance);
-        //ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance, calculateImmutableSolidColorBrushColor);
-        //IOnRequestedThemeChanged onRequestedThemeChanged = new OnRequestedThemeChanged(tryEnableMicaEffect);
-        //IApplyFluentAvaloniaUiStyle applyFluentAvaloniaUiStyle = new ApplyFluentAvaloniaUiStyle(windowInstance, onRequestedThemeChanged, tryEnableMicaEffect);
+        var thm = ActualThemeVariant;
+        IWindowInstance windowInstance = new WindowInstance(this);
+        ICalculateImmutableSolidColorBrushColor calculateImmutableSolidColorBrushColor = new CalculateImmutableSolidColorBrushColor(windowInstance);
+        ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance, calculateImmutableSolidColorBrushColor);
+        IOnRequestedThemeChanged onRequestedThemeChanged = new OnRequestedThemeChanged(tryEnableMicaEffect);
+        IApplyFluentAvaloniaUiStyle applyFluentAvaloniaUiStyle = new ApplyFluentAvaloniaUiStyle(windowInstance, onRequestedThemeChanged, tryEnableMicaEffect);
 
-        //if (thm != null)
-        //{
-        //    applyFluentAvaloniaUiStyle.RunFor(thm);
-        //}
+        applyFluentAvaloniaUiStyle.RunFor(thm);
 
         TargetDataGrid.Items = new DataGridCollectionView(Countries.All)
                                {

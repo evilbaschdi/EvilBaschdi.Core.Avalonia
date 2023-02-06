@@ -1,8 +1,8 @@
-﻿using FluentAvalonia.Styling;
+﻿using Avalonia.Styling;
 
 namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
-public interface IApplyFluentAvaloniaUiStyle : IRunFor<FluentAvaloniaTheme>
+public interface IApplyFluentAvaloniaUiStyle : IRunFor<ThemeVariant>
 {
 }

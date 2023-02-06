@@ -1,8 +1,8 @@
-﻿using FluentAvalonia.Styling;
+﻿using Avalonia.Styling;
 
 namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
-public interface ITryEnableMicaEffect : IRunFor<FluentAvaloniaTheme>
+public interface ITryEnableMicaEffect : IRunFor<ThemeVariant>
 {
 }

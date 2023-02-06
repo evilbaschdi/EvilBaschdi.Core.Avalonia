@@ -1,4 +1,6 @@
-﻿using EvilBaschdi.Core.Extensions;
+﻿using System.Runtime.InteropServices;
+using Avalonia;
+using EvilBaschdi.Core.Extensions;
 using FluentAvalonia.Styling;
 
 namespace EvilBaschdi.Core.Avalonia;
@@ -19,7 +21,7 @@ public class OnRequestedThemeChanged : IOnRequestedThemeChanged
     }
 
     /// <inheritdoc />
-    public void RunFor(FluentAvaloniaTheme sender, RequestedThemeChangedEventArgs args)
+    public void RunFor(object sender, EventArgs args)
     {
         if (sender == null)
         {
@@ -31,9 +33,15 @@ public class OnRequestedThemeChanged : IOnRequestedThemeChanged
             throw new ArgumentNullException(nameof(args));
         }
 
-        if (VersionHelper.IsWindows11 && args.NewTheme != FluentAvaloniaTheme.HighContrastModeString)
+        var themeVariant = Application.Current?.ActualThemeVariant;
+
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) && themeVariant != FluentAvaloniaTheme.HighContrastTheme)
         {
-            _tryEnableMicaEffect.RunFor(sender);
+            if (VersionHelper.IsWindows11)
+            {
+                _tryEnableMicaEffect.RunFor(themeVariant);
+            }
+            //_windowInstance.Value.SetValue(_windowInstance.Value.BackgroundProperty, AvaloniaProperty.UnsetValue);
         }
     }
 }

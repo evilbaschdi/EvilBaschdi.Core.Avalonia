@@ -1,8 +1,6 @@
-﻿using FluentAvalonia.Styling;
-
-namespace EvilBaschdi.Core.Avalonia;
+﻿namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
-public interface IOnRequestedThemeChanged : IRunFor2<FluentAvaloniaTheme, RequestedThemeChangedEventArgs>
+public interface IOnRequestedThemeChanged : IRunFor2<object, EventArgs>
 {
 }

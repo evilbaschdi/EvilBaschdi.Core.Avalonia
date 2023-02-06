@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media.Immutable;
+using Avalonia.Styling;
 using FluentAvalonia.Styling;
 using FluentAvalonia.UI.Media;
 
@@ -23,25 +24,25 @@ public class TryEnableMicaEffect : ITryEnableMicaEffect
     }
 
     /// <inheritdoc />
-    public void RunFor(FluentAvaloniaTheme fluentAvaloniaTheme)
+    public void RunFor(ThemeVariant themeVariant)
     {
-        if (fluentAvaloniaTheme == null)
+        if (themeVariant == null)
         {
-            throw new ArgumentNullException(nameof(fluentAvaloniaTheme));
+            throw new ArgumentNullException(nameof(themeVariant));
         }
 
-        if (fluentAvaloniaTheme.RequestedTheme == FluentAvaloniaTheme.HighContrastModeString)
+        if (themeVariant == FluentAvaloniaTheme.HighContrastTheme)
         {
             return;
         }
 
         Color2 color = default;
 
-        if (fluentAvaloniaTheme.RequestedTheme == FluentAvaloniaTheme.DarkModeString)
+        if (themeVariant == ThemeVariant.Dark)
         {
             color = _calculateImmutableSolidColorBrushColor.ValueFor((-0.8f, new(32, 32, 32)));
         }
-        else if (fluentAvaloniaTheme.RequestedTheme == FluentAvaloniaTheme.LightModeString)
+        else if (themeVariant == ThemeVariant.Light)
         {
             color = _calculateImmutableSolidColorBrushColor.ValueFor((0.5f, new(243, 243, 243)));
         }
