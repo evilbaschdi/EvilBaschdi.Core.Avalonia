@@ -5,6 +5,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
+// ReSharper disable once UnusedType.Global
 public class CurrentAssembly : ICurrentAssembly
 {
     /// <inheritdoc />
