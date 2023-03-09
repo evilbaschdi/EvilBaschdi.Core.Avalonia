@@ -6,20 +6,20 @@
 		x:Class="EvilBaschdi.Core.Avalonia.DummyApp.MainWindow"
 		Icon="/Assets/b.ico"
 		TransparencyLevelHint="Mica"
-		Background="{x:Null}"
+		Background="Transparent"
 		Title="DummyApp">
 
     <Panel Name="RootPanel">
-		<ExperimentalAcrylicBorder IsHitTestVisible="False">
-			<ExperimentalAcrylicBorder.Material>
-				<ExperimentalAcrylicMaterial
-					TintColor="Black"
-					TintOpacity="1"
-					MaterialOpacity="0.9" />
-			</ExperimentalAcrylicBorder.Material>
-		</ExperimentalAcrylicBorder>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.9" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
 
-		<Panel Name="HeaderPanel" IsVisible="False">
+        <Panel Name="HeaderPanel" IsVisible="False">
 			<Panel Margin="7">
 				<Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 			</Panel>
