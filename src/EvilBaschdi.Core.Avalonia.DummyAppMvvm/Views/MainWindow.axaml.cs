@@ -2,6 +2,10 @@ using Avalonia.Collections;
 using Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 
+#pragma warning disable IDE0079
+#pragma warning disable CA1859
+#pragma warning restore IDE0079
+
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 
 public partial class MainWindow : Window

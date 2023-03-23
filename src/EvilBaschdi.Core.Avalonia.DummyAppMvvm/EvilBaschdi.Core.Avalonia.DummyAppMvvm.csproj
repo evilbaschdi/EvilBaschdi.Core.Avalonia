@@ -9,6 +9,9 @@
 		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Title>EvilBaschdi.Avalonia.DummyAppMwwm</Title>
+		<Description>TestUi for EvilBaschdi.Core.Avalonia</Description>
+		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	</PropertyGroup>
 
@@ -25,7 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0-preview5" />
+		<PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0-preview6" />
 		<ProjectReference Include="..\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
 	</ItemGroup>
 
