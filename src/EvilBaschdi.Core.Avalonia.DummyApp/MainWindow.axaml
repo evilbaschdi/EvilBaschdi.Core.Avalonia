@@ -30,7 +30,7 @@
 			<Panel>
 				<Panel Name="ContentPanel" Margin="0,0,0,0">
 					<Grid Margin="15" RowDefinitions="256,*">
-					
+					    <TextBox Name="ArchitectureInformation" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True"/>
 					</Grid>
 				</Panel>
 			</Panel>

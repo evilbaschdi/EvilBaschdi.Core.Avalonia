@@ -44,7 +44,6 @@
 		<PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview6" />
 		<PackageReference Include="EvilBaschdi.Core" Version="2023.3.9.1752-develop" />
 		<PackageReference Include="FluentAvaloniaUI" Version="2.0.0-preview6" />
-		<!--<PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />-->
 	</ItemGroup>
 
 	<!-- this project only -->

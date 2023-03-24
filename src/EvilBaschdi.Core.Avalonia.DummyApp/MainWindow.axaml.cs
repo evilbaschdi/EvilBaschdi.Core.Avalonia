@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Avalonia.Controls;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
@@ -17,5 +18,7 @@ public partial class MainWindow : Window
         base.OnOpened(e);
         IHandleOsDependentTitleBar handleOsDependentTitleBar = new HandleOsDependentTitleBar();
         handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel));
+
+        ArchitectureInformation.Text = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower();
     }
 }
