@@ -16,8 +16,8 @@ public partial class MainWindow : Window
     protected override void OnOpened(EventArgs e)
     {
         base.OnOpened(e);
-        IHandleOsDependentTitleBar handleOsDependentTitleBar = new HandleOsDependentTitleBar();
-        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel));
+        var handleOsDependentTitleBar = new HandleOsDependentTitleBar();
+        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel, AcrylicBorder));
 
         ArchitectureInformation.Text = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower();
     }

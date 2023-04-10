@@ -19,7 +19,7 @@ public partial class MainWindow : Window
     {
         base.OnOpened(e);
         IHandleOsDependentTitleBar handleOsDependentTitleBar = new HandleOsDependentTitleBar();
-        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel));
+        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel, AcrylicBorder));
 
         var thm = ActualThemeVariant;
         IWindowInstance windowInstance = new WindowInstance(this);

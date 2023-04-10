@@ -10,7 +10,7 @@
 		Title="DummyApp">
 
     <Panel Name="RootPanel">
-        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+        <ExperimentalAcrylicBorder IsHitTestVisible="False" Name="AcrylicBorder">
             <ExperimentalAcrylicBorder.Material>
                 <ExperimentalAcrylicMaterial
                     TintColor="Black"

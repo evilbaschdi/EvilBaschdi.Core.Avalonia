@@ -2,7 +2,7 @@
 
 namespace EvilBaschdi.Core.Avalonia;
 
-/// <inheritdoc />
-public interface IHandleOsDependentTitleBar : IRunFor<(Window window, Panel headerPanel, Panel mainPanel)>
+/// <inheritdoc cref="IRunFor{TIn}" />
+public interface IHandleOsDependentTitleBar : IRunFor<(Window window, Panel headerPanel, Panel mainPanel, ExperimentalAcrylicBorder AcrylicBorder)>
 {
 }
