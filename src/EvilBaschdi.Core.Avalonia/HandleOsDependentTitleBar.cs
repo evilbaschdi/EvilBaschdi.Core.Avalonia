@@ -14,6 +14,11 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
     {
         var (window, headerPanel, mainPanel, acrylicBorder) = value;
 
+        if (!VersionHelper.IsWindows)
+        {
+            return;
+        }
+
         if (acrylicBorder != null)
         {
             if (window.ActualThemeVariant == ThemeVariant.Dark)
@@ -24,11 +29,6 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
             {
                 acrylicBorder.Material.TintColor = Colors.White;
             }
-        }
-
-        if (!VersionHelper.IsWindows)
-        {
-            return;
         }
 
         window.ExtendClientAreaToDecorationsHint = true;

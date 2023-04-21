@@ -19,6 +19,9 @@ public partial class MainWindow : Window
         var handleOsDependentTitleBar = new HandleOsDependentTitleBar();
         handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel, AcrylicBorder));
 
+        var applicationLayout = new ApplicationLayout(true, true);
+        applicationLayout.Run();
+
         ArchitectureInformation.Text = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower();
     }
 }
