@@ -41,8 +41,16 @@
 							<DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" />
 							<DataGridTextColumn Header="GDP" Binding="{Binding GDP}" Width="3*" />
 						</DataGrid.Columns>
+								<DataGrid.Styles>
+			<Style Selector="DataGridColumnHeader">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
+			<Style Selector="DataGridRowGroupHeader">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
 
-					</DataGrid>
+                    </DataGrid.Styles>
+                    </DataGrid>
 				</Panel>
 			</Panel>
 		</Panel>

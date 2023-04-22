@@ -28,7 +28,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0-preview6" />
+		<PackageReference Include="EvilBaschdi.DependencyInjection" Version="2023.4.21.557-develop" />
 		<ProjectReference Include="..\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
 	</ItemGroup>
 
 </Project>

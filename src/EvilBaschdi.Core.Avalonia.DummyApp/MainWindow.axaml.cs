@@ -11,17 +11,16 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        Load();
+        ArchitectureInformation.Text = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower();
     }
 
-    protected override void OnOpened(EventArgs e)
+    private void Load()
     {
-        base.OnOpened(e);
         var handleOsDependentTitleBar = new HandleOsDependentTitleBar();
-        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel, AcrylicBorder));
+        handleOsDependentTitleBar.RunFor(this);
 
-        var applicationLayout = new ApplicationLayout(true, true);
-        applicationLayout.Run();
-
-        ArchitectureInformation.Text = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower();
+        var applicationLayout = new ApplicationLayout();
+        applicationLayout.RunFor((this, true, true));
     }
 }

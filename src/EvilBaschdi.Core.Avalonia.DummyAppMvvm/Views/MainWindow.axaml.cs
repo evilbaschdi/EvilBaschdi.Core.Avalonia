@@ -1,6 +1,7 @@
 using Avalonia.Collections;
 using Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 #pragma warning disable IDE0079
 #pragma warning disable CA1859
@@ -13,13 +14,12 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        Load();
     }
 
     protected override void OnOpened(EventArgs e)
     {
         base.OnOpened(e);
-        IHandleOsDependentTitleBar handleOsDependentTitleBar = new HandleOsDependentTitleBar();
-        handleOsDependentTitleBar.RunFor((this, HeaderPanel, MainPanel, AcrylicBorder));
 
         var thm = ActualThemeVariant;
         IWindowInstance windowInstance = new WindowInstance(this);
@@ -37,5 +37,14 @@ public partial class MainWindow : Window
                                        new DataGridPathGroupDescription("Region")
                                    }
                                };
+    }
+
+    private void Load()
+    {
+        var handleOsDependentTitleBar = App.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
+        handleOsDependentTitleBar?.RunFor(this);
+
+        var applicationLayout = App.ServiceProvider?.GetRequiredService<IApplicationLayout>();
+        applicationLayout?.RunFor((this, true, true));
     }
 }

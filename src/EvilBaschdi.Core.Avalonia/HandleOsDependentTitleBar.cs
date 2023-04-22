@@ -1,4 +1,6 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Styling;
@@ -10,14 +12,33 @@ namespace EvilBaschdi.Core.Avalonia;
 public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
 {
     /// <inheritdoc />
-    public void RunFor((Window window, Panel headerPanel, Panel mainPanel, ExperimentalAcrylicBorder AcrylicBorder) value)
+    public void Run()
     {
-        var (window, headerPanel, mainPanel, acrylicBorder) = value;
+        if (Application.Current == null)
+        {
+            return;
+        }
 
+        var mainWindow = Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop ? desktop.MainWindow : null;
+
+        if (mainWindow != null)
+        {
+            RunFor(mainWindow);
+        }
+    }
+
+    /// <inheritdoc />
+    public void RunFor([NotNull] Window window)
+    {
+        ArgumentNullException.ThrowIfNull(window);
         if (!VersionHelper.IsWindows)
         {
             return;
         }
+
+        var acrylicBorder = window.FindNameScope()?.Find<ExperimentalAcrylicBorder>("AcrylicBorder");
+        var headerPanel = window.FindNameScope()?.Find<Panel>("HeaderPanel");
+        var mainPanel = window.FindNameScope()?.Find<Panel>("MainPanel");
 
         if (acrylicBorder != null)
         {
@@ -33,7 +54,14 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
 
         window.ExtendClientAreaToDecorationsHint = true;
         window.ExtendClientAreaChromeHints = ExtendClientAreaChromeHints.Default;
-        headerPanel.IsVisible = true;
-        mainPanel.Margin = new(0, 30, 0, 0);
+        if (headerPanel != null)
+        {
+            headerPanel.IsVisible = true;
+        }
+
+        if (mainPanel != null)
+        {
+            mainPanel.Margin = new(0, 30, 0, 0);
+        }
     }
 }
