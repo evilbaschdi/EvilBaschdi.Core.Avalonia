@@ -30,7 +30,7 @@ public class ApplicationLayout : IApplicationLayout
         var (window, center, resizeWithBorder400) = value;
         if (center)
         {
-            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         // ReSharper disable once InvertIf
