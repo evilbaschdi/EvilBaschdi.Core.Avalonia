@@ -30,13 +30,13 @@ public partial class MainWindow : Window
 
         applyFluentAvaloniaUiStyle.RunFor(thm);
 
-        TargetDataGrid.Items = new DataGridCollectionView(Countries.All)
-                               {
-                                   GroupDescriptions =
-                                   {
-                                       new DataGridPathGroupDescription("Region")
-                                   }
-                               };
+        TargetDataGrid.ItemsSource = new DataGridCollectionView(Countries.All)
+                                     {
+                                         GroupDescriptions =
+                                         {
+                                             new DataGridPathGroupDescription("Region")
+                                         }
+                                     };
     }
 
     private void Load()
