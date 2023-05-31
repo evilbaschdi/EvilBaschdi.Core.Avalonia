@@ -9,8 +9,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 
+/// <summary>
+///     The main window.
+/// </summary>
 public partial class MainWindow : Window
 {
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="MainWindow" /> class.
+    /// </summary>
     public MainWindow()
     {
         InitializeComponent();
@@ -20,15 +26,6 @@ public partial class MainWindow : Window
     protected override void OnOpened(EventArgs e)
     {
         base.OnOpened(e);
-
-        var thm = ActualThemeVariant;
-        IWindowInstance windowInstance = new WindowInstance(this);
-        ICalculateImmutableSolidColorBrushColor calculateImmutableSolidColorBrushColor = new CalculateImmutableSolidColorBrushColor(windowInstance);
-        ITryEnableMicaEffect tryEnableMicaEffect = new TryEnableMicaEffect(windowInstance, calculateImmutableSolidColorBrushColor);
-        IOnRequestedThemeChanged onRequestedThemeChanged = new OnRequestedThemeChanged(tryEnableMicaEffect);
-        IApplyFluentAvaloniaUiStyle applyFluentAvaloniaUiStyle = new ApplyFluentAvaloniaUiStyle(windowInstance, onRequestedThemeChanged, tryEnableMicaEffect);
-
-        applyFluentAvaloniaUiStyle.RunFor(thm);
 
         TargetDataGrid.ItemsSource = new DataGridCollectionView(Countries.All)
                                      {

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using Avalonia;
+using Avalonia.ReactiveUI;
 
 namespace EvilBaschdi.Core.Avalonia;
 
@@ -16,5 +17,6 @@ public class AppBuilderImplementation<TApp> : IAppBuilderImplementation
                                                    //UseWindowsUIComposition = true,
                                                    //CompositionBackdropCornerRadius = 8f,
                                                    UseWgl = RuntimeInformation.OSArchitecture == Architecture.Arm || RuntimeInformation.OSArchitecture == Architecture.Arm64
-                                               });
+                                               })
+                                         .UseReactiveUI();
 }

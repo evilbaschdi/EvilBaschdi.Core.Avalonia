@@ -1,16 +1,13 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             
              xmlns:dummyAppMvvm="clr-namespace:EvilBaschdi.Core.Avalonia.DummyAppMvvm"
-             xmlns:styling="clr-namespace:FluentAvalonia.Styling;assembly=FluentAvalonia"
              x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.App">
     <Application.DataTemplates>
         <dummyAppMvvm:ViewLocator />
     </Application.DataTemplates>
 
     <Application.Styles>
-        <!--<FluentTheme />-->
+        <FluentTheme />
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
-        <styling:FluentAvaloniaTheme />
     </Application.Styles>
 </Application>
