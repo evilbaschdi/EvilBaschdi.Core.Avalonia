@@ -29,8 +29,12 @@
         <Panel Name="MainPanel" Margin="0,0,0,0">
             <Panel>
                 <Panel Name="ContentPanel" Margin="0,0,0,0">
-                    <Grid Margin="15" RowDefinitions="256,*">
-                        <TextBox Name="ArchitectureInformation" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" />
+                    <Grid Margin="15" RowDefinitions="50,50,50,*">
+                        
+                        <TextBox Grid.Row="0" Name="ArchitectureInformation" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <Button Grid.Row="1" Click="ShowMessageBox"  Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="MessageBox" />
+                        <TextBox Grid.Row="2" Name="MessageBoxResult" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" />
+
                     </Grid>
                 </Panel>
             </Panel>

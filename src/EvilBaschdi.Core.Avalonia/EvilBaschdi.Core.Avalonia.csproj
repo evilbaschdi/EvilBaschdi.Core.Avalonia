@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
 		<Authors>Sebastian Walter</Authors>
 		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 		<Company>evilbaschdi (Sebastian Walter)</Company>
@@ -10,10 +11,7 @@
 		<Description>Core Avalonia package</Description>
 		<!-- ReSharper disable once UnknownProperty -->
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<ImplicitUsings>enable</ImplicitUsings>
 		<IsPackable>true</IsPackable>
-		<LangVersion>preview</LangVersion>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
 		<PackageId>EvilBaschdi.Core.Avalonia</PackageId>
@@ -21,19 +19,12 @@
 		<PackageTags>Avalonia</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Avalonia</RepositoryUrl>
-		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
 		<!--Avalonia doesen't support TrimMode=link currently,but we are working on that https://github.com/AvaloniaUI/Avalonia/issues/6892 -->
 		<TrimMode>copyused</TrimMode>
-		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Using Include="EvilBaschdi.Core" />
-		<Using Include="JetBrains.Annotations" />
 	</ItemGroup>
 
 	<ItemGroup>

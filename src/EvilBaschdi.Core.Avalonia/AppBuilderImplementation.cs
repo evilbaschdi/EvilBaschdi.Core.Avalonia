@@ -9,14 +9,24 @@ public class AppBuilderImplementation<TApp> : IAppBuilderImplementation
     where TApp : Application, new()
 {
     /// <inheritdoc />
-    public AppBuilder Value => AppBuilder.Configure<TApp>()
+    public AppBuilder Value
+    {
+        get
+        {
+            var win32PlatformOptions = new Win32PlatformOptions();
+            if (RuntimeInformation.OSArchitecture == Architecture.Arm || RuntimeInformation.OSArchitecture == Architecture.Arm64)
+            {
+                win32PlatformOptions.RenderingMode = new List<Win32RenderingMode>
+                                                                  {
+                                                                      Win32RenderingMode.Wgl
+                                                                  };
+            }
+
+            return AppBuilder.Configure<TApp>()
                                          .UsePlatformDetect()
                                          .LogToTrace()
-                                         .With(new Win32PlatformOptions
-                                               {
-                                                   //UseWindowsUIComposition = true,
-                                                   //CompositionBackdropCornerRadius = 8f,
-                                                   UseWgl = RuntimeInformation.OSArchitecture == Architecture.Arm || RuntimeInformation.OSArchitecture == Architecture.Arm64
-                                               })
+                                         .With(win32PlatformOptions)
                                          .UseReactiveUI();
+        }
+    }
 }

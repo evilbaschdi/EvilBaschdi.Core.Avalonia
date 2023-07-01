@@ -3,6 +3,5 @@
              x:Class="EvilBaschdi.Core.Avalonia.DummyApp.App">
     <Application.Styles>
         <FluentTheme />
-        <!--<sty:FluentAvaloniaTheme />-->
     </Application.Styles>
 </Application>

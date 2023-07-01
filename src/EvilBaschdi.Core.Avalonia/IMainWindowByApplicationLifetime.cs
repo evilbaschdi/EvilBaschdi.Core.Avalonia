@@ -3,6 +3,6 @@
 namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
-public interface IWindowInstance : IValue<Window>
+public interface IMainWindowByApplicationLifetime : IValue<Window>
 {
 }

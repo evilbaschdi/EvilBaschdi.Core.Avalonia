@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="EvilBaschdi.Core.Avalonia.MessageBox"
+        SizeToContent="WidthAndHeight"
+        CanResize="False"
+		SystemDecorations="None"
+        TransparencyLevelHint="Mica"
+        Background="Transparent">
+
+	<Panel Name="RootPanel">
+		<ExperimentalAcrylicBorder IsHitTestVisible="False" Name="AcrylicBorder">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.9" />
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>
+
+		<Panel Name="HeaderPanel" IsVisible="False" Margin="7,0,7,0">
+			<TextBlock Name="MessageBoxTitle" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0" />
+		</Panel>
+
+		<Panel Name="MainPanel" Margin="0,0,0,0">
+			<Panel>
+				<Panel Name="ContentPanel" Margin="7,0,7,0">
+
+					<StackPanel HorizontalAlignment="Center">
+						<TextBlock HorizontalAlignment="Center" Name="Text"/>
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
+							<StackPanel.Styles>
+								<Style Selector="Button">
+									<Setter Property="Margin" Value="5"/>
+								</Style>
+							</StackPanel.Styles>
+						</StackPanel>
+					</StackPanel>
+
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+
+</Window>
