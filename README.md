@@ -1,6 +1,6 @@
 # EvilBaschdi.Core.Avalonia
 
-source code of core assembly.\
+source code of core avalonia assembly.\
 MyGet Feed for NuGet Package: <https://www.myget.org/F/evilbaschdi/api/v3/index.json>
 
 | main | develop |

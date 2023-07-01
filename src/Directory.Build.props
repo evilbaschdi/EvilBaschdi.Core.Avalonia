@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>preview</LangVersion>
 		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
-		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
+		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
 	</PropertyGroup>
 
 	<ItemGroup>
