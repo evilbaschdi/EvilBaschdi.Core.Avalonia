@@ -4,12 +4,12 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Avalonia" Version="11.0.0-rc2.1" />
-    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.0.0-rc2.1" />
-    <PackageVersion Include="Avalonia.Desktop" Version="11.0.0-rc2.1" />
-    <PackageVersion Include="Avalonia.Diagnostics" Version="11.0.0-rc2.1" />
-    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.0-rc2.1" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.0.0-rc2.1" />
+    <PackageVersion Include="Avalonia" Version="11.0.0-rc2.2" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.0.0-rc2.2" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.0.0-rc2.2" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.0.0-rc2.2" />
+    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.0-rc2.2" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.0.0-rc2.2" />
     <PackageVersion Include="DotNet.ReproducibleBuilds" Version="1.1.1" />
     <PackageVersion Include="EvilBaschdi.Core" Version="2023.5.14.959-develop" />
     <PackageVersion Include="EvilBaschdi.DependencyInjection" Version="2023.6.13.2030-develop" />

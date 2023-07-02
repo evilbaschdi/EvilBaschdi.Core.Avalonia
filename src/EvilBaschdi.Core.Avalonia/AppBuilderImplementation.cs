@@ -17,16 +17,16 @@ public class AppBuilderImplementation<TApp> : IAppBuilderImplementation
             if (RuntimeInformation.OSArchitecture == Architecture.Arm || RuntimeInformation.OSArchitecture == Architecture.Arm64)
             {
                 win32PlatformOptions.RenderingMode = new List<Win32RenderingMode>
-                                                                  {
-                                                                      Win32RenderingMode.Wgl
-                                                                  };
+                                                     {
+                                                         Win32RenderingMode.Wgl
+                                                     };
             }
 
             return AppBuilder.Configure<TApp>()
-                                         .UsePlatformDetect()
-                                         .LogToTrace()
-                                         .With(win32PlatformOptions)
-                                         .UseReactiveUI();
+                             .UsePlatformDetect()
+                             .LogToTrace()
+                             .With(win32PlatformOptions)
+                             .UseReactiveUI();
         }
     }
 }
