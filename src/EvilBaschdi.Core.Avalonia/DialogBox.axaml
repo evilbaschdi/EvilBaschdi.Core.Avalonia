@@ -2,9 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="900"
-        x:Class="EvilBaschdi.Core.Avalonia.MessageBox"
-        SizeToContent="WidthAndHeight"
+        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="450"
+        x:Class="EvilBaschdi.Core.Avalonia.DialogBox"
+        SizeToContent="Height"
         CanResize="False"
 		SystemDecorations="None"
         TransparencyLevelHint="Mica"
@@ -28,9 +28,10 @@
 			<Panel>
 				<Panel Name="ContentPanel" Margin="7,0,7,0">
 
-                    <Grid Margin="14,0,14,7" RowDefinitions="*,*">
-						<TextBlock Grid.Row="0" HorizontalAlignment="Center" Name="Text" FontWeight="Bold"/>
-						<StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
+                    <Grid Margin="14,0,14,7" RowDefinitions="40,40,*">
+						<TextBlock Grid.Row="0" HorizontalAlignment="Center" Name="Text" Height="30" FontWeight="Bold"/>
+						<TextBox Grid.Row="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="Input" Height="30"/>
+						<StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
 							<StackPanel.Styles>
 								<Style Selector="Button">
 									<Setter Property="Margin" Value="7"/>

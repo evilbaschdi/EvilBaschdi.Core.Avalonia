@@ -1,52 +1,12 @@
 using Avalonia.Controls;
+using Avalonia.Media;
+using EvilBaschdi.Core.Avalonia.Internal;
 
 namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
 public partial class MessageBox : Window
 {
-    /// <summary>
-    /// </summary>
-    public enum MessageBoxButtons
-    {
-        /// <summary>
-        /// </summary>
-        Ok,
-
-        /// <summary>
-        /// </summary>
-        OkCancel,
-
-        /// <summary>
-        /// </summary>
-        YesNo,
-
-        /// <summary>
-        /// </summary>
-        YesNoCancel
-    }
-
-    /// <summary>
-    /// </summary>
-    public enum MessageBoxResult
-    {
-        /// <summary>
-        /// </summary>
-        Ok,
-
-        /// <summary>
-        /// </summary>
-        Cancel,
-
-        /// <summary>
-        /// </summary>
-        Yes,
-
-        /// <summary>
-        /// </summary>
-        No
-    }
-
     /// <summary>
     ///     Constructor
     /// </summary>
@@ -73,23 +33,41 @@ public partial class MessageBox : Window
     /// <param name="text"></param>
     /// <param name="title"></param>
     /// <param name="buttons"></param>
+    /// <param name="boxType"></param>
     /// <returns></returns>
-    public static Task<MessageBoxResult> Show(Window parent, string text, string title, MessageBoxButtons buttons)
+    public static Task<MessageBoxResult> Show(Window parent, string text, string title, MessageBoxButtons buttons, MessageBoxType boxType = MessageBoxType.Default)
     {
         var msgbox = new MessageBox
                      {
                          Title = title
                      };
+
         var textControl = msgbox.FindControl<TextBlock>("Text");
         var messageBoxTitleControl = msgbox.FindControl<TextBlock>("MessageBoxTitle");
         if (textControl != null)
         {
             textControl.Text = text;
-        }
 
-        if (messageBoxTitleControl != null)
-        {
-            messageBoxTitleControl.Text = title;
+            if (messageBoxTitleControl != null)
+            {
+                messageBoxTitleControl.Text = title;
+
+                switch (boxType)
+                {
+                    case MessageBoxType.Default:
+                        break;
+                    case MessageBoxType.Warning:
+                        messageBoxTitleControl.Foreground = Brushes.DarkOrange;
+                        textControl.Foreground = Brushes.DarkOrange;
+                        break;
+                    case MessageBoxType.Error:
+                        messageBoxTitleControl.Foreground = Brushes.Red;
+                        textControl.Foreground = Brushes.Red;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(boxType), boxType, null);
+                }
+            }
         }
 
         var buttonPanel = msgbox.FindControl<StackPanel>("Buttons");
@@ -97,17 +75,17 @@ public partial class MessageBox : Window
         switch (buttons)
         {
             case MessageBoxButtons.Ok or MessageBoxButtons.OkCancel:
-                AddButton("Ok", MessageBoxResult.Ok, true);
+                AddButton("Ok", MessageBoxResult.Ok);
                 break;
             case MessageBoxButtons.YesNo or MessageBoxButtons.YesNoCancel:
                 AddButton("Yes", MessageBoxResult.Yes);
-                AddButton("No", MessageBoxResult.No, true);
+                AddButton("No", MessageBoxResult.No);
                 break;
         }
 
         if (buttons is MessageBoxButtons.OkCancel or MessageBoxButtons.YesNoCancel)
         {
-            AddButton("Cancel", MessageBoxResult.Cancel, true);
+            AddButton("Cancel", MessageBoxResult.Cancel);
         }
 
         var tcs = new TaskCompletionSource<MessageBoxResult>();
@@ -124,7 +102,7 @@ public partial class MessageBox : Window
 
         return tcs.Task;
 
-        void AddButton(string caption, MessageBoxResult r, bool def = false)
+        void AddButton(string caption, MessageBoxResult r)
         {
             var btn = new Button { Content = caption };
             btn.Click += (_, _) =>
@@ -133,11 +111,6 @@ public partial class MessageBox : Window
                              msgbox.Close();
                          };
             buttonPanel?.Children.Add(btn);
-
-            if (def)
-            {
-                res = r;
-            }
         }
     }
 }
