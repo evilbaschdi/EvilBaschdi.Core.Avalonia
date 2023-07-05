@@ -4,14 +4,14 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Avalonia" Version="11.0.0-rc2.2" />
-    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.0.0-rc2.2" />
-    <PackageVersion Include="Avalonia.Desktop" Version="11.0.0-rc2.2" />
-    <PackageVersion Include="Avalonia.Diagnostics" Version="11.0.0-rc2.2" />
-    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.0-rc2.2" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.0.0-rc2.2" />
+    <PackageVersion Include="Avalonia" Version="11.0.0" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.0.0" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.0.0" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.0.0" />
+    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.0" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.0.0" />
     <PackageVersion Include="DotNet.ReproducibleBuilds" Version="1.1.1" />
-    <PackageVersion Include="EvilBaschdi.Core" Version="2023.5.14.959-develop" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2023.7.5.1535-develop" />
     <PackageVersion Include="EvilBaschdi.DependencyInjection" Version="2023.6.13.2030-develop" />
   </ItemGroup>
   <ItemGroup>
@@ -22,7 +22,7 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.7.0-preview.23280.1" />
     <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.16" />
     <PackageVersion Include="xunit.analyzers" Version="1.2.0-pre.48" />
-    <PackageVersion Include="xunit.runner.console" Version="2.5.0-pre.43" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.0-pre.26" />
+    <PackageVersion Include="xunit.runner.console" Version="2.5.0-pre.44" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.0-pre.27" />
   </ItemGroup>
 </Project>
