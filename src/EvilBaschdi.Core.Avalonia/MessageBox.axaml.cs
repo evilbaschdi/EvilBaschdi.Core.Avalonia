@@ -88,9 +88,9 @@ public partial class MessageBox : Window
             AddButton("Cancel", MessageBoxResult.Cancel);
         }
 
-        var tcs = new TaskCompletionSource<MessageBoxResult>();
-        var res = MessageBoxResult.Ok;
-        msgbox.Closed += delegate { tcs.TrySetResult(res); };
+        var taskCompletionSource = new TaskCompletionSource<MessageBoxResult>();
+        var result = MessageBoxResult.Ok;
+        msgbox.Closed += delegate { taskCompletionSource.TrySetResult(result); };
         if (parent != null)
         {
             msgbox.ShowDialog(parent);
@@ -100,14 +100,14 @@ public partial class MessageBox : Window
             msgbox.Show();
         }
 
-        return tcs.Task;
+        return taskCompletionSource.Task;
 
-        void AddButton(string caption, MessageBoxResult r)
+        void AddButton(string caption, MessageBoxResult messageBoxResult)
         {
             var btn = new Button { Content = caption };
             btn.Click += (_, _) =>
                          {
-                             res = r;
+                             result = messageBoxResult;
                              msgbox.Close();
                          };
             buttonPanel?.Children.Add(btn);

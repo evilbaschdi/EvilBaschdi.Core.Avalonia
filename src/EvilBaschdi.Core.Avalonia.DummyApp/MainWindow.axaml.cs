@@ -27,6 +27,7 @@ public partial class MainWindow : Window
     }
 
     // ReSharper disable UnusedParameter.Local
+    // ReSharper disable once UnusedMember.Local
     private async void ShowMessage(object? sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
@@ -36,6 +37,7 @@ public partial class MainWindow : Window
     }
 
     // ReSharper disable UnusedParameter.Local
+    // ReSharper disable once UnusedMember.Local
     private async void ShowWarning(object? sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
@@ -46,6 +48,7 @@ public partial class MainWindow : Window
     }
 
     // ReSharper disable UnusedParameter.Local
+    // ReSharper disable once UnusedMember.Local
     private async void ShowError(object? sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
@@ -54,6 +57,7 @@ public partial class MainWindow : Window
     }
 
     // ReSharper disable UnusedParameter.Local
+    // ReSharper disable once UnusedMember.Local
     private async void ShowDialogBox(object? sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
@@ -62,5 +66,26 @@ public partial class MainWindow : Window
 
             DialogBoxResult.Text = result;
         }
+    }
+
+    // ReSharper disable UnusedParameter.Local
+    // ReSharper disable once UnusedMember.Local
+    private async void ShowProgressBox(object? sender, RoutedEventArgs e)
+        // ReSharper restore UnusedParameter.Local
+    {
+        //var result = await ProgressBox.Show(this, "wait until finished", "Progress");
+
+        var progressBox = new ProgressBox();
+
+        await Task.Run(() =>
+                       {
+                           for (int i = 0; i < 100; i++)
+                           {
+                               progressBox.Value = i;
+                               // Do something
+                               Task.Delay(1000).Wait();
+                           }
+                       });
+        await progressBox.ShowDialog(this);
     }
 }

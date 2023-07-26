@@ -29,16 +29,21 @@
         <Panel Name="MainPanel" Margin="0,0,0,0">
             <Panel>
                 <Panel Name="ContentPanel" Margin="0,0,0,0">
-                    <Grid Margin="15" RowDefinitions="50,50,50,50,50,*" ColumnDefinitions="*,*,*">
-                        
+                    <Grid Margin="15" RowDefinitions="50,50,50,50,50,50,50,*" ColumnDefinitions="*,*,*">
+                        <!-- Framework version -->
                         <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"  Name="ArchitectureInformation" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <!-- MessageBox -->
                         <Button Grid.Column="0" Grid.Row="1" Click="ShowMessage" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show MessageBox" />
                         <Button Grid.Column="1" Grid.Row="1" Click="ShowWarning" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Warning" />
                         <Button Grid.Column="2" Grid.Row="1" Click="ShowError" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Error" />
 						<TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Name="MessageBoxResult" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" />
-
+                        <!-- DialogBox -->
                         <Button Grid.Column="0" Grid.Row="3" Click="ShowDialogBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show DialogBox" />
                         <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Name="DialogBoxResult" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" />
+
+                        <!-- ProgressBox -->
+                        <Button Grid.Column="0" Grid.Row="5" Click="ShowProgressBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show ProgressBox" />
+                        <TextBox Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Name="ProgressBoxResult" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" />
                     </Grid>
                 </Panel>
             </Panel>

@@ -56,9 +56,9 @@ public partial class DialogBox : Window
         AddButton("Ok");
         AddButton("Cancel");
 
-        var tcs = new TaskCompletionSource<string>();
-        var res = inputControl?.Text;
-        dialogBox.Closed += delegate { tcs.TrySetResult(res); };
+        var taskCompletionSource = new TaskCompletionSource<string>();
+        var result = inputControl?.Text;
+        dialogBox.Closed += delegate { taskCompletionSource.TrySetResult(result); };
         if (parent != null)
         {
             dialogBox.ShowDialog(parent);
@@ -68,14 +68,14 @@ public partial class DialogBox : Window
             dialogBox.Show();
         }
 
-        return tcs.Task;
+        return taskCompletionSource.Task;
 
         void AddButton(string caption)
         {
             var btn = new Button { Content = caption };
             btn.Click += (_, _) =>
                          {
-                             res = inputControl?.Text;
+                             result = inputControl?.Text;
                              dialogBox.Close();
                          };
             buttonPanel?.Children.Add(btn);
