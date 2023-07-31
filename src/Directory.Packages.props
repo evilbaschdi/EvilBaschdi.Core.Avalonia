@@ -4,19 +4,19 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Avalonia" Version="11.0.1" />
-    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.0.1" />
-    <PackageVersion Include="Avalonia.Desktop" Version="11.0.1" />
-    <PackageVersion Include="Avalonia.Diagnostics" Version="11.0.1" />
-    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.1" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.0.1" />
+    <PackageVersion Include="Avalonia" Version="11.0.2" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.0.2" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.0.2" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.0.2" />
+    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.2" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.0.2" />
     <PackageVersion Include="DotNet.ReproducibleBuilds" Version="1.1.1" />
     <PackageVersion Include="EvilBaschdi.Core" Version="2023.7.5.1535-develop" />
     <PackageVersion Include="EvilBaschdi.DependencyInjection" Version="2023.7.11.1831-develop" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2023.7.16.2104-develop" />
+    <PackageVersion Include="EvilBaschdi.Testing" Version="2023.7.26.1744-develop" />
     <PackageVersion Include="FluentAssertions.Analyzers" Version="0.21.0" />
     <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.10" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.7.0-preview-23364-03" />
