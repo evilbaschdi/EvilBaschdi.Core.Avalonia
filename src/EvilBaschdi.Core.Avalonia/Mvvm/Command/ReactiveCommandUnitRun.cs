@@ -4,6 +4,7 @@ using ReactiveUI;
 namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 
 /// <inheritdoc />
+// ReSharper disable once UnusedType.Global
 public abstract class ReactiveCommandUnitRun : IReactiveCommandUnitRun
 {
     /// <inheritdoc />

@@ -32,6 +32,7 @@ public partial class ProgressBox : Window
     /// <param name="text"></param>
     /// <param name="title"></param>
     /// <returns></returns>
+    // ReSharper disable once UnusedMember.Global
     public static Task<MessageBoxResult> Show(Window parent, string text, string title)
     {
         var progressBox = new ProgressBox
@@ -87,6 +88,7 @@ public partial class ProgressBox : Window
     /// </summary>
     public double Value
     {
+        // ReSharper disable once UnusedMember.Global
         get => Input.Value;
         set => Input.Value = value;
     }
