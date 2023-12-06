@@ -47,9 +47,9 @@
                         <!-- ProgressBox -->
                         <Button Grid.Column="0" Grid.Row="5" Click="ShowProgressBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                                 Content="Show ProgressBox" />
-                        <TextBox Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Name="ProgressBoxResult" Height="30" VerticalContentAlignment="Center"
-                                 HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <ProgressBar Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Name="ProgressBoxResult" Height="30" />
                     </Grid>
+                      
                 </Panel>
             </Panel>
         </Panel>
