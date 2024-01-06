@@ -27,7 +27,7 @@ public partial class MainWindow : Window
     {
         base.OnOpened(e);
 
-        TargetDataGrid.ItemsSource = new DataGridCollectionView(Countries.All)
+        TargetDataGrid.ItemsSource = new DataGridCollectionView(Countries.Value)
                                      {
                                          GroupDescriptions =
                                          {

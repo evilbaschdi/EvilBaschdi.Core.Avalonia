@@ -43,11 +43,6 @@
                         <Button Grid.Column="0" Grid.Row="3" Click="ShowDialogBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show DialogBox" />
                         <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Name="DialogBoxResult" Height="30" VerticalContentAlignment="Center"
                                  HorizontalContentAlignment="Center" IsReadOnly="True" />
-
-                        <!-- ProgressBox -->
-                        <Button Grid.Column="0" Grid.Row="5" Click="ShowProgressBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                                Content="Show ProgressBox" />
-                        <ProgressBar Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Name="ProgressBoxResult" Height="30" />
                     </Grid>
                       
                 </Panel>

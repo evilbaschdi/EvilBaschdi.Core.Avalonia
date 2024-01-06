@@ -1,11 +1,9 @@
-using System.ComponentModel;
 using System.Runtime.InteropServices;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Enums;
-using MsBox.Avalonia.Models;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
 
@@ -102,52 +100,5 @@ public partial class MainWindow : Window
         {
             DialogBoxResult.Text = messageBoxStandard.InputValue;
         }
-    }
-
-    // ReSharper disable UnusedParameter.Local
-    // ReSharper disable once UnusedMember.Local
-    private async void ShowProgressBox(object sender, RoutedEventArgs e)
-        // ReSharper restore UnusedParameter.Local
-    {
-        //var result = await ProgressBox.Show(this, "wait until finished", "Progress");
-        var messageBoxCustomParams = new MessageBoxCustomParams
-                                     {
-                                         ButtonDefinitions = new List<ButtonDefinition>
-                                                             {
-                                                                 new ButtonDefinition { Name = "Cancel", }
-                                                             },
-                                         ContentMessage = "wait until finished",
-                                         ContentTitle = "Progress",
-                                         ContentHeader = "Progress",
-                                         InputParams = new InputParams
-                                                       {
-                                                           Label = "%",
-                                                           DefaultValue = "0"
-                                                       }
-                                     };
-        var messageBoxCustom = MessageBoxManager.GetMessageBoxCustom(messageBoxCustomParams);
-
-        await messageBoxCustom.ShowAsPopupAsync(this);
-
-        BackgroundWorker worker = new BackgroundWorker();
-        worker.WorkerReportsProgress = true;
-        worker.DoWork += WorkerDoWork;
-        worker.ProgressChanged += WorkerProgressChanged;
-
-        worker.RunWorkerAsync();
-    }
-
-    void WorkerDoWork(object sender, DoWorkEventArgs e)
-    {
-        for (int i = 0; i < 100; i++)
-        {
-            (sender as BackgroundWorker)?.ReportProgress(i);
-            Thread.Sleep(100);
-        }
-    }
-
-    void WorkerProgressChanged(object sender, ProgressChangedEventArgs e)
-    {
-        ProgressBoxResult.Value = e.ProgressPercentage;
     }
 }

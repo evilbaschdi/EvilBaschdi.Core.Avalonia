@@ -31,6 +31,7 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
     public void RunFor([NotNull] Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
+
         if (!VersionHelper.IsWindows)
         {
             return;
