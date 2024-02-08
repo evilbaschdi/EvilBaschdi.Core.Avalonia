@@ -66,7 +66,7 @@ public partial class MainWindow : Window
         // ReSharper restore UnusedParameter.Local
     {
         var messageBoxStandard =
-            MessageBoxManager.GetMessageBoxStandard("Running out of coffee Exception occured!", DateTime.Now.ToString("R"), ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
+            MessageBoxManager.GetMessageBoxStandard("Running out of coffee Exception occurred!", DateTime.Now.ToString("R"), ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
         await messageBoxStandard.ShowAsPopupAsync(this);
     }
 
