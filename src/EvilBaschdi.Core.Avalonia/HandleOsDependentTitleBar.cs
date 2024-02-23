@@ -43,18 +43,26 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
 
         if (acrylicBorder != null)
         {
-            if (window.ActualThemeVariant == ThemeVariant.Dark)
+            if (VersionHelper.IsWindows11)
             {
-                acrylicBorder.Material.TintColor = Colors.Black;
+                acrylicBorder.IsVisible = false;
             }
-            else if (window.ActualThemeVariant == ThemeVariant.Light)
+            else
             {
-                acrylicBorder.Material.TintColor = Colors.White;
+                if (window.ActualThemeVariant == ThemeVariant.Dark)
+                {
+                    acrylicBorder.Material.TintColor = Colors.Black;
+                }
+                else if (window.ActualThemeVariant == ThemeVariant.Light)
+                {
+                    acrylicBorder.Material.TintColor = Colors.White;
+                }
             }
         }
 
         window.ExtendClientAreaToDecorationsHint = true;
         window.ExtendClientAreaChromeHints = ExtendClientAreaChromeHints.Default;
+
         if (headerPanel != null)
         {
             headerPanel.IsVisible = true;

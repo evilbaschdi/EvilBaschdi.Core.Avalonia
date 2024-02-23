@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using FluentAvalonia.UI.Controls;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Enums;
@@ -33,22 +34,32 @@ public partial class MainWindow : Window
     private async void ShowMessage(object sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
-        var messageBoxStandard = MessageBoxManager.GetMessageBoxStandard(
-            new MessageBoxStandardParams
-            {
-                ButtonDefinitions = ButtonEnum.YesNoCancel,
-                ContentTitle = "Title with maaaaaaaaaaaaaany signs",
-                ContentHeader = "Title with maaaaaaaaaaaaaany signs",
-                ContentMessage = DateTime.Now.ToString("R"),
-                Icon = MsBox.Avalonia.Enums.Icon.Info,
-                WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                CanResize = false,
-                SizeToContent = SizeToContent.WidthAndHeight,
-                ShowInCenter = true,
-                Topmost = false
-            });
-        var messageBoxResult = await messageBoxStandard.ShowAsPopupAsync(this);
-        MessageBoxResult.Text = messageBoxResult.ToString();
+        //var messageBoxStandard = MessageBoxManager.GetMessageBoxStandard(
+        //    new MessageBoxStandardParams
+        //    {
+        //        ButtonDefinitions = ButtonEnum.YesNoCancel,
+        //        ContentTitle = "Title with maaaaaaaaaaaaaany signs",
+        //        ContentHeader = "Title with maaaaaaaaaaaaaany signs",
+        //        ContentMessage = DateTime.Now.ToString("R"),
+        //        Icon = MsBox.Avalonia.Enums.Icon.Info,
+        //        WindowStartupLocation = WindowStartupLocation.CenterOwner,
+        //        CanResize = false,
+        //        SizeToContent = SizeToContent.WidthAndHeight,
+        //        ShowInCenter = true,
+        //        Topmost = false
+        //    });
+        //var messageBoxResult = await messageBoxStandard.ShowAsPopupAsync(this);
+        //MessageBoxResult.Text = messageBoxResult.ToString();
+
+        var contentDialog = new ContentDialog
+                            {
+                                Title = "Title with maaaaaaaaaaaaaany signs",
+                                Content = DateTime.Now.ToString("R"),
+                                PrimaryButtonText = "Yes",
+                                SecondaryButtonText = "No"
+                            };
+        var result = await contentDialog.ShowAsync();
+        MessageBoxResult.Text = result.ToString();
     }
 
     // ReSharper disable UnusedParameter.Local
