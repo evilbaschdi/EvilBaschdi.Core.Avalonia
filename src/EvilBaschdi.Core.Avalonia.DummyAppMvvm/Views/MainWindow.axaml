@@ -9,10 +9,6 @@
         Background="Transparent"
         Title="EvilBaschdi.Avalonia.DummyAppMvvm">
 
-    <!--<Design.DataContext>
-        <viewModels:MainWindowViewModel />
-    </Design.DataContext>-->
-
     <Panel Name="RootPanel">
         <ExperimentalAcrylicBorder IsHitTestVisible="False" Name="AcrylicBorder">
             <ExperimentalAcrylicBorder.Material>
