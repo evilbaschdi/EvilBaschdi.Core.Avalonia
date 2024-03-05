@@ -6,8 +6,20 @@
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 
-public class Country(string name, string region, int population, int area, double density, double coast, double? migration,
-                     double? infantMorality, int gdp, double? literacy, double? phones, double? birth, double? death)
+public class Country(
+    string name,
+    string region,
+    int population,
+    int area,
+    double density,
+    double coast,
+    double? migration,
+    double? infantMorality,
+    int gdp,
+    double? literacy,
+    double? phones,
+    double? birth,
+    double? death)
 {
     //Square Miles
     public int Area { get; private set; } = area;
