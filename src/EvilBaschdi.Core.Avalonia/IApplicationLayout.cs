@@ -7,6 +7,4 @@ namespace EvilBaschdi.Core.Avalonia;
 /// </summary>
 public interface IApplicationLayout :
     IRunFor<(bool Center, bool ResizeWithBorder400)>,
-    IRunFor<(Window Window, bool Center, bool ResizeWithBorder400)>
-{
-}
+    IRunFor<(Window Window, bool Center, bool ResizeWithBorder400)>;
