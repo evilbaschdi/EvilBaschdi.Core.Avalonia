@@ -23,6 +23,9 @@ public partial class MainWindow : Window
         Load();
     }
 
+    /// <summary>
+    /// </summary>
+    /// <param name="e"></param>
     protected override void OnOpened(EventArgs e)
     {
         base.OnOpened(e);
