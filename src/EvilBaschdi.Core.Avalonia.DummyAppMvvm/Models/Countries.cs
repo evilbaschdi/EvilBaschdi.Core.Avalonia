@@ -1,7 +1,11 @@
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 
+/// <summary>
+/// </summary>
 public static class Countries
 {
+    /// <summary>
+    /// </summary>
     // ReSharper disable once MemberCanBePrivate.Global
     public static IEnumerable<Country> Value =>
     [

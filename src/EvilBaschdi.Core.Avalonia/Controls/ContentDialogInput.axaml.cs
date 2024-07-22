@@ -28,6 +28,7 @@ public partial class ContentDialogInput : UserControl
     }
 
     // ReSharper disable once UnusedParameter.Local
+    // ReSharper disable once UnusedMember.Local
     private void InputFieldOnAttachedToVisualTree(object sender, VisualTreeAttachmentEventArgs e)
     {
         // We will set the focus into our input field just after it got attached to the visual tree.
@@ -37,6 +38,7 @@ public partial class ContentDialogInput : UserControl
         }
     }
 
+    // ReSharper disable once UnusedMember.Local
     // ReSharper disable UnusedParameter.Local
     private void ResultOnTextChanged(object sender, TextChangedEventArgs e)
         // ReSharper restore UnusedParameter.Local

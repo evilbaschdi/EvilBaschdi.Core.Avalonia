@@ -1,5 +1,4 @@
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 
-public class MainWindowViewModel : ViewModelBase
-{
-}
+/// <inheritdoc />
+public class MainWindowViewModel : ViewModelBase;

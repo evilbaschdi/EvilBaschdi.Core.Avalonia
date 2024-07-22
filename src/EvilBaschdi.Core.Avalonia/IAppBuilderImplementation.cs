@@ -3,6 +3,4 @@
 namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
-public interface IAppBuilderImplementation : IValue<AppBuilder>
-{
-}
+public interface IAppBuilderImplementation : IValue<AppBuilder>;

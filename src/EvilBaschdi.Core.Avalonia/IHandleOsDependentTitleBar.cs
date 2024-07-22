@@ -5,6 +5,4 @@ namespace EvilBaschdi.Core.Avalonia;
 /// <inheritdoc cref="IRunFor{TIn}" />
 public interface IHandleOsDependentTitleBar :
     IRun,
-    IRunFor<Window>
-{
-}
+    IRunFor<Window>;

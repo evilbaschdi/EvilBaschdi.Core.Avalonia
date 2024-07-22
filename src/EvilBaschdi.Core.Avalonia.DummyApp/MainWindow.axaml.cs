@@ -6,6 +6,7 @@ using FluentAvalonia.UI.Controls;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
 
+/// <inheritdoc />
 public partial class MainWindow : Window
 {
     /// <summary>

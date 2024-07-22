@@ -7,8 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm;
 
+/// <inheritdoc />
 public class App : Application
 {
+    /// <summary>
+    /// </summary>
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -18,8 +21,10 @@ public class App : Application
     ///     ServiceProvider for DependencyInjection
     /// </summary>
     // ReSharper disable once MemberCanBePrivate.Global
-    public static IServiceProvider? ServiceProvider { get; set; }
+    public static IServiceProvider ServiceProvider { get; set; }
 
+    /// <summary>
+    /// </summary>
     public override void OnFrameworkInitializationCompleted()
     {
         IServiceCollection serviceCollection = new ServiceCollection();
