@@ -19,6 +19,8 @@
     <PackageVersion Include="EvilBaschdi.DependencyInjection" Version="2024.7.9.1703" />
     <PackageVersion Include="FluentAvaloniaUI" Version="2.1.0" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="TextMateSharp" Version="1.0.62" />
+    <PackageVersion Include="TextMateSharp.Grammars" Version="1.0.62" />
   </ItemGroup>
   <!-- #endregion Project Libs -->
   <!-- #region Unit Test Libs -->

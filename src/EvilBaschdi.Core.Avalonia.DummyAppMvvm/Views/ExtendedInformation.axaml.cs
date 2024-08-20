@@ -35,6 +35,6 @@ public partial class ExtendedInformation : Window
         handleOsDependentTitleBar?.RunFor(this);
 
         var applicationLayout = App.ServiceProvider?.GetRequiredService<IApplicationLayout>();
-        applicationLayout?.RunFor((this, true, true));
+        applicationLayout?.RunFor((this, true, false));
     }
 }
