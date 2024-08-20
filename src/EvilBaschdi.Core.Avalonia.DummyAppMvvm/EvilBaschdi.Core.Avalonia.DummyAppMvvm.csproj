@@ -2,7 +2,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia.Controls.DataGrid" />
+		<PackageReference Include="Avalonia.AvaloniaEdit" />
+		<PackageReference Include="AvaloniaEdit.TextMate" />
 		<PackageReference Include="EvilBaschdi.DependencyInjection" />
+		<PackageReference Include="Newtonsoft.Json" />
 		<ProjectReference Include="..\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
 	</ItemGroup>
 

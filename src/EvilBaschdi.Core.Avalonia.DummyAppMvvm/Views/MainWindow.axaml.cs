@@ -1,11 +1,5 @@
-using Avalonia.Collections;
 using Avalonia.Controls;
-using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 using Microsoft.Extensions.DependencyInjection;
-
-#pragma warning disable IDE0079
-#pragma warning disable CA1859
-#pragma warning restore IDE0079
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 
@@ -20,26 +14,10 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        Load();
+        ApplyLayout();
     }
 
-    /// <summary>
-    /// </summary>
-    /// <param name="e"></param>
-    protected override void OnOpened(EventArgs e)
-    {
-        base.OnOpened(e);
-
-        TargetDataGrid.ItemsSource = new DataGridCollectionView(Countries.Value)
-                                     {
-                                         GroupDescriptions =
-                                         {
-                                             new DataGridPathGroupDescription("Region")
-                                         }
-                                     };
-    }
-
-    private void Load()
+    private void ApplyLayout()
     {
         var handleOsDependentTitleBar = App.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
         handleOsDependentTitleBar?.RunFor(this);

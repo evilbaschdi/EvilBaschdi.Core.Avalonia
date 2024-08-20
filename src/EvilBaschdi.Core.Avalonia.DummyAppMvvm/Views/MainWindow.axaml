@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
         x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.MainWindow"
         Icon="/Assets/b.ico"
@@ -10,15 +11,7 @@
         Title="EvilBaschdi.Avalonia.DummyAppMvvm">
 
     <Panel Name="RootPanel">
-        <ExperimentalAcrylicBorder IsHitTestVisible="False" Name="AcrylicBorder">
-            <ExperimentalAcrylicBorder.Material>
-                <ExperimentalAcrylicMaterial
-                    TintColor="Black"
-                    TintOpacity="1"
-                    MaterialOpacity="0.9" />
-            </ExperimentalAcrylicBorder.Material>
-        </ExperimentalAcrylicBorder>
-
+		
         <Panel Name="HeaderPanel" IsVisible="False">
             <Panel Margin="7">
                 <Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" />
@@ -27,16 +20,36 @@
         </Panel>
 
         <Panel Name="MainPanel" Margin="0,0,0,0">
-            <Panel>
                 <Panel Name="ContentPanel" Margin="0,0,0,0">
-                    <DataGrid Name="TargetDataGrid">
+
+                    <DataGrid Name="TargetDataGrid" ItemsSource="{Binding DataGridCollectionViewCountries}" SelectedItem="{Binding Path=SelectedCountry}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Country" Binding="{Binding Name}" Width="6*" />
                             <DataGridTextColumn Header="Region" Binding="{Binding Region}" Width="4*" />
                             <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{Binding Population}" Width="3*" />
                             <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" />
                             <DataGridTextColumn Header="GDP" Binding="{Binding GDP}" Width="3*" />
-                        </DataGrid.Columns>
+
+                            <DataGridTemplateColumn Header="Info" Width="70" IsReadOnly="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <!-- ReSharper disable Xaml.PossibleNullReferenceException -->
+                                        <!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
+                                        <!-- ReSharper disable once Xaml.StyleClassNotFound -->
+                                        <Button VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                                Width="60" Classes="accent" Name="ShowExtendedInformationButton"
+                                                Command="{Binding DataContext.ShowExtendedInformationCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <controls:SymbolIcon Symbol="Alert" FontSize="18" />
+                                            </StackPanel>
+                                        </Button>
+                                        <!-- ReSharper restore Xaml.BindingWithContextNotResolved -->
+                                        <!-- ReSharper restore Xaml.PossibleNullReferenceException -->
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+						</DataGrid.Columns>
                         <DataGrid.Styles>
                             <Style Selector="DataGridColumnHeader">
                                 <Setter Property="Background" Value="Transparent" />
@@ -46,7 +59,7 @@
                             </Style>
                         </DataGrid.Styles>
                     </DataGrid>
-                </Panel>
+
             </Panel>
         </Panel>
     </Panel>
