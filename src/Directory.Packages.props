@@ -5,22 +5,27 @@
   </PropertyGroup>
   <!-- #region Project Libs -->
   <ItemGroup>
-    <PackageVersion Include="Avalonia" Version="11.1.4" />
-    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.1.4" />
-    <PackageVersion Include="Avalonia.Desktop" Version="11.1.4" />
-    <PackageVersion Include="Avalonia.Diagnostics" Version="11.1.4" />
-    <PackageVersion Include="Avalonia.Fonts.Inter" Version="11.1.4" />
-    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.1.4" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.1.4" />
-    <PackageVersion Include="Avalonia.Themes.Simple" Version="11.1.4" />
-    <PackageVersion Include="EvilBaschdi.Core" Version="2024.7.8.734" />
+    <PackageVersion Include="Avalonia" Version="11.2.0" />
+    <PackageVersion Include="Avalonia.AvaloniaEdit" Version="11.1.0" />
+    <PackageVersion Include="AvaloniaEdit.TextMate" Version="11.1.0" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.2.0" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.2.0" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.2.0" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="11.2.0" />
+    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.2.0" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.2.0" />
+    <PackageVersion Include="Avalonia.Themes.Simple" Version="11.2.0" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2024.10.31.739" />
     <PackageVersion Include="EvilBaschdi.DependencyInjection" Version="2024.10.8.1630" />
     <PackageVersion Include="FluentAvaloniaUI" Version="2.1.0" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="TextMateSharp" Version="1.0.64" />
+    <PackageVersion Include="TextMateSharp.Grammars" Version="1.0.64" />
   </ItemGroup>
   <!-- #endregion Project Libs -->
   <!-- #region Unit Test Libs -->
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2024.9.27.1039" />
+    <PackageVersion Include="EvilBaschdi.Testing" Version="2024.10.28.1729" />
     <PackageVersion Include="coverlet.collector" Version="6.0.2" />
     <PackageVersion Include="FluentAssertions.Analyzers" Version="0.34.1" />
     <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.21" />

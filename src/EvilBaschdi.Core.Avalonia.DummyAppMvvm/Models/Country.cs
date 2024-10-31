@@ -4,6 +4,10 @@
 
 // ReSharper disable UnusedMember.Global
 
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
+
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 
 /// <summary>
@@ -34,7 +38,7 @@ public class Country(
     double? literacy,
     double? phones,
     double? birth,
-    double? death)
+    double? death) : INotifyPropertyChanged
 {
     /// <summary>
     ///     Square Miles
@@ -92,4 +96,41 @@ public class Country(
     /// <summary>
     /// </summary>
     public string Region { get; private set; } = region;
+
+    /// <inheritdoc />
+    /// <summary />
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    /// <inheritdoc />
+    public override string ToString()
+    {
+        return JsonConvert.SerializeObject(this, Formatting.Indented);
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="propertyName"></param>
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="field"></param>
+    /// <param name="value"></param>
+    /// <param name="propertyName"></param>
+    /// <returns></returns>
+    protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(field, value))
+        {
+            return false;
+        }
+
+        field = value;
+        OnPropertyChanged(propertyName);
+        return true;
+    }
 }

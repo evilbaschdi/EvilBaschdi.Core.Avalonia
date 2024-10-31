@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400" Width="400" Height="400"
+        x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.ExtendedInformation"
+        Icon="/Assets/b.ico"
+        TransparencyLevelHint="Mica"
+        Background="Transparent"
+        Title="EvilBaschdi.Avalonia.DummyAppMvvm.ExtendedInformation">
+
+	<Panel Name="RootPanel">
+
+		<Panel Name="HeaderPanel" IsVisible="False">
+			<Panel Margin="7">
+				<Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" />
+			</Panel>
+			<TextBlock Text="ExtendedInformation" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0" />
+		</Panel>
+
+		<Panel Name="MainPanel" Margin="0,0,0,0">
+			<Panel Name="ContentPanel" Margin="0,0,0,0">
+				<avaloniaEdit:TextEditor Name="Output" Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" ShowLineNumbers="True" Background="Transparent" />
+			</Panel>
+		</Panel>
+	</Panel>
+
+</Window>
