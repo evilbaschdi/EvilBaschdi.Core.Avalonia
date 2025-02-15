@@ -14,7 +14,7 @@ public class ConfigureDataGridCollectionView
     {
         get
         {
-            _dataGridCollectionView = new DataGridCollectionView(Countries.Value)
+            _dataGridCollectionView = new(Countries.Value)
                                       {
                                           GroupDescriptions =
                                           {
