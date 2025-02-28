@@ -11,7 +11,7 @@
         Title="EvilBaschdi.Avalonia.DummyAppMvvm">
 
     <Panel Name="RootPanel">
-		
+
         <Panel Name="HeaderPanel" IsVisible="False">
             <Panel Margin="7">
                 <Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" />
@@ -20,45 +20,45 @@
         </Panel>
 
         <Panel Name="MainPanel" Margin="0,0,0,0">
-                <Panel Name="ContentPanel" Margin="0,0,0,0">
+            <Panel Name="ContentPanel" Margin="0,0,0,0">
 
-                    <DataGrid Name="TargetDataGrid" ItemsSource="{Binding DataGridCollectionViewCountries}" SelectedItem="{Binding Path=SelectedCountry}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Country" Binding="{Binding Name}" Width="6*" />
-                            <DataGridTextColumn Header="Region" Binding="{Binding Region}" Width="4*" />
-                            <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{Binding Population}" Width="3*" />
-                            <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" />
-                            <DataGridTextColumn Header="GDP" Binding="{Binding GDP}" Width="3*" />
+                <DataGrid Name="TargetDataGrid" ItemsSource="{Binding DataGridCollectionViewCountries}" SelectedItem="{Binding Path=SelectedCountry}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Country" Binding="{Binding Name}" Width="6*" />
+                        <DataGridTextColumn Header="Region" Binding="{Binding Region}" Width="4*" />
+                        <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{Binding Population}" Width="3*" />
+                        <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" />
+                        <DataGridTextColumn Header="GDP" Binding="{Binding GDP}" Width="3*" />
 
-                            <DataGridTemplateColumn Header="Info" Width="70" IsReadOnly="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <!-- ReSharper disable Xaml.PossibleNullReferenceException -->
-                                        <!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
-                                        <!-- ReSharper disable once Xaml.StyleClassNotFound -->
-                                        <Button VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                                                Width="60" Classes="accent" Name="ShowExtendedInformationButton"
-                                                Command="{Binding DataContext.ShowExtendedInformationCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
-                                            <StackPanel Orientation="Horizontal">
-                                                <controls:SymbolIcon Symbol="Alert" FontSize="18" />
-                                            </StackPanel>
-                                        </Button>
-                                        <!-- ReSharper restore Xaml.BindingWithContextNotResolved -->
-                                        <!-- ReSharper restore Xaml.PossibleNullReferenceException -->
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Info" Width="70" IsReadOnly="False">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <!-- ReSharper disable Xaml.PossibleNullReferenceException -->
+                                    <!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
+                                    <!-- ReSharper disable once Xaml.StyleClassNotFound -->
+                                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                            Width="60" Classes="accent" Name="ShowExtendedInformationButton"
+                                            Command="{Binding DataContext.ShowExtendedInformationCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <controls:SymbolIcon Symbol="Alert" FontSize="18" />
+                                        </StackPanel>
+                                    </Button>
+                                    <!-- ReSharper restore Xaml.BindingWithContextNotResolved -->
+                                    <!-- ReSharper restore Xaml.PossibleNullReferenceException -->
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
-						</DataGrid.Columns>
-                        <DataGrid.Styles>
-                            <Style Selector="DataGridColumnHeader">
-                                <Setter Property="Background" Value="Transparent" />
-                            </Style>
-                            <Style Selector="DataGridRowGroupHeader">
-                                <Setter Property="Background" Value="Transparent" />
-                            </Style>
-                        </DataGrid.Styles>
-                    </DataGrid>
+                    </DataGrid.Columns>
+                    <DataGrid.Styles>
+                        <Style Selector="DataGridColumnHeader">
+                            <Setter Property="Background" Value="Transparent" />
+                        </Style>
+                        <Style Selector="DataGridRowGroupHeader">
+                            <Setter Property="Background" Value="Transparent" />
+                        </Style>
+                    </DataGrid.Styles>
+                </DataGrid>
 
             </Panel>
         </Panel>

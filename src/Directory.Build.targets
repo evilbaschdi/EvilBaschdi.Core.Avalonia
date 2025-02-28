@@ -7,7 +7,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Avalonia'))">
-		<Compile Update="**\*.cs" >
+		<Compile Update="**\*.cs">
 			<DependentUpon>$([System.String]::Copy(I%(Filename).cs).Replace('Cached',''))</DependentUpon>
 		</Compile>
 	</ItemGroup>
