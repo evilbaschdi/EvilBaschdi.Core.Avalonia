@@ -33,8 +33,5 @@ public class ViewLocator : IDataTemplate
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public bool Match(object data)
-    {
-        return data is ViewModelBase;
-    }
+    public bool Match(object data) => data is ViewModelBase;
 }

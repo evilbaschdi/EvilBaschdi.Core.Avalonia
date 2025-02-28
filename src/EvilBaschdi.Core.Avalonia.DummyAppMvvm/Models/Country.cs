@@ -102,10 +102,7 @@ public class Country(
     public event PropertyChangedEventHandler PropertyChanged;
 
     /// <inheritdoc />
-    public override string ToString()
-    {
-        return JsonConvert.SerializeObject(this, Formatting.Indented);
-    }
+    public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
     /// <summary>
     /// </summary>
