@@ -32,6 +32,11 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
     {
         ArgumentNullException.ThrowIfNull(window);
 
+        window.TransparencyLevelHint = new List<WindowTransparencyLevel>
+                                       {
+                                           WindowTransparencyLevel.Mica
+                                       };
+
         if (!VersionHelper.IsWindows)
         {
             return;
@@ -60,6 +65,7 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
             }
         }
 
+        window.Background = Brushes.Transparent;
         window.ExtendClientAreaToDecorationsHint = true;
         window.ExtendClientAreaChromeHints = ExtendClientAreaChromeHints.Default;
 
