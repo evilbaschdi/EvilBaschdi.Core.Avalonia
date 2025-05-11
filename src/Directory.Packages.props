@@ -15,7 +15,7 @@
     <PackageVersion Include="Avalonia.ReactiveUI" Version="11.3.0" />
     <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.3.0" />
     <PackageVersion Include="Avalonia.Themes.Simple" Version="11.3.0" />
-    <PackageVersion Include="EvilBaschdi.Core" Version="2025.5.11.10-develop" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2025.5.11.19" />
     <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2025.5.11.18-develop" />
     <PackageVersion Include="FluentAvaloniaUI" Version="2.3.0" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
