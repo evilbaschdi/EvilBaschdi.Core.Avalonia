@@ -6,7 +6,7 @@ namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels.Internal;
 
 /// <inheritdoc cref="IShowExtendedInformation" />
 /// <inheritdoc cref="ReactiveCommandUnitRun" />
-public class ShowExtendedInformation : ReactiveCommandUnitRun, IShowExtendedInformation
+public class ShowExtendedInformation : ReactiveCommandUnitTask, IShowExtendedInformation
 {
     private readonly IMainWindowByApplicationLifetime _mainWindowByApplicationLifetime;
 
@@ -21,14 +21,14 @@ public class ShowExtendedInformation : ReactiveCommandUnitRun, IShowExtendedInfo
     }
 
     /// <inheritdoc />
-    public override void Run()
+    public override async Task RunAsync()
     {
         var mainWindow = _mainWindowByApplicationLifetime.Value;
         var extendedInformationDialog = App.ServiceProvider.GetRequiredService<ExtendedInformation>();
 
         if (mainWindow != null)
         {
-            extendedInformationDialog.ShowDialog(mainWindow);
+            await extendedInformationDialog.ShowDialog(mainWindow);
         }
     }
 }

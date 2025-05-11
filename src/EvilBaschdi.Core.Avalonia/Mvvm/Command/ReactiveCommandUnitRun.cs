@@ -8,11 +8,8 @@ namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 public abstract class ReactiveCommandUnitRun : IReactiveCommandUnitRun
 {
     /// <inheritdoc />
-    public ReactiveCommand<Unit, Unit> ReactiveCommandValue => ReactiveCommand.Create(Run);
+    public ReactiveCommand<Unit, Unit> Command => ReactiveCommand.Create(Run);
 
     /// <inheritdoc />
-    public virtual void Run()
-    {
-        throw new NotImplementedException();
-    }
+    public virtual void Run() => throw new NotImplementedException();
 }

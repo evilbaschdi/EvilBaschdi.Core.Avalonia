@@ -53,11 +53,11 @@ public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 
     /// <summary>
     /// </summary>
-    public ReactiveCommand<Unit, Unit> ShowExtendedInformationCommand { get; set; }
+    public ReactiveCommand<Unit, Task> ShowExtendedInformationCommand { get; set; }
 
     /// <inheritdoc />
     public void Run()
     {
-        ShowExtendedInformationCommand = _showExtendedInformation.ReactiveCommandValue;
+        ShowExtendedInformationCommand = _showExtendedInformation.Command;
     }
 }

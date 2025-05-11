@@ -2,10 +2,10 @@
 
 namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 
-/// <summary>IReactiveCommand</summary>
-public interface IReactiveCommand<TParam, TResult>
+/// <summary>IInitReactiveCommand</summary>
+public interface IInitReactiveCommand<TParam, TResult>
 {
     /// <inheritdoc cref="ReactiveCommand" />
     // ReSharper disable once UnusedMember.Global
-    ReactiveCommand<TParam, TResult> ReactiveCommandValue { get; }
+    ReactiveCommand<TParam, TResult> Command { get; }
 }

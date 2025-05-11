@@ -1,5 +1,7 @@
-﻿namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
+﻿using System.Reactive;
+
+namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 
 /// <inheritdoc cref="IRun" />
-/// <inheritdoc cref="IReactiveCommand{TParam,TResult}" />
-public interface IReactiveCommandRun<TParam, TResult> : IReactiveCommand<TParam, TResult>, IRun;
+/// <inheritdoc cref="IInitReactiveCommand{TParam,TResult}" />
+public interface IReactiveCommandRun<TParam> : IInitReactiveCommand<TParam, Unit>, IRun;

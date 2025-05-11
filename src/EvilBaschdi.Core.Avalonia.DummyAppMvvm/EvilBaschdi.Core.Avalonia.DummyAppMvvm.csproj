@@ -4,7 +4,7 @@
 		<PackageReference Include="Avalonia.Controls.DataGrid" />
 		<PackageReference Include="Avalonia.AvaloniaEdit" />
 		<PackageReference Include="AvaloniaEdit.TextMate" />
-		<PackageReference Include="EvilBaschdi.DependencyInjection" />
+		<PackageReference Include="EvilBaschdi.Core.DependencyInjection" />
 		<PackageReference Include="Newtonsoft.Json" />
 		<PackageReference Include="TextMateSharp" />
 		<PackageReference Include="TextMateSharp.Grammars" />
