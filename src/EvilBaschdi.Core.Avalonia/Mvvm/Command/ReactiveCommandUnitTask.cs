@@ -8,7 +8,7 @@ namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 public abstract class ReactiveCommandUnitTask : IReactiveCommandUnitTask
 {
     /// <inheritdoc />
-    public ReactiveCommand<Unit, Task> Command => ReactiveCommand.Create(RunAsync);
+    public ReactiveCommand<Unit, Unit> Command => ReactiveCommand.CreateFromTask(RunAsync);
 
     // ReSharper disable once MemberCanBeProtected.Global
     /// <summary>

@@ -53,7 +53,7 @@ public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 
     /// <summary>
     /// </summary>
-    public ReactiveCommand<Unit, Task> ShowExtendedInformationCommand { get; set; }
+    public ReactiveCommand<Unit, Unit> ShowExtendedInformationCommand { get; set; }
 
     /// <inheritdoc />
     public void Run()
