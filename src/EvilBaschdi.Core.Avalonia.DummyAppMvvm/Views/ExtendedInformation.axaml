@@ -5,10 +5,7 @@
         xmlns:avaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
         mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400" Width="400" Height="400"
         x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.ExtendedInformation"
-        Icon="/Assets/b.ico"
-        TransparencyLevelHint="Mica"
-        Background="Transparent"
-        Title="EvilBaschdi.Avalonia.DummyAppMvvm.ExtendedInformation">
+        Icon="/Assets/b.ico" Title="EvilBaschdi.Avalonia.DummyAppMvvm.ExtendedInformation">
 
     <Panel Name="RootPanel">
 
