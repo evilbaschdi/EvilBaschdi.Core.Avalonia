@@ -15,5 +15,5 @@ public abstract class ReactiveCommandUnitTask : IReactiveCommandUnitTask
     /// </summary>
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
-    public virtual Task RunAsync() => throw new NotImplementedException();
+    public virtual Task RunAsync(CancellationToken cancellationToken = default) => throw new NotImplementedException();
 }

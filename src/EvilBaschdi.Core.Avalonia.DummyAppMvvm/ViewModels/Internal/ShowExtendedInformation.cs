@@ -21,7 +21,7 @@ public class ShowExtendedInformation : ReactiveCommandUnitTask, IShowExtendedInf
     }
 
     /// <inheritdoc />
-    public override async Task RunAsync()
+    public override async Task RunAsync(CancellationToken cancellationToken = default)
     {
         var mainWindow = _mainWindowByApplicationLifetime.Value;
         var extendedInformationDialog = App.ServiceProvider.GetRequiredService<ExtendedInformation>();
