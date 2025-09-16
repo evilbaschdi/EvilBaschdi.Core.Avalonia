@@ -5,7 +5,6 @@
 		<PackageReference Include="Avalonia.AvaloniaEdit" />
 		<PackageReference Include="AvaloniaEdit.TextMate" />
 		<PackageReference Include="EvilBaschdi.Core.DependencyInjection" />
-		<PackageReference Include="Newtonsoft.Json" />
 		<PackageReference Include="TextMateSharp" />
 		<PackageReference Include="TextMateSharp.Grammars" />
 		<ProjectReference Include="..\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
