@@ -6,7 +6,7 @@ root = true
 
 ### Diagnostic configuration ####
 
-dotnet_diagnostic.CA1000.severity = error
+dotnet_diagnostic.CA1000.severity = none
 dotnet_diagnostic.CA1001.severity = error
 dotnet_diagnostic.CA1004.severity = error
 dotnet_diagnostic.CA1005.severity = error

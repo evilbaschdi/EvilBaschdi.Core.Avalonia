@@ -1,13 +1,3 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<ItemGroup>
-		<PackageReference Include="Avalonia.Controls.DataGrid" />
-		<PackageReference Include="Avalonia.AvaloniaEdit" />
-		<PackageReference Include="AvaloniaEdit.TextMate" />
-		<PackageReference Include="EvilBaschdi.Core.DependencyInjection" />
-		<PackageReference Include="TextMateSharp" />
-		<PackageReference Include="TextMateSharp.Grammars" />
-		<ProjectReference Include="..\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
-	</ItemGroup>
-
 </Project>

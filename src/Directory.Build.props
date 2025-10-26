@@ -13,7 +13,6 @@
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<IsPackable>true</IsPackable>
 		<LangVersion>preview</LangVersion>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
@@ -23,17 +22,33 @@
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Avalonia</RepositoryUrl>
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
 		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.H))</VersionPrefix>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<Using Include="EvilBaschdi.Core" />
-		<Using Include="JetBrains.Annotations" />
-	</ItemGroup>
+	<Choose>
+		<When Condition="$(MSBuildProjectName.EndsWith('.Testing.Avalonia'))">
+			<PropertyGroup>
+				<TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+			</PropertyGroup>
+
+			<ItemGroup>
+				<Using Include="EvilBaschdi.Core" />
+				<Using Include="JetBrains.Annotations" />
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
 
 	<Choose>
-		<When Condition="$(MSBuildProjectName.EndsWith('.Avalonia'))">
+		<When Condition="$(MSBuildProjectName.EndsWith('.Core.Avalonia'))">
+			<PropertyGroup>
+				<IsPackable>true</IsPackable>
+			</PropertyGroup>
+
 			<ItemGroup>
 				<PackageReference Include="Avalonia" />
 				<PackageReference Include="Avalonia.Controls.DataGrid" />
@@ -49,9 +64,10 @@
 		</When>
 		<When Condition="$(MSBuildProjectName.Contains('.DummyApp'))">
 			<PropertyGroup>
+				<IsPackable>false</IsPackable>
 				<OutputType>WinExe</OutputType>
-				<Title>EvilBaschdi.Avalonia.DummyApp</Title>
-				<Description>TestUi for EvilBaschdi.Core.Avalonia</Description>
+				<Title>$(MSBuildProjectName)</Title>
+				<Description>TestUi for $(MSBuildProjectName)</Description>
 			</PropertyGroup>
 
 			<ItemGroup>
@@ -60,10 +76,32 @@
 
 			<ItemGroup>
 				<!--This helps with theme dll-s trimming.
-	If you will publish your application in self-contained mode with p:PublishTrimmed=true and it will use Fluent theme Default theme will be trimmed from the output and vice versa.
+	If you will publish your application in self-contained mode with p:PublishTrimmed=true, and it will use Fluent theme Default theme will be trimmed from the output and vice versa.
 	https://github.com/AvaloniaUI/Avalonia/issues/5593 -->
 				<TrimmableAssembly Include="Avalonia.Themes.Fluent" />
 				<TrimmableAssembly Include="Avalonia.Themes.Default" />
+			</ItemGroup>
+
+			<ItemGroup>
+				<PackageReference Include="Avalonia.AvaloniaEdit" />
+				<PackageReference Include="AvaloniaEdit.TextMate" />
+				<PackageReference Include="EvilBaschdi.Core.DependencyInjection" />
+				<PackageReference Include="TextMateSharp" />
+				<PackageReference Include="TextMateSharp.Grammars" />
+			</ItemGroup>
+		</When>
+		<When Condition="$(MSBuildProjectName.EndsWith('.Testing.Avalonia'))">
+			<PropertyGroup>
+				<IsPackable>true</IsPackable>
+			</PropertyGroup>
+
+			<ItemGroup>
+				<Using Include="Avalonia.Controls" />
+				<Using Include="Avalonia.Headless" />
+			</ItemGroup>
+
+			<ItemGroup>
+				<PackageReference Include="Avalonia.Headless" />
 			</ItemGroup>
 		</When>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
@@ -121,8 +159,8 @@
 	</Choose>
 
 	<!-- ReSharper disable once UnknownProperty -->
-	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-		<ProjectReference Include="..\$(MSBuildProjectName.Replace('.Tests',''))\$(MSBuildProjectName.Replace('.Tests','')).csproj" />
+	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Avalonia')) != 'true'">
+		<ProjectReference Include="..\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
 	</ItemGroup>
 
 </Project>

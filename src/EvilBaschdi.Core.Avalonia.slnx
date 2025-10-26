@@ -4,6 +4,7 @@
     <File Path="../.gitignore" />
     <File Path="../azure-pipelines.yml" />
     <File Path="../README.md" />
+    <File Path=".editorconfig" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Build.targets" />
     <File Path="Directory.Packages.props" />
@@ -14,4 +15,5 @@
   <Project Path="EvilBaschdi.Core.Avalonia.DummyAppMvvm/EvilBaschdi.Core.Avalonia.DummyAppMvvm.csproj" />
   <Project Path="EvilBaschdi.Core.Avalonia.Tests/EvilBaschdi.Core.Avalonia.Tests.csproj" />
   <Project Path="EvilBaschdi.Core.Avalonia/EvilBaschdi.Core.Avalonia.csproj" />
+  <Project Path="EvilBaschdi.Testing.Avalonia/EvilBaschdi.Testing.Avalonia.csproj" />
 </Solution>
