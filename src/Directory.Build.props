@@ -22,26 +22,18 @@
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Avalonia</RepositoryUrl>
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<TargetFramework>net10.0</TargetFramework>
 		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.H))</VersionPrefix>
 	</PropertyGroup>
 
-	<Choose>
-		<When Condition="$(MSBuildProjectName.EndsWith('.Testing.Avalonia'))">
-			<PropertyGroup>
-				<TargetFrameworks>net9.0;net10.0</TargetFrameworks>
-			</PropertyGroup>
-		</When>
-		<Otherwise>
-			<PropertyGroup>
-				<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
-			</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="EvilBaschdi.Core" />
+	</ItemGroup>
 
-			<ItemGroup>
-				<Using Include="EvilBaschdi.Core" />
-				<Using Include="JetBrains.Annotations" />
-			</ItemGroup>
-		</Otherwise>
-	</Choose>
+	<ItemGroup>
+		<Using Include="EvilBaschdi.Core" />
+		<Using Include="JetBrains.Annotations" />
+	</ItemGroup>
 
 	<Choose>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Core.Avalonia'))">
@@ -57,7 +49,6 @@
 				<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
 				<PackageReference Include="Avalonia.Themes.Fluent" />
 				<PackageReference Include="Avalonia.Themes.Simple" />
-				<PackageReference Include="EvilBaschdi.Core" />
 				<PackageReference Include="FluentAvaloniaUI" />
 				<PackageReference Include="ReactiveUI.Avalonia" />
 			</ItemGroup>
