@@ -32,10 +32,7 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
     {
         ArgumentNullException.ThrowIfNull(window);
 
-        window.TransparencyLevelHint = new List<WindowTransparencyLevel>
-                                       {
-                                           WindowTransparencyLevel.Mica
-                                       };
+        window.TransparencyLevelHint = (List<WindowTransparencyLevel>)[WindowTransparencyLevel.Mica];
 
         if (!VersionHelper.IsWindows)
         {
@@ -69,14 +66,8 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
         window.ExtendClientAreaToDecorationsHint = true;
         window.ExtendClientAreaChromeHints = ExtendClientAreaChromeHints.Default;
 
-        if (headerPanel != null)
-        {
-            headerPanel.IsVisible = true;
-        }
+        headerPanel?.IsVisible = true;
 
-        if (mainPanel != null)
-        {
-            mainPanel.Margin = new(0, 30, 0, 0);
-        }
+        mainPanel?.Margin = new(0, 30, 0, 0);
     }
 }

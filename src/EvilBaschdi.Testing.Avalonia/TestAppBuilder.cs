@@ -14,7 +14,7 @@ public static class TestAppBuilder<TApp>
     private static bool _isInitialized;
 
     // ReSharper disable once StaticMemberInGenericType
-    private static readonly Lock Lock = new Lock();
+    private static readonly Lock Lock = new();
 
     /// <summary>
     ///     Ensures the Avalonia application is initialized for testing with thread-safe double-checked locking.
@@ -44,7 +44,7 @@ public static class TestAppBuilder<TApp>
 
     private static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<TApp>()
-                     .UseHeadless(new AvaloniaHeadlessPlatformOptions
+                     .UseHeadless(new()
                                   {
                                       UseHeadlessDrawing = true
                                   });
