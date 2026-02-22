@@ -50,8 +50,10 @@
 				<PackageReference Include="Avalonia.Themes.Fluent" />
 				<PackageReference Include="Avalonia.Themes.Simple" />
 				<PackageReference Include="FluentAvaloniaUI" />
+				<PackageReference Include="EvilBaschdi.Core.DependencyInjection" />
 				<PackageReference Include="ReactiveUI" />
 				<PackageReference Include="ReactiveUI.Avalonia" />
+				<PackageReference Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" />
 			</ItemGroup>
 		</When>
 		<When Condition="$(MSBuildProjectName.Contains('.DummyApp'))">
@@ -77,7 +79,6 @@
 			<ItemGroup>
 				<PackageReference Include="Avalonia.AvaloniaEdit" />
 				<PackageReference Include="AvaloniaEdit.TextMate" />
-				<PackageReference Include="EvilBaschdi.Core.DependencyInjection" />
 				<PackageReference Include="TextMateSharp" />
 				<PackageReference Include="TextMateSharp.Grammars" />
 			</ItemGroup>

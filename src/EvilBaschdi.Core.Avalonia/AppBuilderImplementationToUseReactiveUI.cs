@@ -5,7 +5,8 @@ using ReactiveUI.Builder;
 namespace EvilBaschdi.Core.Avalonia;
 
 /// <inheritdoc />
-public class AppBuilderImplementation<TApp> : IAppBuilderImplementation
+// ReSharper disable once InconsistentNaming
+public class AppBuilderImplementationToUseReactiveUI<TApp> : IAppBuilderImplementationToUseReactiveUI
     where TApp : Application, new()
 {
     /// <inheritdoc />

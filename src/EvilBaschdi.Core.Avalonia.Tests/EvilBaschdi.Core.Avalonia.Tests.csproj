@@ -1,3 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <ItemGroup>
+    <ProjectReference Include="..\EvilBaschdi.Testing.Avalonia\EvilBaschdi.Testing.Avalonia.csproj" />
+  </ItemGroup>
 </Project>

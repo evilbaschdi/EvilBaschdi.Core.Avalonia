@@ -1,6 +1,4 @@
-using System.Reflection;
 using Avalonia;
-using ReactiveUI.Avalonia;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
 
@@ -17,9 +15,5 @@ internal class Program
 
     // Avalonia configuration, don't remove; also used by visual designer.
     // ReSharper disable once MemberCanBePrivate.Global
-    public static AppBuilder BuildAvaloniaApp() => new AppBuilderImplementation<App>().ValueFor(rxAppBuilder =>
-                                                                                                {
-                                                                                                    // Enable ReactiveUI
-                                                                                                    rxAppBuilder.WithViewsFromAssembly(Assembly.GetExecutingAssembly());
-                                                                                                }).RegisterReactiveUIViewsFromEntryAssembly();
+    public static AppBuilder BuildAvaloniaApp() => new AppBuilderImplementationToUseReactiveUI<App>().ValueFor(_ => { });
 }

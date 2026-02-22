@@ -23,7 +23,7 @@ public partial class ExtendedInformation : Window
 
         ApplyLayout();
 
-        var extendedInformationViewModel = App.ServiceProvider.GetRequiredService<ExtendedInformationViewModel>();
+        var extendedInformationViewModel = Program.ServiceProvider.GetRequiredService<ExtendedInformationViewModel>();
         DataContext = extendedInformationViewModel;
 
         Output.Text = extendedInformationViewModel.SelectedCountry?.ToString() ?? "CurrentItem is NULL";
@@ -31,10 +31,10 @@ public partial class ExtendedInformation : Window
 
     private void ApplyLayout()
     {
-        var handleOsDependentTitleBar = App.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
+        var handleOsDependentTitleBar = Program.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
         handleOsDependentTitleBar?.RunFor(this);
 
-        var applicationLayout = App.ServiceProvider?.GetRequiredService<IApplicationLayout>();
+        var applicationLayout = Program.ServiceProvider?.GetRequiredService<IApplicationLayout>();
         applicationLayout?.RunFor((this, true, false));
     }
 }

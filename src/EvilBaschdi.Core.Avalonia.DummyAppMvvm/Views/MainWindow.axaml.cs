@@ -19,10 +19,10 @@ public partial class MainWindow : Window
 
     private void ApplyLayout()
     {
-        var handleOsDependentTitleBar = App.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
+        var handleOsDependentTitleBar = Program.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
         handleOsDependentTitleBar?.RunFor(this);
 
-        var applicationLayout = App.ServiceProvider?.GetRequiredService<IApplicationLayout>();
+        var applicationLayout = Program.ServiceProvider?.GetRequiredService<IApplicationLayout>();
         applicationLayout?.RunFor((this, true, true));
     }
 }
