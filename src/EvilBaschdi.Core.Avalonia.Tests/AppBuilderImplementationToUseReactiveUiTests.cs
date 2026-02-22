@@ -1,5 +1,4 @@
 ﻿using Avalonia;
-using FluentAssertions;
 using ReactiveUI.Builder;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;

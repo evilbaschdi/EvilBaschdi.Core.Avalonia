@@ -7,7 +7,7 @@ namespace EvilBaschdi.Core.Avalonia;
 /// <summary>
 ///     Provides an AppBuilder configuration entry that integrates ReactiveUI and exposes
 ///     an API to configure a Microsoft dependency injection container and resolver.
-///     Use <see cref="ValueFor(Action{IServiceCollection}, Action{IServiceProvider}, Action{ReactiveUIBuilder})" />
+///     Use <see cref="ValueFor(Action{IServiceCollection}, Action{ReactiveUIBuilder})" />
 ///     to supply service registrations, apply the resolved <see cref="IServiceProvider" /> as the
 ///     application's resolver, and optionally configure ReactiveUI-specific settings.
 /// </summary>
@@ -23,15 +23,11 @@ public interface IAppBuilderImplementationToUseReactiveUIWithMicrosoftDependency
     /// <param name="containerConfig">
     ///     Action invoked with an <see cref="IServiceCollection" /> to register application services.
     /// </param>
-    /// <param name="withResolver">
-    ///     Action invoked with the built <see cref="IServiceProvider" /> so the caller can set the
-    ///     application's resolver (for example, assign it to a static resolver or adapter).
-    /// </param>
     /// <param name="withReactiveUIBuilder">
     ///     Optional action to configure the <see cref="ReactiveUIBuilder" /> for ReactiveUI-specific setup.
     /// </param>
     /// <returns>
     ///     The configured <see cref="AppBuilder" /> instance.
     /// </returns>
-    AppBuilder ValueFor(Action<IServiceCollection> containerConfig, Action<IServiceProvider> withResolver, Action<ReactiveUIBuilder> withReactiveUIBuilder = null);
+    AppBuilder ValueFor(Action<IServiceCollection> containerConfig, Action<ReactiveUIBuilder> withReactiveUIBuilder = null);
 }

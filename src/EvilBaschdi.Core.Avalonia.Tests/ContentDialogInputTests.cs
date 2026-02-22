@@ -1,8 +1,6 @@
-using Avalonia;
 using Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.Controls;
 using EvilBaschdi.Testing.Avalonia;
-using FluentAssertions;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;
 

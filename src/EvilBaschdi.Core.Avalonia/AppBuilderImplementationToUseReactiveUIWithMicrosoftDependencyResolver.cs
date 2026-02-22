@@ -12,10 +12,9 @@ public class AppBuilderImplementationToUseReactiveUIWithMicrosoftDependencyResol
 {
     /// <inheritdoc />
     // ReSharper disable once InconsistentNaming
-    public AppBuilder ValueFor(Action<IServiceCollection> containerConfig, Action<IServiceProvider> withResolver, Action<ReactiveUIBuilder> withReactiveUIBuilder = null)
+    public AppBuilder ValueFor(Action<IServiceCollection> containerConfig, Action<ReactiveUIBuilder> withReactiveUIBuilder = null)
     {
         ArgumentNullException.ThrowIfNull(containerConfig);
-        ArgumentNullException.ThrowIfNull(withResolver);
 
         var win32PlatformOptions = new Win32PlatformOptions();
 
@@ -23,6 +22,6 @@ public class AppBuilderImplementationToUseReactiveUIWithMicrosoftDependencyResol
                          .UsePlatformDetect()
                          .LogToTrace()
                          .With(win32PlatformOptions)
-                         .UseReactiveUIWithMicrosoftDependencyResolver(containerConfig, withResolver, withReactiveUIBuilder);
+                         .UseReactiveUIWithMicrosoftDependencyResolver(containerConfig, ApplicationServices.Initialize, withReactiveUIBuilder);
     }
 }

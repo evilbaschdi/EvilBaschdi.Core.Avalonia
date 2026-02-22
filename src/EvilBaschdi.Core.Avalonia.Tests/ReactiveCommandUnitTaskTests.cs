@@ -1,6 +1,5 @@
 using System.Reactive;
 using EvilBaschdi.Core.Avalonia.Mvvm.Command;
-using FluentAssertions;
 using ReactiveUI;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;

@@ -1,8 +1,4 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using FluentAssertions;
-
-namespace EvilBaschdi.Core.Avalonia.Tests;
+﻿namespace EvilBaschdi.Core.Avalonia.Tests;
 
 public class ApplicationLayoutTests
 {

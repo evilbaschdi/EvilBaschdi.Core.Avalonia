@@ -4,7 +4,6 @@ using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm;
 
@@ -26,7 +25,7 @@ public class App : Application
             BindingPlugins.DataValidators.RemoveAt(0);
             var mainWindow = new MainWindow
                              {
-                                 DataContext = Program.ServiceProvider.GetRequiredService<MainWindowViewModel>()
+                                 DataContext = ApplicationServices.GetRequiredService<MainWindowViewModel>()
                              };
             desktop.MainWindow = mainWindow;
         }

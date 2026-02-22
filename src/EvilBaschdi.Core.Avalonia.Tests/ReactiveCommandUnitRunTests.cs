@@ -1,6 +1,5 @@
 using System.Reactive;
 using EvilBaschdi.Core.Avalonia.Mvvm.Command;
-using FluentAssertions;
 using ReactiveUI;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;
@@ -66,7 +65,7 @@ public class ReactiveCommandUnitRunTests
     public void Run_DefaultImplementationThrows()
     {
         var sut = new TestReactiveCommandUnitRunDefault();
-        
+
         var act = () => sut.Run();
 
         act.Should().Throw<NotImplementedException>();
