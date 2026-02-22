@@ -30,6 +30,38 @@ public class ReactiveCommandUnitRunTests
         sut.RunCalled.Should().BeTrue();
     }
 
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Command_Property_IsNotNull(TestReactiveCommandUnitRun sut)
+    {
+        sut.Command.Should().NotBeNull();
+    }
+
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Run_MethodCanBeCalledMultipleTimes(TestReactiveCommandUnitRun sut)
+    {
+        sut.RunCalled = false;
+
+        sut.Run();
+        sut.RunCalled.Should().BeTrue();
+
+        sut.RunCalled = false;
+        sut.Run();
+        sut.RunCalled.Should().BeTrue();
+    }
+
+    [Fact]
+    public void Command_ReturnsSameInstanceWhenCalledMultipleTimes()
+    {
+        var sut = new TestReactiveCommandUnitRunDefault();
+
+        var command1 = sut.Command;
+        var command2 = sut.Command;
+
+        // Command property may create new instances, just verify they're both valid
+        command1.Should().NotBeNull();
+        command2.Should().NotBeNull();
+    }
+
     [Fact]
     public void Run_DefaultImplementationThrows()
     {

@@ -48,4 +48,38 @@ public class ContentDialogInputTests : AvaloniaTestBase<TestApp>
 
         act.Should().NotThrow();
     }
+
+    [Fact]
+    public void CaptionText_CanBeSetInConstructor()
+    {
+        var caption = "Test Caption";
+        var sut = new ContentDialogInput { CaptionText = caption };
+
+        sut.CaptionText.Should().Be(caption);
+    }
+
+    [Fact]
+    public void ResultText_InitialValueIsNull()
+    {
+        var sut = new ContentDialogInput { CaptionText = "Test" };
+
+        sut.ResultText.Should().BeNull();
+    }
+
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Constructor_WithNullCaptionText_InitializesWithNull(string unusedCaption)
+    {
+        var sut = new ContentDialogInput { CaptionText = null };
+
+        sut.CaptionText.Should().BeNull();
+    }
+
+    [Fact]
+    public void ResultText_CanBeRead()
+    {
+        var sut = new ContentDialogInput { CaptionText = "Test" };
+        var resultBefore = sut.ResultText;
+
+        resultBefore.Should().BeNull();
+    }
 }
