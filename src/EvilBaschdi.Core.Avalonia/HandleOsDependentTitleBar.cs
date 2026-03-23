@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
+using Avalonia.Media.Immutable;
 using Avalonia.Styling;
 using EvilBaschdi.Core.Extensions;
 
@@ -34,6 +35,15 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
         window.TransparencyLevelHint = [WindowTransparencyLevel.Mica];
         window.Background = null;
 
+        //topLevel.TransparencyLevelHint = [transparencyLevel];
+
+        if (window.ActualTransparencyLevel != WindowTransparencyLevel.None &&
+            window.ActualTransparencyLevel == WindowTransparencyLevel.Mica)
+        {
+            var transparentBrush = new ImmutableSolidColorBrush(Colors.White, 0);
+            window.Background = transparentBrush;
+        }
+
         if (!VersionHelper.IsWindows)
         {
             return;
@@ -64,7 +74,7 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
             }
         }
 
-        window.ExtendClientAreaToDecorationsHint = true;
+        window.ExtendClientAreaToDecorationsHint = false;
 
         headerPanel?.IsVisible = true;
 
