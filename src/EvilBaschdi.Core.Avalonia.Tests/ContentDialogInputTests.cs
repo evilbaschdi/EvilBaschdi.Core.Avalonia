@@ -64,8 +64,8 @@ public class ContentDialogInputTests : AvaloniaTestBase<TestApp>
         sut.ResultText.Should().BeNull();
     }
 
-    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Constructor_WithNullCaptionText_InitializesWithNull(string unusedCaption)
+    [Fact]
+    public void Constructor_WithNullCaptionText_InitializesWithNull()
     {
         var sut = new ContentDialogInput { CaptionText = null };
 

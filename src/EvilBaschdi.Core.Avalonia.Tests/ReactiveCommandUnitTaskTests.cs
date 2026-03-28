@@ -32,15 +32,15 @@ public class ReactiveCommandUnitTaskTests
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public void RunAsync_ReceivesCancellationToken(TestReactiveCommandUnitTask sut)
     {
-        sut.CancellationTokenReceived = CancellationToken.None;
+        sut.CancellationTokenReceived = TestContext.Current.CancellationToken;
 
-        sut.CancellationTokenReceived.Should().Be(CancellationToken.None);
+        sut.CancellationTokenReceived.Should().Be(TestContext.Current.CancellationToken);
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public async Task RunAsync_CanBeAwaited(TestReactiveCommandUnitTask sut)
     {
-        var task = sut.RunAsync();
+        var task = sut.RunAsync(TestContext.Current.CancellationToken);
 
         var act = async () => await task;
 
