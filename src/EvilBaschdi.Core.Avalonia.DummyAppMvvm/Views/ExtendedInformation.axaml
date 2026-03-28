@@ -2,11 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
         xmlns:viewModels="clr-namespace:EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels"
+        x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.ExtendedInformation"
         mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400" Width="400" Height="400"
         x:DataType="viewModels:ExtendedInformationViewModel"
-        x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.ExtendedInformation"
-        Icon="/Assets/b.ico" Title="EvilBaschdi.Avalonia.DummyAppMvvm.ExtendedInformation">
+        Icon="/Assets/b.ico"
+        Title="EvilBaschdi.Avalonia.DummyAppMvvm.ExtendedInformation">
 
     <Panel Name="RootPanel">
 
@@ -19,7 +21,8 @@
 
         <Panel Name="MainPanel" Margin="0,0,0,0">
             <Panel Name="ContentPanel" Margin="0,0,0,0">
-                <TextBox Name="Output" Text="{Binding Path=SelectedCountryAsString}" />
+                <avaloniaEdit:TextEditor Name="Output" Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" ShowLineNumbers="True"
+                                         Background="Transparent" />
             </Panel>
         </Panel>
     </Panel>

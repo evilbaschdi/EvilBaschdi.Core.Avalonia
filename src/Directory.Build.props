@@ -75,14 +75,11 @@
 	https://github.com/AvaloniaUI/Avalonia/issues/5593 -->
 				<TrimmableAssembly Include="Avalonia.Themes.Fluent" />
 				<TrimmableAssembly Include="Avalonia.Themes.Default" />
-			</ItemGroup>
-			<!--todo: reactivate once there are packages compatible with Avalonia 12-->
-			<!--<ItemGroup>
 				<PackageReference Include="Avalonia.AvaloniaEdit" />
 				<PackageReference Include="AvaloniaEdit.TextMate" />
 				<PackageReference Include="TextMateSharp" />
 				<PackageReference Include="TextMateSharp.Grammars" />
-			</ItemGroup>-->
+			</ItemGroup>
 		</When>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Testing.Avalonia'))">
 			<PropertyGroup>

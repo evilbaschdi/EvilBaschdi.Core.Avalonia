@@ -1,9 +1,8 @@
 using Avalonia.Controls;
+using AvaloniaEdit.TextMate;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
-//using AvaloniaEdit.TextMate;
-
-//using TextMateSharp.Grammars;
+using TextMateSharp.Grammars;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 
@@ -17,15 +16,17 @@ public partial class ExtendedInformation : Window
     {
         InitializeComponent();
 
-        //var registryOptions = new RegistryOptions(ThemeName.DarkPlus);
+        var registryOptions = new RegistryOptions(ThemeName.DarkPlus);
 
-        //var textMateInstallation = Output.InstallTextMate(registryOptions);
-        //textMateInstallation.SetGrammar(registryOptions.GetScopeByLanguageId(registryOptions.GetLanguageByExtension(".json").Id));
+        var textMateInstallation = Output.InstallTextMate(registryOptions);
+        textMateInstallation.SetGrammar(registryOptions.GetScopeByLanguageId(registryOptions.GetLanguageByExtension(".json").Id));
 
         ApplyLayout();
 
         var extendedInformationViewModel = ApplicationServices.ServiceProvider.GetRequiredService<ExtendedInformationViewModel>();
         DataContext = extendedInformationViewModel;
+
+        Output.Text = extendedInformationViewModel.SelectedCountry?.ToString() ?? "CurrentItem is NULL";
     }
 
     private void ApplyLayout()
