@@ -8,20 +8,20 @@
         mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400" Width="400" Height="400"
         x:DataType="viewModels:ExtendedInformationViewModel"
         Icon="/Assets/b.ico"
-        Title="EvilBaschdi.Avalonia.DummyAppMvvm.ExtendedInformation">
+        Title="ExtendedInformation">
 
     <Panel Name="RootPanel">
-
+        <!--
         <Panel Name="HeaderPanel" IsVisible="False">
             <Panel Margin="7">
                 <Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" />
             </Panel>
             <TextBlock Text="ExtendedInformation" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0" />
-        </Panel>
+        </Panel>-->
 
         <Panel Name="MainPanel" Margin="0,0,0,0">
             <Panel Name="ContentPanel" Margin="0,0,0,0">
-                <avaloniaEdit:TextEditor Name="Output" Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" ShowLineNumbers="True"
+                <avaloniaEdit:TextEditor Name="Output" Margin="10,-10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" ShowLineNumbers="True"
                                          Background="Transparent" />
             </Panel>
         </Panel>
