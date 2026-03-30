@@ -1,8 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
+using EvilBaschdi.Core.Avalonia.Themes;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm;
 
@@ -24,6 +26,8 @@ public class App : Application
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
+            ThemeEngine.Initialize(this);
+
             var mainWindow = new MainWindow
                              {
                                  DataContext = ApplicationServices.GetRequiredService<MainWindowViewModel>()

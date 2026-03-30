@@ -1,7 +1,10 @@
-﻿using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
+﻿using EvilBaschdi.Core.Avalonia.Behaviors;
+using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels.Internal;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
+using EvilBaschdi.Core.Avalonia.Layout;
+using EvilBaschdi.Core.Avalonia.Lifetime;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -16,6 +19,7 @@ public static class ConfigureDummyAppMvvmServiceCollection
         serviceCollection.TryAddSingleton<IHandleOsDependentTitleBar, HandleOsDependentTitleBar>();
         serviceCollection.TryAddSingleton<IApplicationLayout, ApplicationLayout>();
         serviceCollection.TryAddSingleton<IMainWindowByApplicationLifetime, MainWindowByApplicationLifetime>();
+        serviceCollection.TryAddSingleton<IWindowOpenedBehavior, WindowOpenedBehavior>();
 
         serviceCollection.AddSingleton<MainWindowViewModel>();
         serviceCollection.AddSingleton<ExtendedInformationViewModel>();
