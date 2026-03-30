@@ -1,4 +1,6 @@
-﻿namespace EvilBaschdi.Core.Avalonia.Tests;
+﻿using EvilBaschdi.Core.Avalonia.Layout;
+
+namespace EvilBaschdi.Core.Avalonia.Tests;
 
 public class HandleOsDependentTitleBarTests
 {
@@ -23,7 +25,7 @@ public class HandleOsDependentTitleBarTests
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public void Run_DoesNotThrow(HandleOsDependentTitleBar sut)
     {
-        var act = () => sut.Run();
+        var act = sut.Run;
 
         act.Should().NotThrow();
     }
@@ -41,8 +43,8 @@ public class HandleOsDependentTitleBarTests
     {
         var sut = new HandleOsDependentTitleBar();
 
-        var act1 = () => sut.Run();
-        var act2 = () => sut.Run();
+        var act1 = sut.Run;
+        var act2 = sut.Run;
 
         act1.Should().NotThrow();
         act2.Should().NotThrow();

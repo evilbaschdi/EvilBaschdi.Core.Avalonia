@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using ReactiveUI.Builder;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.AppBuilderImplementations;
 
 /// <inheritdoc />
 // ReSharper disable once InconsistentNaming

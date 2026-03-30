@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using EvilBaschdi.Core.Avalonia.Layout;
 
 //using EvilBaschdi.Core.Avalonia.Controls;
 //using FluentAvalonia.UI.Controls;

@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.Lifetime;
 
 /// <inheritdoc />
 public class MainWindowByApplicationLifetime : IMainWindowByApplicationLifetime

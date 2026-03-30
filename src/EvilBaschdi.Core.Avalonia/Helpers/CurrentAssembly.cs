@@ -2,7 +2,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.Helpers;
 
 /// <inheritdoc />
 // ReSharper disable once UnusedType.Global

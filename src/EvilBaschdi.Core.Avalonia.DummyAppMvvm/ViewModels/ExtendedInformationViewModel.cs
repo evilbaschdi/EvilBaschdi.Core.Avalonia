@@ -1,6 +1,4 @@
-using System;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 

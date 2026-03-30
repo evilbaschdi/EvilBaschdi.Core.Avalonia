@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.DependencyInjection;
 
 /// <summary>
 ///     Provides access to the application's service provider for dependency injection.

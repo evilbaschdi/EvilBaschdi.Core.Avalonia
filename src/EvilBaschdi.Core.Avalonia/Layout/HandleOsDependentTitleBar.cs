@@ -3,14 +3,24 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
 using Avalonia.Media.Immutable;
-using Avalonia.Styling;
+using EvilBaschdi.Core.Avalonia.Themes;
 using EvilBaschdi.Core.Extensions;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.Layout;
 
 /// <inheritdoc />
 public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
 {
+    private readonly IThemeColorProvider _themeColorProvider;
+
+    /// <summary>
+    ///     Constructor for HandleOsDependentTitleBar.
+    /// </summary>
+    public HandleOsDependentTitleBar()
+    {
+        _themeColorProvider = new PlatformThemeColorProvider();
+    }
+
     /// <inheritdoc />
     public void Run()
     {
@@ -33,9 +43,6 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
         ArgumentNullException.ThrowIfNull(window);
 
         window.TransparencyLevelHint = [WindowTransparencyLevel.Mica];
-        window.Background = null;
-
-        //topLevel.TransparencyLevelHint = [transparencyLevel];
 
         if (window.ActualTransparencyLevel != WindowTransparencyLevel.None &&
             window.ActualTransparencyLevel == WindowTransparencyLevel.Mica)
@@ -46,33 +53,14 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
 
         if (!VersionHelper.IsWindows)
         {
+            var (_, background) = _themeColorProvider.GetSystemColors();
+            window.Background = new SolidColorBrush(background);
+
             return;
         }
 
-        var acrylicBorder = window.FindNameScope()?.Find<ExperimentalAcrylicBorder>("AcrylicBorder");
         var headerPanel = window.FindNameScope()?.Find<Panel>("HeaderPanel");
         var mainPanel = window.FindNameScope()?.Find<Panel>("MainPanel");
-
-        if (acrylicBorder != null)
-        {
-            if (VersionHelper.IsWindows11)
-            {
-                acrylicBorder.IsVisible = false;
-            }
-            else
-            {
-                acrylicBorder.IsVisible = true;
-
-                if (window.ActualThemeVariant == ThemeVariant.Dark)
-                {
-                    acrylicBorder.Material?.TintColor = Colors.Black;
-                }
-                else if (window.ActualThemeVariant == ThemeVariant.Light)
-                {
-                    acrylicBorder.Material?.TintColor = Colors.White;
-                }
-            }
-        }
 
         window.ExtendClientAreaToDecorationsHint = false;
 

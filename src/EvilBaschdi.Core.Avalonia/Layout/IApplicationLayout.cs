@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.Layout;
 
 /// <summary>
 ///     Interface for classes that handle the layout of the current avalonia app.
