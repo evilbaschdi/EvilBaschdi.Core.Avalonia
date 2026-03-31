@@ -5,17 +5,17 @@
   </PropertyGroup>
   <!-- #region Project Libs -->
   <ItemGroup>
-    <PackageVersion Include="Avalonia" Version="12.0.0-rc1" />
+    <PackageVersion Include="Avalonia" Version="12.0.0-rc2" />
     <PackageVersion Include="Avalonia.AvaloniaEdit" Version="12.0.0-rc1" />
     <PackageVersion Include="AvaloniaEdit.TextMate" Version="12.0.0-rc1" />
-    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.0.0-rc1" />
-    <PackageVersion Include="Avalonia.Desktop" Version="12.0.0-rc1" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.0.0-rc2" />
+    <PackageVersion Include="Avalonia.Desktop" Version="12.0.0-rc2" />
     <PackageVersion Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.0-beta3" />
-    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.0.0-rc1" />
-    <PackageVersion Include="Avalonia.Headless" Version="12.0.0-rc1" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.0.0-rc1" />
-    <PackageVersion Include="Avalonia.Themes.Simple" Version="12.0.0-rc1" />
-    <PackageVersion Include="EvilBaschdi.Core" Version="2026.3.30.14-develop" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.0.0-rc2" />
+    <PackageVersion Include="Avalonia.Headless" Version="12.0.0-rc2" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.0.0-rc2" />
+    <PackageVersion Include="Avalonia.Themes.Simple" Version="12.0.0-rc2" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2026.3.30.19" />
     <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2026.3.12.17" />
     <!--todo: reactivate once there are packages compatible with Avalonia 12-->
     <!--<PackageVersion Include="FluentAvaloniaUI" Version="2.5.0" />-->
