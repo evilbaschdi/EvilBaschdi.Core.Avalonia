@@ -27,7 +27,7 @@
   <!-- #endregion Project Libs -->
   <!-- #region Unit Test Libs -->
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2026.3.25.21" />
+    <PackageVersion Include="EvilBaschdi.Testing" Version="2026.4.6.14" />
     <PackageVersion Include="coverlet.collector" Version="8.0.1" />
     <PackageVersion Include="FluentAssertions.Analyzers" Version="0.34.1" />
     <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.22" />
