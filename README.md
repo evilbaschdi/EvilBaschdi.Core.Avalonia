@@ -4,23 +4,25 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge&)](LICENSE)
 
-### Package Feeds
+## Package Feeds
+
+Default by NuGet.config is myget.org
 
 |                                | Feed Url                                                         |
 | :----------------------------- | :--------------------------------------------------------------- |
 | ![myget.org][myGetBadge]       | <https://www.myget.org/F/evilbaschdi/api/v3/index.json>          |
 | ![codeberg.org][codebergBadge] | <https://codeberg.org/api/packages/evilbaschdi/nuget/index.json> |
 
-### Build and Codefactor
+## Build and Codefactor
 
 | main                                                         | develop                                                            |
 | :----------------------------------------------------------- | :----------------------------------------------------------------- |
 | ![evilbaschdi Azure DevOps Build Status][buildStatusMain]    | ![evilbaschdi Azure DevOps Build Status][buildStatusDevelop]       |
 | [![CodeFactor][codeFactorMainBadge]][codeFactorMainOverview] | [![CodeFactor][codeFactorDevelopBadge]][codeFactorDevelopOverview] |
 
-### Packages
+## Packages
 
-#### EvilBaschdi.Core.Avalonia
+### EvilBaschdi.Core.Avalonia
 
 |                main                | develop                               |
 | :--------------------------------: | :------------------------------------ |
