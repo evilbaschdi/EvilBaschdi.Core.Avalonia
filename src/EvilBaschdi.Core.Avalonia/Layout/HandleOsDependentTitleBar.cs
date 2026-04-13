@@ -11,15 +11,7 @@ namespace EvilBaschdi.Core.Avalonia.Layout;
 /// <inheritdoc />
 public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
 {
-    private readonly IThemeColorProvider _themeColorProvider;
-
-    /// <summary>
-    ///     Constructor for HandleOsDependentTitleBar.
-    /// </summary>
-    public HandleOsDependentTitleBar()
-    {
-        _themeColorProvider = new PlatformThemeColorProvider();
-    }
+    private readonly PlatformThemeColorProvider _themeColorProvider = new();
 
     /// <inheritdoc />
     public void Run()

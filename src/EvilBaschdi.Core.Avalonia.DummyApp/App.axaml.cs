@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using EvilBaschdi.Core.Avalonia.Themes;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
 
@@ -22,6 +23,8 @@ public class App : Application
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
+            ThemeEngine.Initialize(this);
+
             desktop.MainWindow = new MainWindow();
         }
 

@@ -49,8 +49,7 @@
 				<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="AvaloniaUI.DiagnosticsSupport" />
 				<PackageReference Include="Avalonia.Themes.Fluent" />
 				<PackageReference Include="Avalonia.Themes.Simple" />
-				<!--todo: reactivate once there are packages compatible with Avalonia 12-->
-				<!--<PackageReference Include="FluentAvaloniaUI" />-->
+				<PackageReference Include="FluentAvaloniaUI" />
 				<PackageReference Include="EvilBaschdi.Core.DependencyInjection" />
 				<PackageReference Include="ReactiveUI" />
 				<PackageReference Include="ReactiveUI.Avalonia" />
@@ -109,7 +108,7 @@
 				<Using Include="AutoFixture.Xunit3" />
 				<Using Include="EvilBaschdi.Testing" />
 				<Using Include="FluentAssertions" />
-				<Using Include="FluentAssertions.Microsoft.Extensions.DependencyInjection" />
+				<Using Include="EvilBaschdi.Testing.FluentAssertions.Microsoft.Extensions.DependencyInjection" />
 				<Using Include="NSubstitute" />
 				<Using Include="NSubstitute.ReturnsExtensions" />
 				<Using Include="Xunit" />

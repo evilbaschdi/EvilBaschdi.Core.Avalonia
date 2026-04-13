@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels"
         xmlns:models="clr-namespace:EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models"
+        xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
         x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.MainWindow"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
         x:DataType="viewModels:MainWindowViewModel"
@@ -30,18 +31,18 @@
                         <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" x:DataType="models:Country" />
                         <DataGridTextColumn Header="GDP" Binding="{Binding Gdp}" Width="3*" x:DataType="models:Country" />
 
-                        <DataGridTemplateColumn Header="Info" Width="70" IsReadOnly="False">
+                        <DataGridTemplateColumn Header="Info" Width="100" IsReadOnly="False">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate x:DataType="models:Country">
                                     <!-- ReSharper disable Xaml.PossibleNullReferenceException -->
                                     <!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
                                     <!-- ReSharper disable once Xaml.StyleClassNotFound -->
                                     <Button VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                                            Width="60" Classes="accent" Name="ShowExtendedInformationButton"
+                                            Width="90" Classes="accent" Name="ShowExtendedInformationButton"
                                             Command="{Binding $parent[Window].((viewModels:MainWindowViewModel)DataContext).ShowExtendedInformationCommand}">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Show" Margin="0,0,5,0" />
-                                            <!--<controls:SymbolIcon Symbol="Alert" FontSize="18" />-->
+                                            <controls:FASymbolIcon Symbol="Alert" FontSize="18" />
                                         </StackPanel>
                                     </Button>
                                     <!-- ReSharper restore Xaml.BindingWithContextNotResolved -->

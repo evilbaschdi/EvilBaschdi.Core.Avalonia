@@ -17,8 +17,7 @@
     <PackageVersion Include="Avalonia.Themes.Simple" Version="12.0.0" />
     <PackageVersion Include="EvilBaschdi.Core" Version="2026.3.30.19" />
     <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2026.3.12.17" />
-    <!--todo: reactivate once there are packages compatible with Avalonia 12-->
-    <!--<PackageVersion Include="FluentAvaloniaUI" Version="2.5.1" />-->
+    <PackageVersion Include="FluentAvaloniaUI" Version="3.0.0-preview1" />
     <PackageVersion Include="ReactiveUI" Version="23.2.1" />
     <PackageVersion Include="ReactiveUI.Avalonia" Version="11.4.12" />
     <PackageVersion Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" Version="11.4.12" />

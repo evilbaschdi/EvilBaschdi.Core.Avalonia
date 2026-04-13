@@ -9,30 +9,32 @@
 
     <Panel Name="RootPanel">
 
-        <Panel Name="HeaderPanel" IsVisible="False">
+        <!--        <Panel Name="HeaderPanel" IsVisible="False">
             <Panel Margin="7">
                 <Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" />
             </Panel>
             <TextBlock Text="DummyApp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0" />
-        </Panel>
+        </Panel>-->
 
         <Panel Name="MainPanel" Margin="0,0,0,0">
             <Panel>
                 <Panel Name="ContentPanel" Margin="0,0,0,0">
-                    <Grid Margin="15" RowDefinitions="50,50,50,50,50,50,50,*" ColumnDefinitions="*,*,*">
+                    <Grid Margin="15,-10" RowDefinitions="30,10,50,30,10,50,30,*" ColumnDefinitions="*,*,*">
                         <!-- Framework version -->
-                        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Name="ArchitectureInformation" Height="30" VerticalContentAlignment="Center"
-                                 HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Name="ArchitectureInformation" HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <Separator Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" />
                         <!-- MessageBox -->
-                        <Button Grid.Column="0" Grid.Row="1" Click="ShowMessage" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show MessageBox" />
-                        <Button Grid.Column="1" Grid.Row="1" Click="ShowWarning" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Warning" />
-                        <Button Grid.Column="2" Grid.Row="1" Click="ShowError" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Error" />
-                        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Name="MessageBoxResult" Height="30" VerticalContentAlignment="Center"
+                        <Button Grid.Column="0" Grid.Row="2" Click="ShowMessage" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show MessageBox" />
+                        <Button Grid.Column="1" Grid.Row="2" Click="ShowWarning" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Warning" />
+                        <Button Grid.Column="2" Grid.Row="2" Click="ShowError" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Error" />
+                        <TextBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Name="MessageBoxResult" VerticalContentAlignment="Center"
                                  HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <Separator Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" />
                         <!-- DialogBox -->
-                        <Button Grid.Column="0" Grid.Row="3" Click="ShowDialogBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show DialogBox" />
-                        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Name="DialogBoxResult" Height="30" VerticalContentAlignment="Center"
+                        <Button Grid.Column="0" Grid.Row="5" Click="ShowDialogBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show DialogBox" />
+                        <TextBox Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Name="DialogBoxResult" VerticalContentAlignment="Center"
                                  HorizontalContentAlignment="Center" IsReadOnly="True" />
+
                     </Grid>
 
                 </Panel>
