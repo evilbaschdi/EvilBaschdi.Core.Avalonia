@@ -1,16 +1,16 @@
-using Avalonia.Controls;
 using AvaloniaEdit.TextMate;
 using EvilBaschdi.Core.Avalonia.Behaviors;
 using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 using EvilBaschdi.Core.Avalonia.Layout;
+using FluentAvalonia.UI.Windowing;
 using Microsoft.Extensions.DependencyInjection;
 using TextMateSharp.Grammars;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 
 /// <inheritdoc />
-public partial class ExtendedInformation : Window
+public partial class ExtendedInformation : FAAppWindow
 {
     /// <summary>
     ///     Constructor
@@ -41,8 +41,8 @@ public partial class ExtendedInformation : Window
 
     private void ApplyLayout()
     {
-        //var handleOsDependentTitleBar = ApplicationServices.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
-        //handleOsDependentTitleBar?.RunFor(this);
+        var handleOsDependentTitleBar = ApplicationServices.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
+        handleOsDependentTitleBar?.RunFor(this);
 
         var applicationLayout = ApplicationServices.ServiceProvider?.GetRequiredService<IApplicationLayout>();
         applicationLayout?.RunFor((this, true, false));

@@ -2,9 +2,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
-using Avalonia.Media.Immutable;
 using EvilBaschdi.Core.Avalonia.Themes;
 using EvilBaschdi.Core.Extensions;
+using FluentAvalonia.UI.Windowing;
 
 namespace EvilBaschdi.Core.Avalonia.Layout;
 
@@ -33,26 +33,24 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
     public void RunFor([NotNull] Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
-
-        window.TransparencyLevelHint = [WindowTransparencyLevel.Mica];
-
-        if (window.ActualTransparencyLevel != WindowTransparencyLevel.None &&
-            window.ActualTransparencyLevel == WindowTransparencyLevel.Mica)
+        if (window is not FAAppWindow appWindow)
         {
-            var transparentBrush = new ImmutableSolidColorBrush(Colors.White, 0);
-            window.Background = transparentBrush;
-        }
-
-        if (!VersionHelper.IsWindows)
-        {
-            var (_, background) = _themeColorProvider.GetSystemColors();
-            window.Background = new SolidColorBrush(background);
-
             return;
         }
 
-        // In Avalonia 12, extend client area to decorations for seamless Mica effect
-        window.ExtendClientAreaToDecorationsHint = true;
-        window.WindowDecorations = WindowDecorations.Full;
+        appWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+
+        if (VersionHelper.IsWindows)
+        {
+            return;
+        }
+
+        var (_, background) = _themeColorProvider.GetSystemColors();
+        appWindow.Background = new SolidColorBrush(background);
+
+        var titleBarPanel = appWindow.FindNameScope()?.Find<Panel>("TitleBarPanel");
+        var mainPanel = appWindow.FindNameScope()?.Find<Panel>("MainPanel");
+        titleBarPanel?.IsVisible = false;
+        mainPanel?.Margin = new Thickness(0, 0, 0, 0);
     }
 }

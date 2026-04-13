@@ -29,7 +29,8 @@ public partial class MainWindow : FAAppWindow
 
     private void ApplyLayout()
     {
-        TitleBar.ExtendsContentIntoTitleBar = true;
+        var handleOsDependentTitleBar = ApplicationServices.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
+        handleOsDependentTitleBar?.RunFor(this);
 
         var applicationLayout = ApplicationServices.ServiceProvider?.GetRequiredService<IApplicationLayout>();
         applicationLayout?.RunFor((this, true, true));
