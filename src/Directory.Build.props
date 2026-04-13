@@ -54,6 +54,7 @@
 				<PackageReference Include="ReactiveUI" />
 				<PackageReference Include="ReactiveUI.Avalonia" />
 				<PackageReference Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" />
+				<PackageReference Include="Tmds.DBus.Protocol" />
 			</ItemGroup>
 		</When>
 		<When Condition="$(MSBuildProjectName.Contains('.DummyApp'))">
@@ -62,6 +63,7 @@
 				<OutputType>WinExe</OutputType>
 				<Title>$(MSBuildProjectName)</Title>
 				<Description>TestUi for $(MSBuildProjectName)</Description>
+				<AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
 			</PropertyGroup>
 
 			<ItemGroup>
