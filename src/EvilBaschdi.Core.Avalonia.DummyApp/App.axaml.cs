@@ -16,11 +16,6 @@ public class App : Application
     /// </summary>
     public override void OnFrameworkInitializationCompleted()
     {
-#if DEBUG
-
-        this.AttachDeveloperTools();
-#endif
-
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             ThemeEngine.Initialize(this);

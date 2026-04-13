@@ -20,6 +20,9 @@ public class AppBuilderImplementationToUseReactiveUIWithMicrosoftDependencyResol
         return AppBuilder.Configure<TApp>()
                          .UsePlatformDetect()
                          .LogToTrace()
+#if DEBUG
+                         .WithDeveloperTools()
+#endif
                          .UseReactiveUIWithMicrosoftDependencyResolver(containerConfig, ApplicationServices.Initialize, withReactiveUIBuilder);
     }
 

@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using Avalonia.Interactivity;
+using EvilBaschdi.Core.Avalonia.Behaviors;
 using EvilBaschdi.Core.Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.Layout;
 using FluentAvalonia.UI.Controls;
@@ -17,7 +18,14 @@ public partial class MainWindow : FAAppWindow
     {
         InitializeComponent();
         Load();
+        Opened += OnOpened;
         ArchitectureInformation.Text = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower();
+    }
+
+    private void OnOpened(object sender, EventArgs e)
+    {
+        var windowOpenedBehavior = new WindowOpenedBehavior();
+        windowOpenedBehavior.OnWindowOpened(this);
     }
 
     private void Load()
