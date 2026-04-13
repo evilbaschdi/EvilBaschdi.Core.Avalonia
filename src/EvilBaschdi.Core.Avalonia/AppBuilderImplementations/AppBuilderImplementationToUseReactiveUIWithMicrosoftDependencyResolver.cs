@@ -1,9 +1,10 @@
 ﻿using Avalonia;
+using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI.Avalonia.Splat;
 using ReactiveUI.Builder;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.AppBuilderImplementations;
 
 /// <inheritdoc />
 // ReSharper disable once InconsistentNaming
@@ -16,12 +17,9 @@ public class AppBuilderImplementationToUseReactiveUIWithMicrosoftDependencyResol
         ArgumentNullException.ThrowIfNull(containerConfig);
         ArgumentNullException.ThrowIfNull(withReactiveUIBuilder);
 
-        var win32PlatformOptions = new Win32PlatformOptions();
-
         return AppBuilder.Configure<TApp>()
                          .UsePlatformDetect()
                          .LogToTrace()
-                         .With(win32PlatformOptions)
                          .UseReactiveUIWithMicrosoftDependencyResolver(containerConfig, ApplicationServices.Initialize, withReactiveUIBuilder);
     }
 

@@ -1,4 +1,6 @@
+using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
+using EvilBaschdi.Core.Avalonia.Lifetime;
 using EvilBaschdi.Core.Avalonia.Mvvm.Command;
 using Microsoft.Extensions.DependencyInjection;
 

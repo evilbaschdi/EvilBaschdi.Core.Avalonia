@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.Layout;
 
 /// <inheritdoc />
 public class ApplicationLayout : IApplicationLayout

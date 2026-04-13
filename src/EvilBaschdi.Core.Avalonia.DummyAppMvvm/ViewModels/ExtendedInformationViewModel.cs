@@ -22,5 +22,11 @@ public class ExtendedInformationViewModel(
         set => _currentItem.Value = value;
     }
 
+    /// <summary>
+    /// </summary>
+
+    [CanBeNull]
+    public string SelectedCountryAsString => SelectedCountry?.ToString() ?? "CurrentItem is NULL";
+
     #endregion Properties
 }

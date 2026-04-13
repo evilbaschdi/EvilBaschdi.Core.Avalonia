@@ -1,38 +1,44 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        x:Class="EvilBaschdi.Core.Avalonia.DummyApp.MainWindow"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
-        Icon="/Assets/b.ico"
-        Title="DummyApp">
+<local:FAAppWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:local="using:FluentAvalonia.UI.Windowing"
+                   x:Class="EvilBaschdi.Core.Avalonia.DummyApp.MainWindow"
+                   mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
+                   Icon="/Assets/b.ico"
+                   Title="DummyApp">
 
     <Panel Name="RootPanel">
 
-        <Panel Name="HeaderPanel" IsVisible="False">
-            <Panel Margin="7">
-                <Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            </Panel>
-            <TextBlock Text="DummyApp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0" />
+        <Panel Name="TitleBarPanel" Height="30" VerticalAlignment="Top" Margin="0,0,0,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8" Margin="8,0">
+                <!-- App Icon -->
+                <Image Source="{Binding Icon, RelativeSource={RelativeSource AncestorType=local:FAAppWindow}}"
+                       Width="16" Height="16" VerticalAlignment="Center" />
+                <!-- App Title -->
+                <TextBlock Text="DummyApp" VerticalAlignment="Center" Foreground="{DynamicResource SystemControlForeground}" />
+            </StackPanel>
         </Panel>
 
-        <Panel Name="MainPanel" Margin="0,0,0,0">
+        <Panel Name="MainPanel" Margin="0,30,0,0">
             <Panel>
                 <Panel Name="ContentPanel" Margin="0,0,0,0">
-                    <Grid Margin="15" RowDefinitions="50,50,50,50,50,50,50,*" ColumnDefinitions="*,*,*">
+                    <Grid Margin="15" RowDefinitions="30,10,50,30,10,50,30,*" ColumnDefinitions="*,*,*">
                         <!-- Framework version -->
-                        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Name="ArchitectureInformation" Height="30" VerticalContentAlignment="Center"
-                                 HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Name="ArchitectureInformation" HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <Separator Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" />
                         <!-- MessageBox -->
-                        <Button Grid.Column="0" Grid.Row="1" Click="ShowMessage" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show MessageBox" />
-                        <Button Grid.Column="1" Grid.Row="1" Click="ShowWarning" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Warning" />
-                        <Button Grid.Column="2" Grid.Row="1" Click="ShowError" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Error" />
-                        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Name="MessageBoxResult" Height="30" VerticalContentAlignment="Center"
+                        <Button Grid.Column="0" Grid.Row="2" Click="ShowMessage" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show MessageBox" />
+                        <Button Grid.Column="1" Grid.Row="2" Click="ShowWarning" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Warning" />
+                        <Button Grid.Column="2" Grid.Row="2" Click="ShowError" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show Error" />
+                        <TextBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Name="MessageBoxResult" VerticalContentAlignment="Center"
                                  HorizontalContentAlignment="Center" IsReadOnly="True" />
+                        <Separator Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" />
                         <!-- DialogBox -->
-                        <Button Grid.Column="0" Grid.Row="3" Click="ShowDialogBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show DialogBox" />
-                        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Name="DialogBoxResult" Height="30" VerticalContentAlignment="Center"
+                        <Button Grid.Column="0" Grid.Row="5" Click="ShowDialogBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Show DialogBox" />
+                        <TextBox Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Name="DialogBoxResult" VerticalContentAlignment="Center"
                                  HorizontalContentAlignment="Center" IsReadOnly="True" />
+
                     </Grid>
 
                 </Panel>
@@ -40,4 +46,4 @@
         </Panel>
 
     </Panel>
-</Window>
+</local:FAAppWindow>

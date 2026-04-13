@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.Layout;
 
 /// <inheritdoc cref="IRunFor{TIn}" />
 public interface IHandleOsDependentTitleBar :

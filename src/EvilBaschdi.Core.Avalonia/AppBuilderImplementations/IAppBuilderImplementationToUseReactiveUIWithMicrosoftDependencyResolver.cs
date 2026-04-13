@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI.Builder;
 
-namespace EvilBaschdi.Core.Avalonia;
+namespace EvilBaschdi.Core.Avalonia.AppBuilderImplementations;
 
 /// <summary>
 ///     Provides an AppBuilder configuration entry that integrates ReactiveUI and exposes

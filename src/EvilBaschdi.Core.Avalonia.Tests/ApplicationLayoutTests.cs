@@ -1,4 +1,6 @@
-﻿namespace EvilBaschdi.Core.Avalonia.Tests;
+﻿using EvilBaschdi.Core.Avalonia.Layout;
+
+namespace EvilBaschdi.Core.Avalonia.Tests;
 
 public class ApplicationLayoutTests
 {

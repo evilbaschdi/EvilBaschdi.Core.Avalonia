@@ -1,9 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
+using EvilBaschdi.Core.Avalonia.Themes;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm;
 
@@ -18,11 +19,15 @@ public class App : Application
     /// </summary>
     public override void OnFrameworkInitializationCompleted()
     {
+#if DEBUG
+
+        this.AttachDeveloperTools();
+#endif
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Line below is needed to remove Avalonia data validation.
-            // Without this line you will get duplicate validations from both Avalonia and CT
-            BindingPlugins.DataValidators.RemoveAt(0);
+            ThemeEngine.Initialize(this);
+
             var mainWindow = new MainWindow
                              {
                                  DataContext = ApplicationServices.GetRequiredService<MainWindowViewModel>()

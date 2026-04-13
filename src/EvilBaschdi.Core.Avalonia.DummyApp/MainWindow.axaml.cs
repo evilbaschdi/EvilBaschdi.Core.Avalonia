@@ -1,13 +1,14 @@
 using System.Runtime.InteropServices;
-using Avalonia.Controls;
 using Avalonia.Interactivity;
 using EvilBaschdi.Core.Avalonia.Controls;
+using EvilBaschdi.Core.Avalonia.Layout;
 using FluentAvalonia.UI.Controls;
+using FluentAvalonia.UI.Windowing;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
 
 /// <inheritdoc />
-public partial class MainWindow : Window
+public partial class MainWindow : FAAppWindow
 {
     /// <summary>
     ///     Constructor
@@ -21,8 +22,7 @@ public partial class MainWindow : Window
 
     private void Load()
     {
-        var handleOsDependentTitleBar = new HandleOsDependentTitleBar();
-        handleOsDependentTitleBar.RunFor(this);
+        TitleBar.ExtendsContentIntoTitleBar = true;
 
         var applicationLayout = new ApplicationLayout();
         applicationLayout.RunFor((this, true, true));
@@ -33,7 +33,7 @@ public partial class MainWindow : Window
     private async void ShowMessage(object sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
-        var contentDialog = new ContentDialog
+        var contentDialog = new FAContentDialog
                             {
                                 Title = "Title with maaaaaaaaaaaaaany signs",
                                 Content = DateTime.Now.ToString("R"),
@@ -49,14 +49,14 @@ public partial class MainWindow : Window
     private async void ShowWarning(object sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
-        var taskDialog = new TaskDialog
+        var taskDialog = new FATaskDialog
                          {
                              Title = "This is a warning message",
                              Content = DateTime.Now.ToString("R"),
-                             IconSource = new SymbolIconSource { Symbol = Symbol.AlertFilled },
+                             IconSource = new FASymbolIconSource { Symbol = FASymbol.AlertFilled },
                              Buttons =
                              {
-                                 TaskDialogButton.OKButton,
+                                 FATaskDialogButton.OKButton,
                              },
                              XamlRoot = this
                          };
@@ -69,14 +69,14 @@ public partial class MainWindow : Window
     private async void ShowError(object sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
-        var taskDialog = new TaskDialog
+        var taskDialog = new FATaskDialog
                          {
                              Title = "Running out of coffee Exception occurred!",
                              Content = DateTime.Now.ToString("R"),
-                             IconSource = new SymbolIconSource { Symbol = Symbol.Cancel },
+                             IconSource = new FASymbolIconSource { Symbol = FASymbol.Cancel },
                              Buttons =
                              {
-                                 TaskDialogButton.OKButton,
+                                 FATaskDialogButton.OKButton,
                              },
                              XamlRoot = this
                          };
@@ -89,7 +89,7 @@ public partial class MainWindow : Window
     private async void ShowDialogBox(object sender, RoutedEventArgs e)
         // ReSharper restore UnusedParameter.Local
     {
-        var dialog = new ContentDialog
+        var dialog = new FAContentDialog
                      {
                          Title = "Enter the new directory name",
                          PrimaryButtonText = "Ok",
@@ -104,7 +104,7 @@ public partial class MainWindow : Window
 
         var result = await dialog.ShowAsync();
 
-        if (result == ContentDialogResult.Primary && !string.IsNullOrWhiteSpace(input.ResultText))
+        if (result == FAContentDialogResult.Primary && !string.IsNullOrWhiteSpace(input.ResultText))
         {
             DialogBoxResult.Text = input.ResultText;
         }
