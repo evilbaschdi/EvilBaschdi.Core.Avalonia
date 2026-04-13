@@ -51,13 +51,8 @@ public class HandleOsDependentTitleBar : IHandleOsDependentTitleBar
             return;
         }
 
-        var headerPanel = window.FindNameScope()?.Find<Panel>("HeaderPanel");
-        var mainPanel = window.FindNameScope()?.Find<Panel>("MainPanel");
-
-        window.ExtendClientAreaToDecorationsHint = false;
-
-        headerPanel?.IsVisible = true;
-
-        mainPanel?.Margin = new(0, 30, 0, 0);
+        // In Avalonia 12, extend client area to decorations for seamless Mica effect
+        window.ExtendClientAreaToDecorationsHint = true;
+        window.WindowDecorations = WindowDecorations.Full;
     }
 }

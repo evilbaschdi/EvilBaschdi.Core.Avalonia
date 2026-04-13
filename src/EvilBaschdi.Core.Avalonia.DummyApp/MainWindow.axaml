@@ -1,25 +1,29 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        x:Class="EvilBaschdi.Core.Avalonia.DummyApp.MainWindow"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
-        Icon="/Assets/b.ico"
-        Title="DummyApp">
+<local:FAAppWindow xmlns="https://github.com/avaloniaui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:local="using:FluentAvalonia.UI.Windowing"
+                   x:Class="EvilBaschdi.Core.Avalonia.DummyApp.MainWindow"
+                   mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="800" Height="450"
+                   Icon="/Assets/b.ico"
+                   Title="DummyApp">
 
     <Panel Name="RootPanel">
 
-        <!--        <Panel Name="HeaderPanel" IsVisible="False">
-            <Panel Margin="7">
-                <Image Source="/Assets/b.ico" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            </Panel>
-            <TextBlock Text="DummyApp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0" />
-        </Panel>-->
+        <Panel Name="TitleBarPanel" Height="30" VerticalAlignment="Top" Margin="0,0,0,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8" Margin="8,0">
+                <!-- App Icon -->
+                <Image Source="{Binding Icon, RelativeSource={RelativeSource AncestorType=local:FAAppWindow}}"
+                       Width="16" Height="16" VerticalAlignment="Center" />
+                <!-- App Title -->
+                <TextBlock Text="DummyApp" VerticalAlignment="Center" Foreground="{DynamicResource SystemControlForeground}" />
+            </StackPanel>
+        </Panel>
 
-        <Panel Name="MainPanel" Margin="0,0,0,0">
+        <Panel Name="MainPanel" Margin="0,30,0,0">
             <Panel>
                 <Panel Name="ContentPanel" Margin="0,0,0,0">
-                    <Grid Margin="15,-10" RowDefinitions="30,10,50,30,10,50,30,*" ColumnDefinitions="*,*,*">
+                    <Grid Margin="15" RowDefinitions="30,10,50,30,10,50,30,*" ColumnDefinitions="*,*,*">
                         <!-- Framework version -->
                         <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Name="ArchitectureInformation" HorizontalContentAlignment="Center" IsReadOnly="True" />
                         <Separator Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" />
@@ -42,4 +46,4 @@
         </Panel>
 
     </Panel>
-</Window>
+</local:FAAppWindow>

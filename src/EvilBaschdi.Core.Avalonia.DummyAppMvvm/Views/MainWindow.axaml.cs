@@ -1,7 +1,7 @@
-using Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.Behaviors;
 using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using EvilBaschdi.Core.Avalonia.Layout;
+using FluentAvalonia.UI.Windowing;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
@@ -9,7 +9,7 @@ namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 /// <summary>
 ///     The main window.
 /// </summary>
-public partial class MainWindow : Window
+public partial class MainWindow : FAAppWindow
 {
     /// <summary>
     ///     Initializes a new instance of the <see cref="MainWindow" /> class.
@@ -29,8 +29,7 @@ public partial class MainWindow : Window
 
     private void ApplyLayout()
     {
-        //var handleOsDependentTitleBar = ApplicationServices.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
-        //handleOsDependentTitleBar?.RunFor(this);
+        TitleBar.ExtendsContentIntoTitleBar = true;
 
         var applicationLayout = ApplicationServices.ServiceProvider?.GetRequiredService<IApplicationLayout>();
         applicationLayout?.RunFor((this, true, true));

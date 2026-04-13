@@ -1,14 +1,14 @@
 using System.Runtime.InteropServices;
-using Avalonia.Controls;
 using Avalonia.Interactivity;
 using EvilBaschdi.Core.Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.Layout;
 using FluentAvalonia.UI.Controls;
+using FluentAvalonia.UI.Windowing;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
 
 /// <inheritdoc />
-public partial class MainWindow : Window
+public partial class MainWindow : FAAppWindow
 {
     /// <summary>
     ///     Constructor
@@ -22,8 +22,7 @@ public partial class MainWindow : Window
 
     private void Load()
     {
-        var handleOsDependentTitleBar = new HandleOsDependentTitleBar();
-        handleOsDependentTitleBar.RunFor(this);
+        TitleBar.ExtendsContentIntoTitleBar = true;
 
         var applicationLayout = new ApplicationLayout();
         applicationLayout.RunFor((this, true, true));
