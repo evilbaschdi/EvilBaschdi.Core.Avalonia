@@ -24,7 +24,6 @@ public class ExtendedInformationViewModel(
 
     /// <summary>
     /// </summary>
-
     [CanBeNull]
     public string SelectedCountryAsString => SelectedCountry?.ToString() ?? "CurrentItem is NULL";
 

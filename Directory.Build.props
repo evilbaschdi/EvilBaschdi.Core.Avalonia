@@ -150,7 +150,7 @@
 
 	<!-- ReSharper disable once UnknownProperty -->
 	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Avalonia')) != 'true'">
-		<ProjectReference Include="..\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
+		<ProjectReference Include="..\..\src\EvilBaschdi.Core.Avalonia\EvilBaschdi.Core.Avalonia.csproj" />
 	</ItemGroup>
 
 </Project>

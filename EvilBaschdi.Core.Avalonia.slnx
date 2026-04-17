@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="NuGet.config" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/EvilBaschdi.Core.Avalonia.DummyApp/EvilBaschdi.Core.Avalonia.DummyApp.csproj" />
+    <Project Path="samples/EvilBaschdi.Core.Avalonia.DummyAppMvvm/EvilBaschdi.Core.Avalonia.DummyAppMvvm.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/EvilBaschdi.Core.Avalonia/EvilBaschdi.Core.Avalonia.csproj" />
+    <Project Path="src/EvilBaschdi.Testing.Avalonia/EvilBaschdi.Testing.Avalonia.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EvilBaschdi.Core.Avalonia.Tests/EvilBaschdi.Core.Avalonia.Tests.csproj" />
+  </Folder>
+</Solution>
