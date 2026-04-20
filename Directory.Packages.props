@@ -19,8 +19,8 @@
     <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2026.4.15.17" />
     <PackageVersion Include="FluentAvaloniaUI" Version="3.0.0-preview1" />
     <PackageVersion Include="ReactiveUI" Version="23.2.1" />
-    <PackageVersion Include="ReactiveUI.Avalonia" Version="11.4.12" />
-    <PackageVersion Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" Version="11.4.12" />
+    <PackageVersion Include="ReactiveUI.Avalonia" Version="12.0.1" />
+    <PackageVersion Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" Version="12.0.1" />
     <PackageVersion Include="TextMateSharp" Version="2.0.3" />
     <PackageVersion Include="TextMateSharp.Grammars" Version="2.0.3" />
     <PackageVersion Include="Tmds.DBus.Protocol" Version="0.92.0" />

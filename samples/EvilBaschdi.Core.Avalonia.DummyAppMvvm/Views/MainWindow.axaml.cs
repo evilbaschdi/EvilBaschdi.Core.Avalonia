@@ -1,8 +1,4 @@
-using EvilBaschdi.Core.Avalonia.Behaviors;
-using EvilBaschdi.Core.Avalonia.DependencyInjection;
-using EvilBaschdi.Core.Avalonia.Layout;
 using FluentAvalonia.UI.Windowing;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;
 
@@ -17,22 +13,5 @@ public partial class MainWindow : FAAppWindow
     public MainWindow()
     {
         InitializeComponent();
-        ApplyLayout();
-        Opened += OnOpened;
-    }
-
-    private void OnOpened(object sender, EventArgs e)
-    {
-        var windowOpenedBehavior = ApplicationServices.ServiceProvider?.GetRequiredService<IWindowOpenedBehavior>();
-        windowOpenedBehavior?.OnWindowOpened(this);
-    }
-
-    private void ApplyLayout()
-    {
-        var handleOsDependentTitleBar = ApplicationServices.ServiceProvider?.GetRequiredService<IHandleOsDependentTitleBar>();
-        handleOsDependentTitleBar?.RunFor(this);
-
-        var applicationLayout = ApplicationServices.ServiceProvider?.GetRequiredService<IApplicationLayout>();
-        applicationLayout?.RunFor((this, true, true));
     }
 }

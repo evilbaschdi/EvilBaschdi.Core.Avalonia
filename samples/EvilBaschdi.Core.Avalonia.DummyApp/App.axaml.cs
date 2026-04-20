@@ -20,7 +20,11 @@ public class App : Application
         {
             ThemeEngine.Initialize(this);
 
-            desktop.MainWindow = new MainWindow();
+            var mainWindow = new MainWindow();
+
+            ThemeEngine.ApplyThemeToWindow(mainWindow, true);
+
+            desktop.MainWindow = mainWindow;
         }
 
         base.OnFrameworkInitializationCompleted();

@@ -1,8 +1,6 @@
 using System.Runtime.InteropServices;
 using Avalonia.Interactivity;
-using EvilBaschdi.Core.Avalonia.Behaviors;
 using EvilBaschdi.Core.Avalonia.Controls;
-using EvilBaschdi.Core.Avalonia.Layout;
 using FluentAvalonia.UI.Controls;
 using FluentAvalonia.UI.Windowing;
 
@@ -17,23 +15,8 @@ public partial class MainWindow : FAAppWindow
     public MainWindow()
     {
         InitializeComponent();
-        Load();
-        Opened += OnOpened;
+
         ArchitectureInformation.Text = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower();
-    }
-
-    private void OnOpened(object sender, EventArgs e)
-    {
-        var windowOpenedBehavior = new WindowOpenedBehavior();
-        windowOpenedBehavior.OnWindowOpened(this);
-    }
-
-    private void Load()
-    {
-        TitleBar.ExtendsContentIntoTitleBar = true;
-
-        var applicationLayout = new ApplicationLayout();
-        applicationLayout.RunFor((this, true, true));
     }
 
     // ReSharper disable UnusedParameter.Local

@@ -27,6 +27,9 @@ public class App : Application
                              {
                                  DataContext = ApplicationServices.GetRequiredService<MainWindowViewModel>()
                              };
+
+            ThemeEngine.ApplyThemeToWindow(mainWindow, true);
+
             desktop.MainWindow = mainWindow;
         }
 
