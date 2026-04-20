@@ -5,6 +5,7 @@
                        xmlns:avaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
                        xmlns:viewModels="clr-namespace:EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels"
                        xmlns:windowing="clr-namespace:FluentAvalonia.UI.Windowing;assembly=FluentAvalonia"
+                       xmlns:mvvm="clr-namespace:EvilBaschdi.Core.Avalonia.Mvvm;assembly=EvilBaschdi.Core.Avalonia"
                        x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.ExtendedInformation"
                        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400" Width="400" Height="400"
                        x:DataType="viewModels:ExtendedInformationViewModel" ShowAsDialog="True"
@@ -24,7 +25,8 @@
 
         <Panel Name="MainPanel" Margin="0,30,0,0">
             <Panel Name="ContentPanel" Margin="0,0,0,0">
-                <avaloniaEdit:TextEditor Name="Output" Margin="10,0,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" ShowLineNumbers="True" />
+                <avaloniaEdit:TextEditor Name="Output" Margin="10,0,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" ShowLineNumbers="True"
+                                         mvvm:TextEditorBindingHelper.Text="{Binding SelectedCountryAsString, Mode=TwoWay}" />
             </Panel>
         </Panel>
     </Panel>

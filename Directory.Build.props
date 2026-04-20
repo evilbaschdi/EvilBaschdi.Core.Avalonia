@@ -55,6 +55,11 @@
 				<PackageReference Include="ReactiveUI.Avalonia" />
 				<PackageReference Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" />
 				<PackageReference Include="Tmds.DBus.Protocol" />
+
+				<PackageReference Include="Avalonia.AvaloniaEdit" />
+				<PackageReference Include="AvaloniaEdit.TextMate" />
+				<PackageReference Include="TextMateSharp" />
+				<PackageReference Include="TextMateSharp.Grammars" />
 			</ItemGroup>
 		</When>
 		<When Condition="$(MSBuildProjectName.Contains('.DummyApp'))">
@@ -76,10 +81,6 @@
 	https://github.com/AvaloniaUI/Avalonia/issues/5593 -->
 				<TrimmableAssembly Include="Avalonia.Themes.Fluent" />
 				<TrimmableAssembly Include="Avalonia.Themes.Default" />
-				<PackageReference Include="Avalonia.AvaloniaEdit" />
-				<PackageReference Include="AvaloniaEdit.TextMate" />
-				<PackageReference Include="TextMateSharp" />
-				<PackageReference Include="TextMateSharp.Grammars" />
 			</ItemGroup>
 		</When>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Testing.Avalonia'))">

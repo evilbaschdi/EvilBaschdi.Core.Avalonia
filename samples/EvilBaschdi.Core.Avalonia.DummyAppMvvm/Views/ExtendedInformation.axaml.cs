@@ -23,10 +23,10 @@ public partial class ExtendedInformation : FAAppWindow
         var textMateInstallation = Output.InstallTextMate(registryOptions);
         textMateInstallation.SetGrammar(registryOptions.GetScopeByLanguageId(registryOptions.GetLanguageByExtension(".json").Id));
 
-        var extendedInformationViewModel = ApplicationServices.ServiceProvider.GetRequiredService<ExtendedInformationViewModel>();
-        DataContext = extendedInformationViewModel;
+        DataContext = ApplicationServices.ServiceProvider.GetRequiredService<ExtendedInformationViewModel>();
+        ;
 
-        Output.Text = extendedInformationViewModel.SelectedCountry?.ToString() ?? "CurrentItem is NULL";
+        //Output.Text = extendedInformationViewModel.SelectedCountry?.ToString() ?? "CurrentItem is NULL";
         ThemeEngine.ApplyThemeToWindow(this, false);
     }
 }

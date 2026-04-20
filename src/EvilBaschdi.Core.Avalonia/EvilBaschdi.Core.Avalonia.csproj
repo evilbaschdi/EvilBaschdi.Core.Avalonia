@@ -4,8 +4,4 @@
 		<None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Converters\" />
-	</ItemGroup>
-
 </Project>
