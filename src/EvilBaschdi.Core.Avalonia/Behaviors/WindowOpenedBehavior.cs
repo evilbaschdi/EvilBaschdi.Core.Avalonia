@@ -17,7 +17,6 @@ public class WindowOpenedBehavior : IWindowOpenedBehavior
     {
         if (VersionHelper.IsWindows)
         {
-            window.Background = Brushes.Transparent;
             window.TransparencyLevelHint =
             [
                 WindowTransparencyLevel.Mica,
@@ -25,6 +24,11 @@ public class WindowOpenedBehavior : IWindowOpenedBehavior
                 WindowTransparencyLevel.Blur,
                 WindowTransparencyLevel.Transparent
             ];
+
+            if (VersionHelper.IsWindows11)
+            {
+                window.Background = Brushes.Transparent;
+            }
         }
         else
         {
