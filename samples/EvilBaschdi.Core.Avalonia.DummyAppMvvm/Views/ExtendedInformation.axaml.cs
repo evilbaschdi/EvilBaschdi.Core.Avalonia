@@ -24,9 +24,7 @@ public partial class ExtendedInformation : FAAppWindow
         textMateInstallation.SetGrammar(registryOptions.GetScopeByLanguageId(registryOptions.GetLanguageByExtension(".json").Id));
 
         DataContext = ApplicationServices.ServiceProvider.GetRequiredService<ExtendedInformationViewModel>();
-        ;
 
-        //Output.Text = extendedInformationViewModel.SelectedCountry?.ToString() ?? "CurrentItem is NULL";
         ThemeEngine.ApplyThemeToWindow(this, false);
     }
 }
