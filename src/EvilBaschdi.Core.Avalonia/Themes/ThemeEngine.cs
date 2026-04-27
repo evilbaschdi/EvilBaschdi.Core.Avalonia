@@ -28,36 +28,20 @@ public static class ThemeEngine
     /// <summary>
     ///     Sets platform-specific visual effects for the window.
     /// </summary>
-    /// <returns></returns>
-    public static EventHandler SetPlatformSpecificVisualEffects()
+    public static void SetPlatformSpecificVisualEffects(Window window)
     {
-        return (sender, _) =>
-               {
-                   if (sender is not Window window)
-                   {
-                       return;
-                   }
+        ArgumentNullException.ThrowIfNull(window);
+        window.Background = (IBrush)Application.Current!.Resources["BackgroundBrush"]!;
 
-                   if (VersionHelper.IsWindows)
-                   {
-                       window.TransparencyLevelHint =
-                       [
-                           WindowTransparencyLevel.Mica,
-                           WindowTransparencyLevel.AcrylicBlur,
-                           WindowTransparencyLevel.Blur,
-                           WindowTransparencyLevel.Transparent
-                       ];
+        if (!VersionHelper.IsWindows || !VersionHelper.IsWindows11)
+        {
+            return;
+        }
 
-                       if (VersionHelper.IsWindows11)
-                       {
-                           window.Background = Brushes.Transparent;
-                       }
-                   }
-                   else
-                   {
-                       window.Background = (IBrush)Application.Current!.Resources["BackgroundBrush"];
-                   }
-               };
+        window.TransparencyLevelHint = [WindowTransparencyLevel.Mica];
+        window.Background = Brushes.Transparent;
+
+        window.Resources["ApplicationPageBackgroundThemeBrush"] = Brushes.Transparent;
     }
 
     /// <summary>
@@ -67,6 +51,7 @@ public static class ThemeEngine
     /// <param name="resizeWithBorder400"></param>
     public static void SetWindowSize(Window window, bool resizeWithBorder400)
     {
+        ArgumentNullException.ThrowIfNull(window);
         window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
         // ReSharper disable once InvertIf
@@ -113,8 +98,9 @@ public static class ThemeEngine
     public static void ApplyThemeToWindow(Window window, bool resizeWithBorder400)
     {
         ArgumentNullException.ThrowIfNull(window);
-        window.Opened += SetPlatformSpecificVisualEffects();
-        SetWindowSize(window, resizeWithBorder400);
+
         HandleOsDependentTitleBar(window);
+        SetWindowSize(window, resizeWithBorder400);
+        SetPlatformSpecificVisualEffects(window);
     }
 }

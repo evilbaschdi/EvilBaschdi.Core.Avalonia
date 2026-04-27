@@ -55,7 +55,7 @@ public class LinuxThemeColorProvider : IThemeColorProvider
 
         if (version >= 45)
         {
-            return GetGnomeLibadwaitaColors(); // moderner Weg
+            return GetGnomeLibAdwaitaColors(); // moderner Weg
         }
 
         return GetGnomeGtkCssColors(); // alter Weg
@@ -89,7 +89,7 @@ public class LinuxThemeColorProvider : IThemeColorProvider
         return -1;
     }
 
-    private (Color? Accent, Color? Background) GetGnomeLibadwaitaColors()
+    private (Color? Accent, Color? Background) GetGnomeLibAdwaitaColors()
     {
         var accentIndexStr = RunGSettings("org.gnome.desktop.interface", "accent-color");
         var scheme = RunGSettings("org.gnome.desktop.interface", "color-scheme");
@@ -97,10 +97,10 @@ public class LinuxThemeColorProvider : IThemeColorProvider
         var accentIndex = int.TryParse(accentIndexStr, out var idx) ? idx : -1;
 
         string[] palette =
-        {
+        [
             "#3584e4", "#9141ac", "#e01b24", "#ff7800", "#f6d32d",
             "#33d17a", "#1c71d8", "#613583", "#c01c28", "#e66100"
-        };
+        ];
 
         var accent = accentIndex >= 0 && accentIndex < palette.Length
             ? Color.Parse(palette[accentIndex])
@@ -144,7 +144,6 @@ public class LinuxThemeColorProvider : IThemeColorProvider
             var output = p.StandardOutput.ReadToEnd().Trim();
             p.WaitForExit();
 
-            // gsettings gibt Strings in Quotes zurück → entfernen
             return output.Trim('\'', '"');
         }
         catch
@@ -159,10 +158,10 @@ public class LinuxThemeColorProvider : IThemeColorProvider
     private (Color? Accent, Color? Background) GetKdeColors()
     {
         var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        var kdeglobals = Path.Combine(home, ".config/kdeglobals");
+        var kdeGlobals = Path.Combine(home, ".config/kdeglobals");
 
-        var accent = ParseKdeColor(kdeglobals, "Colors:Selection", "BackgroundNormal");
-        var bg = ParseKdeColor(kdeglobals, "Colors:Window", "BackgroundNormal");
+        var accent = ParseKdeColor(kdeGlobals, "Colors:Selection", "BackgroundNormal");
+        var bg = ParseKdeColor(kdeGlobals, "Colors:Window", "BackgroundNormal");
 
         return (accent, bg);
     }
