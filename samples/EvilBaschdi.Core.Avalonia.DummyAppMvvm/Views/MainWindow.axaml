@@ -17,7 +17,7 @@
         <Panel Name="TitleBarPanel" Height="30" VerticalAlignment="Top" Margin="0,0,0,0">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8" Margin="8,0">
                 <!-- App Icon -->
-                <Image Source="{Binding Icon, RelativeSource={RelativeSource AncestorType=local:FAAppWindow}}" Width="16" Height="16" VerticalAlignment="Center" />
+                <Image Source="{CompiledBinding Icon, RelativeSource={RelativeSource AncestorType=local:FAAppWindow}}" Width="16" Height="16" VerticalAlignment="Center" />
                 <!-- App Title -->
                 <TextBlock Text="DummyAppMvvm" />
             </StackPanel>
@@ -26,13 +26,13 @@
         <Panel Name="MainPanel" Margin="0,30,0,0">
             <Panel Name="ContentPanel" Margin="7">
 
-                <DataGrid Name="TargetDataGrid" ItemsSource="{Binding DataGridCollectionViewCountries}" SelectedItem="{Binding Path=SelectedCountry}">
+                <DataGrid Name="TargetDataGrid" ItemsSource="{CompiledBinding DataGridCollectionViewCountries}" SelectedItem="{CompiledBinding Path=SelectedCountry}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Country" Binding="{Binding Name}" Width="6*" x:DataType="models:Country" />
-                        <DataGridTextColumn Header="Region" Binding="{Binding Region}" Width="4*" x:DataType="models:Country" />
-                        <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{Binding Population}" Width="3*" x:DataType="models:Country" />
-                        <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{Binding Area}" Width="3*" x:DataType="models:Country" />
-                        <DataGridTextColumn Header="GDP" Binding="{Binding Gdp}" Width="3*" x:DataType="models:Country" />
+                        <DataGridTextColumn Header="Country" Binding="{CompiledBinding Name}" Width="6*" x:DataType="models:Country" />
+                        <DataGridTextColumn Header="Region" Binding="{CompiledBinding Region}" Width="4*" x:DataType="models:Country" />
+                        <DataGridTextColumn DisplayIndex="3" Header="Population" Binding="{CompiledBinding Population}" Width="3*" x:DataType="models:Country" />
+                        <DataGridTextColumn DisplayIndex="2" Header="Area" Binding="{CompiledBinding Area}" Width="3*" x:DataType="models:Country" />
+                        <DataGridTextColumn Header="GDP" Binding="{CompiledBinding Gdp}" Width="3*" x:DataType="models:Country" />
 
                         <DataGridTemplateColumn Header="Info" Width="100" IsReadOnly="False">
                             <DataGridTemplateColumn.CellTemplate>
@@ -42,7 +42,7 @@
                                     <!-- ReSharper disable once Xaml.StyleClassNotFound -->
                                     <Button VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                                             Width="90" Classes="accent" Name="ShowExtendedInformationButton"
-                                            Command="{Binding $parent[Window].((viewModels:MainWindowViewModel)DataContext).ShowExtendedInformationCommand}">
+                                            Command="{CompiledBinding $parent[Window].((viewModels:MainWindowViewModel)DataContext).ShowExtendedInformationCommand}">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Show" Margin="0,0,5,0" />
                                             <controls:FASymbolIcon Symbol="Alert" FontSize="18" />

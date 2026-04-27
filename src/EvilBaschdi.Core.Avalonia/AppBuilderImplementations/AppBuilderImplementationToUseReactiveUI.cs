@@ -17,9 +17,7 @@ public class AppBuilderImplementationToUseReactiveUI<TApp> : IAppBuilderImplemen
         return AppBuilder.Configure<TApp>()
                          .UsePlatformDetect()
                          .LogToTrace()
-#if DEBUG
                          .WithDeveloperTools()
-#endif
                          .UseReactiveUI(withReactiveUiBuilder);
     }
 }

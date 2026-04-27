@@ -46,7 +46,7 @@
 				<PackageReference Include="Avalonia.Controls.DataGrid" />
 				<PackageReference Include="Avalonia.Desktop" />
 				<PackageReference Include="Avalonia.Fonts.Inter" />
-				<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="AvaloniaUI.DiagnosticsSupport" />
+				<PackageReference Include="AvaloniaUI.DiagnosticsSupport" />
 				<PackageReference Include="Avalonia.Themes.Fluent" />
 				<PackageReference Include="Avalonia.Themes.Simple" />
 				<PackageReference Include="FluentAvaloniaUI" />
@@ -55,7 +55,6 @@
 				<PackageReference Include="ReactiveUI.Avalonia" />
 				<PackageReference Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" />
 				<PackageReference Include="Tmds.DBus.Protocol" />
-
 				<PackageReference Include="Avalonia.AvaloniaEdit" />
 				<PackageReference Include="AvaloniaEdit.TextMate" />
 				<PackageReference Include="TextMateSharp" />
@@ -94,7 +93,7 @@
 			</ItemGroup>
 
 			<ItemGroup>
-				<PackageReference Include="Avalonia.Headless" />
+				<PackageReference Include="Avalonia.Headless.XUnit" />
 			</ItemGroup>
 		</When>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
