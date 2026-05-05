@@ -18,17 +18,17 @@
     <PackageVersion Include="EvilBaschdi.Core" Version="2026.3.30.19" />
     <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2026.4.21.19" />
     <PackageVersion Include="FluentAvaloniaUI" Version="3.0.0-preview2" />
-    <PackageVersion Include="ReactiveUI" Version="23.2.19" />
+    <PackageVersion Include="ReactiveUI" Version="23.2.27" />
     <PackageVersion Include="ReactiveUI.Avalonia" Version="12.0.1" />
     <PackageVersion Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" Version="12.0.1" />
     <PackageVersion Include="TextMateSharp" Version="2.0.3" />
     <PackageVersion Include="TextMateSharp.Grammars" Version="2.0.3" />
-    <PackageVersion Include="Tmds.DBus.Protocol" Version="0.92.0" />
+    <PackageVersion Include="Tmds.DBus.Protocol" Version="0.93.0" />
   </ItemGroup>
   <!-- #endregion Project Libs -->
   <!-- #region Unit Test Libs -->
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2026.4.6.14" />
+    <PackageVersion Include="EvilBaschdi.Testing" Version="2026.4.28.17" />
     <PackageVersion Include="coverlet.collector" Version="10.0.0" />
     <PackageVersion Include="FluentAssertions.Analyzers" Version="0.34.1" />
     <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.22" />
