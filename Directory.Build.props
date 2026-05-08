@@ -67,6 +67,7 @@
 				<OutputType>WinExe</OutputType>
 				<Title>$(MSBuildProjectName)</Title>
 				<Description>TestUi for $(MSBuildProjectName)</Description>
+				<ApplicationIcon>Assets\b.ico</ApplicationIcon>
 				<AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
 			</PropertyGroup>
 

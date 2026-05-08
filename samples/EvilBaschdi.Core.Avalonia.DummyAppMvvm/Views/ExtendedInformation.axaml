@@ -6,22 +6,16 @@
                        xmlns:viewModels="clr-namespace:EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels"
                        xmlns:windowing="clr-namespace:FluentAvalonia.UI.Windowing;assembly=FluentAvalonia"
                        xmlns:mvvm="clr-namespace:EvilBaschdi.Core.Avalonia.Mvvm;assembly=EvilBaschdi.Core.Avalonia"
+                       xmlns:controls="clr-namespace:EvilBaschdi.Core.Avalonia.Controls;assembly=EvilBaschdi.Core.Avalonia"
                        x:Class="EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views.ExtendedInformation"
                        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400" Width="400" Height="400"
                        x:DataType="viewModels:ExtendedInformationViewModel" ShowAsDialog="True"
-                       Icon="/Assets/b.ico"
                        Title="ExtendedInformation">
 
     <Panel Name="RootPanel">
 
-        <Panel Name="TitleBarPanel" Height="30" VerticalAlignment="Top" Margin="0,0,0,0">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8" Margin="8,0">
-                <!-- App Icon -->
-                <Image Source="{Binding Icon, RelativeSource={RelativeSource AncestorType=windowing:FAAppWindow}}" Width="16" Height="16" VerticalAlignment="Center" />
-                <!-- App Title -->
-                <TextBlock Text="DummyAppMvvm" />
-            </StackPanel>
-        </Panel>
+        <!-- ReSharper disable once Xaml.PathError -->
+        <controls:TitleBarControl Icon="/Assets/b.ico" Name="TitleBarControl" />
 
         <Panel Name="MainPanel" Margin="0,30,0,0">
             <Panel Name="ContentPanel" Margin="0,0,0,0">

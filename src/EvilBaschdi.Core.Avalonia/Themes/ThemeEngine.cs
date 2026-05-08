@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
+using EvilBaschdi.Core.Avalonia.Controls;
 using EvilBaschdi.Core.Extensions;
 using FluentAvalonia.UI.Windowing;
 
@@ -32,6 +34,8 @@ public static class ThemeEngine
     {
         ArgumentNullException.ThrowIfNull(window);
         window.Background = (IBrush)Application.Current!.Resources["BackgroundBrush"]!;
+
+        RenderOptions.SetBitmapInterpolationMode(window, BitmapInterpolationMode.HighQuality);
 
         if (!VersionHelper.IsWindows || !VersionHelper.IsWindows11)
         {
@@ -85,8 +89,10 @@ public static class ThemeEngine
         appWindow.Background = new SolidColorBrush(background);
 
         var titleBarPanel = appWindow.FindNameScope()?.Find<Panel>("TitleBarPanel");
+        var titleBarControl = appWindow.FindNameScope()?.Find<TitleBarControl>("TitleBarControl");
         var mainPanel = appWindow.FindNameScope()?.Find<Panel>("MainPanel");
         titleBarPanel?.IsVisible = false;
+        titleBarControl?.IsVisible = false;
         mainPanel?.Margin = new Thickness(0, 0, 0, 0);
     }
 

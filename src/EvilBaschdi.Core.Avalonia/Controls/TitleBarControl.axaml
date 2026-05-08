@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:windowing="clr-namespace:FluentAvalonia.UI.Windowing;assembly=FluentAvalonia"
+             xmlns:controls="clr-namespace:EvilBaschdi.Core.Avalonia.Controls"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EvilBaschdi.Core.Avalonia.Controls.TitleBarControl"
+             DataContext="{Binding $self}">
+    <Panel Name="TitleBarPanel" Height="30" VerticalAlignment="Top" Margin="0,0,0,0">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="5" Margin="5,0">
+            <!-- App Icon -->
+            <Image Source="{Binding Icon, RelativeSource={RelativeSource AncestorType=controls:TitleBarControl}}"
+                   Width="24" Height="24" VerticalAlignment="Center" />
+            <!-- App Title -->
+            <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=windowing:FAAppWindow}}" VerticalAlignment="Center"
+                       Foreground="{DynamicResource SystemControlForeground}" />
+        </StackPanel>
+    </Panel>
+</UserControl>
