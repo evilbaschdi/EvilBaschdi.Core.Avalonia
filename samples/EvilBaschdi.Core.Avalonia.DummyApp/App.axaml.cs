@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
+using EvilBaschdi.Core.Avalonia.Controls;
 using EvilBaschdi.Core.Avalonia.Themes;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
@@ -18,15 +20,43 @@ public class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            ThemeEngine.Initialize(this);
+            var splash = new SplashWindow(Current?.Name);
+            splash.Show();
 
-            var mainWindow = new MainWindow();
-
-            ThemeEngine.ApplyThemeToWindow(mainWindow, true);
-
-            desktop.MainWindow = mainWindow;
+            Dispatcher.UIThread.Post(() => StartMainWindow(desktop, splash, MainWindowFunc()), DispatcherPriority.Background);
         }
 
         base.OnFrameworkInitializationCompleted();
+    }
+
+    private static Func<MainWindow> MainWindowFunc()
+    {
+        return () => new();
+    }
+
+    private void StartMainWindow(IClassicDesktopStyleApplicationLifetime desktop, SplashWindow splash, Func<MainWindow> mainWindowFunc)
+    {
+        ThemeEngine.Initialize(this);
+
+        var mainWindow = mainWindowFunc();
+
+        ThemeEngine.ApplyThemeToWindow(mainWindow, true);
+
+        desktop.MainWindow = mainWindow;
+
+        if (splash is not null)
+        {
+            var splashRef = splash;
+
+            void CloseSplashOnce(object s, EventArgs e)
+            {
+                mainWindow.Opened -= CloseSplashOnce;
+                splashRef.Close();
+            }
+
+            mainWindow.Opened += CloseSplashOnce;
+        }
+
+        mainWindow.Show();
     }
 }

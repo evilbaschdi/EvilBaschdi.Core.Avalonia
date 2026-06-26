@@ -1,1 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk" />
+<Project Sdk="Microsoft.NET.Sdk" >
+
+	<ItemGroup>
+		<AvaloniaResource Include="Assets\**" />
+		<Content Include="Assets\about.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>

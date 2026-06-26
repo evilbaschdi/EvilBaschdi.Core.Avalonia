@@ -15,9 +15,11 @@ public class AppBuilderImplementationToUseReactiveUI<TApp> : IAppBuilderImplemen
         ArgumentNullException.ThrowIfNull(withReactiveUiBuilder);
 
         return AppBuilder.Configure<TApp>()
-                         .UsePlatformDetect()
-                         .LogToTrace()
-                         .WithDeveloperTools()
-                         .UseReactiveUI(withReactiveUiBuilder);
+            .UsePlatformDetect()
+            .LogToTrace()
+#if DEBUG
+            .WithDeveloperTools()
+#endif
+            .UseReactiveUI(withReactiveUiBuilder);
     }
 }
