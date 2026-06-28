@@ -2,23 +2,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         x:Class="EvilBaschdi.Core.Avalonia.Controls.SplashWindow"
-        d:DesignWidth="450" d:DesignHeight="350" Width="450" Height="350"
+        d:DesignWidth="500" d:DesignHeight="400" Width="500" Height="400"
         WindowStartupLocation="CenterScreen"
-        WindowDecorations="BorderOnly"
+        WindowDecorations="None"
         Background="Transparent"
         TransparencyLevelHint="Transparent"
         CanResize="False"
         ShowInTaskbar="False"
         Topmost="True">
-    <Border Name="SplashBorder" CornerRadius="12" BorderThickness="1" BorderBrush="#40FFFFFF">
+    <Border Name="SplashBorder" Margin="25" CornerRadius="12" BorderThickness="1"
+            BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+            Background="{DynamicResource SolidBackgroundFillColorBaseBrush}"
+            BoxShadow="0 10 32 0 #3F000000">
 
-        <Grid Margin="15" RowDefinitions="256,*">
+        <StackPanel Margin="15" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="15">
             <!-- ReSharper disable once UnusedMember.Global -->
-            <Image Grid.Row="0" x:Name="SplashImage" Stretch="Fill" HorizontalAlignment="Center"
+            <Image x:Name="SplashImage" Stretch="Fill" HorizontalAlignment="Center"
                    VerticalAlignment="Center" Width="256" Height="256" />
-            <TextBlock Grid.Row="1" x:Name="TaglineText" HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />
-        </Grid>
+            <TextBlock x:Name="TaglineText" HorizontalAlignment="Center"
+                       VerticalAlignment="Center" Foreground="{DynamicResource TextFillColorPrimaryBrush}" />
+        </StackPanel>
 
     </Border>
 </Window>

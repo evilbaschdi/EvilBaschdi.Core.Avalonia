@@ -18,6 +18,12 @@ public static class ApplicationServices
     public static IServiceProvider ServiceProvider { get; private set; }
 
     /// <summary>
+    ///     Gets or sets the name of the application. This property can be used to store and retrieve the application's name
+    ///     for display purposes or logging.
+    /// </summary>
+    public static string AppName { get; set; }
+
+    /// <summary>
     ///     Initializes the application's service provider for dependency resolution.
     /// </summary>
     /// <param name="serviceProvider">The service provider used to resolve dependencies. Cannot be null.</param>

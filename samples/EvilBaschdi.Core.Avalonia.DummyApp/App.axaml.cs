@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using EvilBaschdi.Core.Avalonia.Controls;
+using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using EvilBaschdi.Core.Avalonia.Themes;
 
 namespace EvilBaschdi.Core.Avalonia.DummyApp;
@@ -20,7 +21,8 @@ public class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var splash = new SplashWindow(Current?.Name);
+            ApplicationServices.AppName = Current?.Name;
+            var splash = new SplashWindow();
             splash.Show();
 
             Dispatcher.UIThread.Post(() => StartMainWindow(desktop, splash, MainWindowFunc()), DispatcherPriority.Background);

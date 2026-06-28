@@ -23,7 +23,8 @@ public class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var splash = new SplashWindow(Current?.Name);
+            ApplicationServices.AppName = Current?.Name;
+            var splash = new SplashWindow();
             splash.Show();
 
             Dispatcher.UIThread.Post(() => StartMainWindow(desktop, splash, MainWindowFunc()), DispatcherPriority.Background);

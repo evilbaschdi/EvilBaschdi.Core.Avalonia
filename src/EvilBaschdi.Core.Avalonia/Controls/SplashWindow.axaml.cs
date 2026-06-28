@@ -1,8 +1,6 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Media;
 using Avalonia.Media.Imaging;
-using Avalonia.Styling;
+using EvilBaschdi.Core.Avalonia.DependencyInjection;
 
 namespace EvilBaschdi.Core.Avalonia.Controls;
 
@@ -10,12 +8,9 @@ namespace EvilBaschdi.Core.Avalonia.Controls;
 public partial class SplashWindow : Window
 {
     /// <summary />
-    /// <inheritdoc />
-    public SplashWindow(string splashTitle)
+    public SplashWindow()
     {
         InitializeComponent();
-
-        var isDark = Application.Current?.ActualThemeVariant == ThemeVariant.Dark;
 
         var baseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "about.png");
         var assetsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "about.png");
@@ -23,11 +18,6 @@ public partial class SplashWindow : Window
 
         SplashImage.Source = new Bitmap(logoSourcePath);
 
-        SplashBorder.Background = new SolidColorBrush(isDark
-            ? Color.Parse("#202020")
-            : Color.Parse("#FFFFFF"));
-
-        TaglineText.Text = splashTitle;
-        TaglineText.Foreground = isDark ? Brushes.White : Brushes.Black;
+        TaglineText.Text = string.IsNullOrWhiteSpace(ApplicationServices.AppName) ? "Starting ..." : ApplicationServices.AppName;
     }
 }
