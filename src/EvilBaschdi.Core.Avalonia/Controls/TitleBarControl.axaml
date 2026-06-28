@@ -5,8 +5,7 @@
              xmlns:windowing="clr-namespace:FluentAvalonia.UI.Windowing;assembly=FluentAvalonia"
              xmlns:controls="clr-namespace:EvilBaschdi.Core.Avalonia.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="EvilBaschdi.Core.Avalonia.Controls.TitleBarControl"
-             DataContext="{Binding $self}">
+             x:Class="EvilBaschdi.Core.Avalonia.Controls.TitleBarControl">
     <Panel Name="TitleBarPanel" Height="30" VerticalAlignment="Top" Margin="0,0,0,0">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="5" Margin="5,0">
             <!-- App Icon -->

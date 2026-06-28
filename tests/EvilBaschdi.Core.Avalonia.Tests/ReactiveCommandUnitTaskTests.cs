@@ -48,11 +48,14 @@ public class ReactiveCommandUnitTaskTests
     }
 
     [Fact]
-    public void Command_Property_IsNotNull()
+    public void Command_ReturnsSameInstanceWhenCalledMultipleTimes()
     {
         var sut = new TestReactiveCommandUnitTaskDefault();
 
-        sut.Command.Should().NotBeNull();
+        var command1 = sut.Command;
+        var command2 = sut.Command;
+
+        command1.Should().BeSameAs(command2);
     }
 
     [Fact]

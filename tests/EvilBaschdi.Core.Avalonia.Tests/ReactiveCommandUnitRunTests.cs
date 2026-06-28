@@ -56,9 +56,7 @@ public class ReactiveCommandUnitRunTests
         var command1 = sut.Command;
         var command2 = sut.Command;
 
-        // Command property may create new instances, just verify they're both valid
-        command1.Should().NotBeNull();
-        command2.Should().NotBeNull();
+        command1.Should().BeSameAs(command2);
     }
 
     [Fact]
