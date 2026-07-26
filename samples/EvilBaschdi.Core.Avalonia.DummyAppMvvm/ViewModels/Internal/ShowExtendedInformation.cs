@@ -7,8 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels.Internal;
 
 /// <inheritdoc cref="IShowExtendedInformation" />
-/// <inheritdoc cref="ReactiveCommandUnitRun" />
-public class ShowExtendedInformation : ReactiveCommandUnitTask, IShowExtendedInformation
+/// <inheritdoc cref="ReactiveCommandRxVoidRun" />
+public class ShowExtendedInformation : ReactiveCommandRxVoidTask, IShowExtendedInformation
 {
     private readonly IMainWindowByApplicationLifetime _mainWindowByApplicationLifetime;
 

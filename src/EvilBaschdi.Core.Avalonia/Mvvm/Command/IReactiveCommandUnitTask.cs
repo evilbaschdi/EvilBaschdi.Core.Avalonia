@@ -1,6 +1,6 @@
-﻿using System.Reactive;
+﻿using ReactiveUI.Primitives;
 
 namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 
 /// <inheritdoc />
-public interface IReactiveCommandUnitTask : IReactiveCommandTask<Unit>;
+public interface IReactiveCommandRxVoidTask : IReactiveCommandTask<RxVoid>;

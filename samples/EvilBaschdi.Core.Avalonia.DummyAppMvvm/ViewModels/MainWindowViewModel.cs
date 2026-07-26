@@ -1,8 +1,8 @@
-using System.Reactive;
 using Avalonia.Collections;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels.Internal;
 using ReactiveUI;
+using ReactiveUI.Primitives;
 
 // ReSharper disable UnusedMember.Global
 
@@ -53,7 +53,7 @@ public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 
     /// <summary>
     /// </summary>
-    public ReactiveCommand<Unit, Unit> ShowExtendedInformationCommand { get; set; }
+    public ReactiveCommand<RxVoid, RxVoid> ShowExtendedInformationCommand { get; set; }
 
     /// <inheritdoc />
     public void Run()

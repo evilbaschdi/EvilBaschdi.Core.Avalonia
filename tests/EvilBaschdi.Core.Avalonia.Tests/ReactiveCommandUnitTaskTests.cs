@@ -1,28 +1,28 @@
-using System.Reactive;
 using EvilBaschdi.Core.Avalonia.Mvvm.Command;
 using ReactiveUI;
+using ReactiveUI.Primitives;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;
 
-public class ReactiveCommandUnitTaskTests
+public class ReactiveCommandRxVoidTaskTests
 {
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Constructor_ReturnsInterfaceName(TestReactiveCommandUnitTask sut)
+    public void Constructor_ReturnsInterfaceName(TestReactiveCommandRxVoidTask sut)
     {
-        sut.Should().BeAssignableTo<IReactiveCommandUnitTask>();
+        sut.Should().BeAssignableTo<IReactiveCommandRxVoidTask>();
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Command_ReturnsReactiveCommand(TestReactiveCommandUnitTask sut)
+    public void Command_ReturnsReactiveCommand(TestReactiveCommandRxVoidTask sut)
     {
         var command = sut.Command;
 
         command.Should().NotBeNull();
-        command.Should().BeOfType<ReactiveCommand<Unit, Unit>>();
+        command.Should().BeOfType<ReactiveCommand<RxVoid, RxVoid>>();
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void RunAsync_MethodCanBeOverridden(TestReactiveCommandUnitTask sut)
+    public void RunAsync_MethodCanBeOverridden(TestReactiveCommandRxVoidTask sut)
     {
         sut.RunAsyncCalled.Should().BeFalse();
         sut.RunAsyncCalled = true;
@@ -30,7 +30,7 @@ public class ReactiveCommandUnitTaskTests
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void RunAsync_ReceivesCancellationToken(TestReactiveCommandUnitTask sut)
+    public void RunAsync_ReceivesCancellationToken(TestReactiveCommandRxVoidTask sut)
     {
         sut.CancellationTokenReceived = TestContext.Current.CancellationToken;
 
@@ -38,7 +38,7 @@ public class ReactiveCommandUnitTaskTests
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public async Task RunAsync_CanBeAwaited(TestReactiveCommandUnitTask sut)
+    public async Task RunAsync_CanBeAwaited(TestReactiveCommandRxVoidTask sut)
     {
         var task = sut.RunAsync(TestContext.Current.CancellationToken);
 
@@ -50,7 +50,7 @@ public class ReactiveCommandUnitTaskTests
     [Fact]
     public void Command_ReturnsSameInstanceWhenCalledMultipleTimes()
     {
-        var sut = new TestReactiveCommandUnitTaskDefault();
+        var sut = new TestReactiveCommandRxVoidTaskDefault();
 
         var command1 = sut.Command;
         var command2 = sut.Command;
@@ -61,7 +61,7 @@ public class ReactiveCommandUnitTaskTests
     [Fact]
     public async Task RunAsync_DefaultImplementation_ThrowsNotImplementedException()
     {
-        var sut = new TestReactiveCommandUnitTaskDefault();
+        var sut = new TestReactiveCommandRxVoidTaskDefault();
 
         var act = () => sut.RunAsync();
 
@@ -69,7 +69,7 @@ public class ReactiveCommandUnitTaskTests
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public async Task RunAsync_ExecutesCommand(TestReactiveCommandUnitTask sut)
+    public async Task RunAsync_ExecutesCommand(TestReactiveCommandRxVoidTask sut)
     {
         var command = sut.Command;
 
@@ -77,7 +77,7 @@ public class ReactiveCommandUnitTaskTests
     }
 }
 
-public class TestReactiveCommandUnitTask : ReactiveCommandUnitTask
+public class TestReactiveCommandRxVoidTask : ReactiveCommandRxVoidTask
 {
     public bool RunAsyncCalled { get; set; }
     public CancellationToken CancellationTokenReceived { get; set; }
@@ -90,6 +90,6 @@ public class TestReactiveCommandUnitTask : ReactiveCommandUnitTask
     }
 }
 
-public class TestReactiveCommandUnitTaskDefault : ReactiveCommandUnitTask
+public class TestReactiveCommandRxVoidTaskDefault : ReactiveCommandRxVoidTask
 {
 }

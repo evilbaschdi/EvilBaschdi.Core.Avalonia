@@ -1,28 +1,28 @@
-using System.Reactive;
 using EvilBaschdi.Core.Avalonia.Mvvm.Command;
 using ReactiveUI;
+using ReactiveUI.Primitives;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;
 
-public class ReactiveCommandUnitRunTests
+public class ReactiveCommandRxVoidRunTests
 {
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Constructor_ReturnsInterfaceName(TestReactiveCommandUnitRun sut)
+    public void Constructor_ReturnsInterfaceName(TestReactiveCommandRxVoidRun sut)
     {
-        sut.Should().BeAssignableTo<IReactiveCommandUnitRun>();
+        sut.Should().BeAssignableTo<IReactiveCommandRxVoidRun>();
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Command_ReturnsReactiveCommand(TestReactiveCommandUnitRun sut)
+    public void Command_ReturnsReactiveCommand(TestReactiveCommandRxVoidRun sut)
     {
         var command = sut.Command;
 
         command.Should().NotBeNull();
-        command.Should().BeOfType<ReactiveCommand<Unit, Unit>>();
+        command.Should().BeOfType<ReactiveCommand<RxVoid, RxVoid>>();
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Run_MethodCanBeOverridden(TestReactiveCommandUnitRun sut)
+    public void Run_MethodCanBeOverridden(TestReactiveCommandRxVoidRun sut)
     {
         sut.RunCalled.Should().BeFalse();
         sut.RunCalled = true;
@@ -30,13 +30,13 @@ public class ReactiveCommandUnitRunTests
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Command_Property_IsNotNull(TestReactiveCommandUnitRun sut)
+    public void Command_Property_IsNotNull(TestReactiveCommandRxVoidRun sut)
     {
         sut.Command.Should().NotBeNull();
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Run_MethodCanBeCalledMultipleTimes(TestReactiveCommandUnitRun sut)
+    public void Run_MethodCanBeCalledMultipleTimes(TestReactiveCommandRxVoidRun sut)
     {
         sut.RunCalled = false;
 
@@ -51,7 +51,7 @@ public class ReactiveCommandUnitRunTests
     [Fact]
     public void Command_ReturnsSameInstanceWhenCalledMultipleTimes()
     {
-        var sut = new TestReactiveCommandUnitRunDefault();
+        var sut = new TestReactiveCommandRxVoidRunDefault();
 
         var command1 = sut.Command;
         var command2 = sut.Command;
@@ -62,7 +62,7 @@ public class ReactiveCommandUnitRunTests
     [Fact]
     public void Run_DefaultImplementationThrows()
     {
-        var sut = new TestReactiveCommandUnitRunDefault();
+        var sut = new TestReactiveCommandRxVoidRunDefault();
 
         var act = () => sut.Run();
 
@@ -70,7 +70,7 @@ public class ReactiveCommandUnitRunTests
     }
 }
 
-public class TestReactiveCommandUnitRun : ReactiveCommandUnitRun
+public class TestReactiveCommandRxVoidRun : ReactiveCommandRxVoidRun
 {
     public bool RunCalled { get; set; }
 
@@ -80,6 +80,6 @@ public class TestReactiveCommandUnitRun : ReactiveCommandUnitRun
     }
 }
 
-public class TestReactiveCommandUnitRunDefault : ReactiveCommandUnitRun
+public class TestReactiveCommandRxVoidRunDefault : ReactiveCommandRxVoidRun
 {
 }

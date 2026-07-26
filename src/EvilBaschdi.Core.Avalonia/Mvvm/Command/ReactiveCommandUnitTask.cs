@@ -1,24 +1,24 @@
-using System.Reactive;
 using ReactiveUI;
+using ReactiveUI.Primitives;
 
 namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 
 /// <inheritdoc />
 // ReSharper disable once UnusedType.Global
-public abstract class ReactiveCommandUnitTask : IReactiveCommandUnitTask
+public abstract class ReactiveCommandRxVoidTask : IReactiveCommandRxVoidTask
 {
-    private readonly Lazy<ReactiveCommand<Unit, Unit>> _command;
+    private readonly Lazy<ReactiveCommand<RxVoid, RxVoid>> _command;
 
     /// <summary>
-    ///     Initializes a new instance of the <see cref="ReactiveCommandUnitTask" /> class.
+    ///     Initializes a new instance of the <see cref="ReactiveCommandRxVoidTask" /> class.
     /// </summary>
-    protected ReactiveCommandUnitTask()
+    protected ReactiveCommandRxVoidTask()
     {
         _command = new(() => ReactiveCommand.CreateFromTask(RunAsync));
     }
 
     /// <inheritdoc />
-    public ReactiveCommand<Unit, Unit> Command => _command.Value;
+    public ReactiveCommand<RxVoid, RxVoid> Command => _command.Value;
 
     // ReSharper disable once MemberCanBeProtected.Global
     /// <summary>
