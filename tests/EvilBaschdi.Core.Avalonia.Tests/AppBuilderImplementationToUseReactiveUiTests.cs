@@ -1,4 +1,4 @@
-﻿using Avalonia;
+using Avalonia;
 using EvilBaschdi.Core.Avalonia.AppBuilderImplementations;
 using ReactiveUI.Builder;
 

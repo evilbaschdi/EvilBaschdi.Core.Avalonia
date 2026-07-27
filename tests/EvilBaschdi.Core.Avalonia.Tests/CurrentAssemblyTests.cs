@@ -1,4 +1,4 @@
-﻿using EvilBaschdi.Core.Avalonia.Helpers;
+using EvilBaschdi.Core.Avalonia.Helpers;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;
 

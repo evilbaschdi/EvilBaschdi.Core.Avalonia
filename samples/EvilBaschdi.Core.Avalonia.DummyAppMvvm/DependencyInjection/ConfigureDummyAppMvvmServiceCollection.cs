@@ -1,4 +1,4 @@
-﻿using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
+using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels.Internal;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Views;

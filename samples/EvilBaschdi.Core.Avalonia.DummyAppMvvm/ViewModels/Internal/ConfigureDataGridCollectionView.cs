@@ -1,4 +1,4 @@
-﻿using Avalonia.Collections;
+using Avalonia.Collections;
 using EvilBaschdi.Core.Avalonia.DummyAppMvvm.Models;
 
 namespace EvilBaschdi.Core.Avalonia.DummyAppMvvm.ViewModels.Internal;

@@ -1,4 +1,4 @@
-﻿using Avalonia;
+using Avalonia;
 using ReactiveUI.Avalonia;
 using ReactiveUI.Builder;
 
@@ -15,11 +15,11 @@ public class AppBuilderImplementationToUseReactiveUI<TApp> : IAppBuilderImplemen
         ArgumentNullException.ThrowIfNull(withReactiveUiBuilder);
 
         return AppBuilder.Configure<TApp>()
-            .UsePlatformDetect()
-            .LogToTrace()
+                         .UsePlatformDetect()
+                         .LogToTrace()
 #if DEBUG
-            .WithDeveloperTools()
+                         .WithDeveloperTools()
 #endif
-            .UseReactiveUI(withReactiveUiBuilder);
+                         .UseReactiveUI(withReactiveUiBuilder);
     }
 }

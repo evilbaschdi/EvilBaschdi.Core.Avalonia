@@ -1,4 +1,4 @@
-﻿using Avalonia;
+using Avalonia;
 using EvilBaschdi.Core.Avalonia.AppBuilderImplementations;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;

@@ -1,4 +1,4 @@
-﻿using EvilBaschdi.Core.Avalonia.Themes;
+using EvilBaschdi.Core.Avalonia.Themes;
 
 namespace EvilBaschdi.Core.Avalonia.Tests.Themes;
 

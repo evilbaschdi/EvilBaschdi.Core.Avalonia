@@ -1,4 +1,4 @@
-﻿using ReactiveUI;
+using ReactiveUI;
 
 namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 

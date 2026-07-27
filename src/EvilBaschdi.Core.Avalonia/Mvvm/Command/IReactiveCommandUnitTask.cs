@@ -1,4 +1,4 @@
-﻿using ReactiveUI.Primitives;
+using ReactiveUI.Primitives;
 
 namespace EvilBaschdi.Core.Avalonia.Mvvm.Command;
 

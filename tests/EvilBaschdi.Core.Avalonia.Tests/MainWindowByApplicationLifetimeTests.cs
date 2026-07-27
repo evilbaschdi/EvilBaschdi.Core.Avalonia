@@ -1,4 +1,4 @@
-﻿using EvilBaschdi.Core.Avalonia.Lifetime;
+using EvilBaschdi.Core.Avalonia.Lifetime;
 
 namespace EvilBaschdi.Core.Avalonia.Tests;
 

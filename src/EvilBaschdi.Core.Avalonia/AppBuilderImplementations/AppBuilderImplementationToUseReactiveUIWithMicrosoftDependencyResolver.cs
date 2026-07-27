@@ -1,4 +1,4 @@
-﻿using Avalonia;
+using Avalonia;
 using EvilBaschdi.Core.Avalonia.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI.Avalonia.Splat;
@@ -15,19 +15,19 @@ public class
 {
     /// <inheritdoc />
     public AppBuilder ValueFor(Action<IServiceCollection> containerConfig,
-        Action<ReactiveUIBuilder> withReactiveUIBuilder)
+                               Action<ReactiveUIBuilder> withReactiveUIBuilder)
     {
         ArgumentNullException.ThrowIfNull(containerConfig);
         ArgumentNullException.ThrowIfNull(withReactiveUIBuilder);
 
         return AppBuilder.Configure<TApp>()
-            .UsePlatformDetect()
-            .LogToTrace()
+                         .UsePlatformDetect()
+                         .LogToTrace()
 #if DEBUG
-            .WithDeveloperTools()
+                         .WithDeveloperTools()
 #endif
-            .UseReactiveUIWithMicrosoftDependencyResolver(containerConfig, ApplicationServices.Initialize,
-                withReactiveUIBuilder);
+                         .UseReactiveUIWithMicrosoftDependencyResolver(containerConfig, ApplicationServices.Initialize,
+                             withReactiveUIBuilder);
     }
 
     /// <inheritdoc />
