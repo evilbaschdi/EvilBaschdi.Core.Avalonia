@@ -19,8 +19,10 @@ public static class ThemeEngine
     ///     Initializes the theme resources based on the current platform.
     /// </summary>
     /// <param name="app">The Avalonia application instance.</param>
-    public static void Initialize(Application app)
+    public static void Initialize([NotNull] Application app)
     {
+        ArgumentNullException.ThrowIfNull(app);
+
         var (accent, background) = ThemeColorProvider.GetSystemColors();
 
         app.Resources["AccentBrush"] = new SolidColorBrush(accent);
@@ -33,6 +35,7 @@ public static class ThemeEngine
     public static void SetPlatformSpecificVisualEffects(Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
+
         window.Background = (IBrush)Application.Current!.Resources["BackgroundBrush"]!;
 
         RenderOptions.SetBitmapInterpolationMode(window, BitmapInterpolationMode.HighQuality);
@@ -56,6 +59,7 @@ public static class ThemeEngine
     public static void SetWindowSize(Window window, bool resizeWithBorder400)
     {
         ArgumentNullException.ThrowIfNull(window);
+
         window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
         // ReSharper disable once InvertIf
@@ -73,6 +77,7 @@ public static class ThemeEngine
     public static void HandleOsDependentTitleBar(Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
+
         if (window is not FAAppWindow appWindow)
         {
             return;
