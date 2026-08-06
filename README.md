@@ -3,6 +3,8 @@
 ## Source Code of EvilBaschdi.Core.Avalonia
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge&)](LICENSE)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/evilbaschdi/evilbaschdi.core.avalonia?style=for-the-badge&)
+![Last Commit](https://img.shields.io/github/last-commit/evilbaschdi/evilbaschdi.core.avalonia?style=for-the-badge&)
 
 ## Package Feeds
 
