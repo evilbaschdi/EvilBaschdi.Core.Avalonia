@@ -1,8 +1,9 @@
 using EvilBaschdi.Core.Avalonia.Themes;
+using EvilBaschdi.Testing.Avalonia;
 
 namespace EvilBaschdi.Core.Avalonia.Tests.Themes;
 
-public class ThemeEngineTests
+public class ThemeEngineTests : AvaloniaTestBase<TestApp>
 {
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public void Constructor_HasNullGuards(GuardClauseAssertion assertion)
