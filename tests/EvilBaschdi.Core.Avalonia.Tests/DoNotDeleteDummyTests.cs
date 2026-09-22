@@ -1,7 +1,7 @@
 #pragma warning disable IDE0079
 #pragma warning disable XFA001
 #pragma warning disable MFA001
-#pragma warning disable FluentAssertions0704
+#pragma warning disable AwesomeAssertions0704
 namespace EvilBaschdi.Core.Avalonia.Tests;
 
 /// <summary>
