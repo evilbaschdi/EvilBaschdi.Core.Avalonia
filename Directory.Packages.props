@@ -19,7 +19,7 @@
     <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2026.9.8.21" />
     <PackageVersion Include="FluentAvaloniaUI" Version="3.1.0" />
     <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.5" />
-    <PackageVersion Include="ReactiveUI" Version="24.2.0" />
+    <PackageVersion Include="ReactiveUI" Version="24.3.0" />
     <PackageVersion Include="ReactiveUI.Avalonia" Version="12.1.2" />
     <PackageVersion Include="ReactiveUI.Avalonia.Microsoft.Extensions.DependencyInjection" Version="12.1.2" />
     <PackageVersion Include="TextMateSharp" Version="2.0.4" />
